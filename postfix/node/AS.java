@@ -7,9 +7,11 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class AS extends PS
 {
-    private TSvg1 _svg1_;
-    private PPr _pr_;
-    private TSvg2 _svg2_;
+    private TStyle _style_;
+    private TIg _ig_;
+    private TCo _co_;
+    private PSp _sp_;
+    private TCo _a_;
 
     public AS()
     {
@@ -17,16 +19,22 @@ public final class AS extends PS
     }
 
     public AS(
-        @SuppressWarnings("hiding") TSvg1 _svg1_,
-        @SuppressWarnings("hiding") PPr _pr_,
-        @SuppressWarnings("hiding") TSvg2 _svg2_)
+        @SuppressWarnings("hiding") TStyle _style_,
+        @SuppressWarnings("hiding") TIg _ig_,
+        @SuppressWarnings("hiding") TCo _co_,
+        @SuppressWarnings("hiding") PSp _sp_,
+        @SuppressWarnings("hiding") TCo _a_)
     {
         // Constructor
-        setSvg1(_svg1_);
+        setStyle(_style_);
 
-        setPr(_pr_);
+        setIg(_ig_);
 
-        setSvg2(_svg2_);
+        setCo(_co_);
+
+        setSp(_sp_);
+
+        setA(_a_);
 
     }
 
@@ -34,9 +42,11 @@ public final class AS extends PS
     public Object clone()
     {
         return new AS(
-            cloneNode(this._svg1_),
-            cloneNode(this._pr_),
-            cloneNode(this._svg2_));
+            cloneNode(this._style_),
+            cloneNode(this._ig_),
+            cloneNode(this._co_),
+            cloneNode(this._sp_),
+            cloneNode(this._a_));
     }
 
     @Override
@@ -45,16 +55,16 @@ public final class AS extends PS
         ((Analysis) sw).caseAS(this);
     }
 
-    public TSvg1 getSvg1()
+    public TStyle getStyle()
     {
-        return this._svg1_;
+        return this._style_;
     }
 
-    public void setSvg1(TSvg1 node)
+    public void setStyle(TStyle node)
     {
-        if(this._svg1_ != null)
+        if(this._style_ != null)
         {
-            this._svg1_.parent(null);
+            this._style_.parent(null);
         }
 
         if(node != null)
@@ -67,19 +77,19 @@ public final class AS extends PS
             node.parent(this);
         }
 
-        this._svg1_ = node;
+        this._style_ = node;
     }
 
-    public PPr getPr()
+    public TIg getIg()
     {
-        return this._pr_;
+        return this._ig_;
     }
 
-    public void setPr(PPr node)
+    public void setIg(TIg node)
     {
-        if(this._pr_ != null)
+        if(this._ig_ != null)
         {
-            this._pr_.parent(null);
+            this._ig_.parent(null);
         }
 
         if(node != null)
@@ -92,19 +102,19 @@ public final class AS extends PS
             node.parent(this);
         }
 
-        this._pr_ = node;
+        this._ig_ = node;
     }
 
-    public TSvg2 getSvg2()
+    public TCo getCo()
     {
-        return this._svg2_;
+        return this._co_;
     }
 
-    public void setSvg2(TSvg2 node)
+    public void setCo(TCo node)
     {
-        if(this._svg2_ != null)
+        if(this._co_ != null)
         {
-            this._svg2_.parent(null);
+            this._co_.parent(null);
         }
 
         if(node != null)
@@ -117,37 +127,101 @@ public final class AS extends PS
             node.parent(this);
         }
 
-        this._svg2_ = node;
+        this._co_ = node;
+    }
+
+    public PSp getSp()
+    {
+        return this._sp_;
+    }
+
+    public void setSp(PSp node)
+    {
+        if(this._sp_ != null)
+        {
+            this._sp_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._sp_ = node;
+    }
+
+    public TCo getA()
+    {
+        return this._a_;
+    }
+
+    public void setA(TCo node)
+    {
+        if(this._a_ != null)
+        {
+            this._a_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._a_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._svg1_)
-            + toString(this._pr_)
-            + toString(this._svg2_);
+            + toString(this._style_)
+            + toString(this._ig_)
+            + toString(this._co_)
+            + toString(this._sp_)
+            + toString(this._a_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._svg1_ == child)
+        if(this._style_ == child)
         {
-            this._svg1_ = null;
+            this._style_ = null;
             return;
         }
 
-        if(this._pr_ == child)
+        if(this._ig_ == child)
         {
-            this._pr_ = null;
+            this._ig_ = null;
             return;
         }
 
-        if(this._svg2_ == child)
+        if(this._co_ == child)
         {
-            this._svg2_ = null;
+            this._co_ = null;
+            return;
+        }
+
+        if(this._sp_ == child)
+        {
+            this._sp_ = null;
+            return;
+        }
+
+        if(this._a_ == child)
+        {
+            this._a_ = null;
             return;
         }
 
@@ -158,21 +232,33 @@ public final class AS extends PS
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._svg1_ == oldChild)
+        if(this._style_ == oldChild)
         {
-            setSvg1((TSvg1) newChild);
+            setStyle((TStyle) newChild);
             return;
         }
 
-        if(this._pr_ == oldChild)
+        if(this._ig_ == oldChild)
         {
-            setPr((PPr) newChild);
+            setIg((TIg) newChild);
             return;
         }
 
-        if(this._svg2_ == oldChild)
+        if(this._co_ == oldChild)
         {
-            setSvg2((TSvg2) newChild);
+            setCo((TCo) newChild);
+            return;
+        }
+
+        if(this._sp_ == oldChild)
+        {
+            setSp((PSp) newChild);
+            return;
+        }
+
+        if(this._a_ == oldChild)
+        {
+            setA((TCo) newChild);
             return;
         }
 

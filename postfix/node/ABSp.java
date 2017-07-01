@@ -7,11 +7,8 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class ABSp extends PSp
 {
-    private PFi _fi_;
-    private TPc _pc_;
-    private PStw _stw_;
-    private TPc _a_;
-    private PSt _st_;
+    private PSp _sp_;
+    private PSp0 _sp0_;
 
     public ABSp()
     {
@@ -19,22 +16,13 @@ public final class ABSp extends PSp
     }
 
     public ABSp(
-        @SuppressWarnings("hiding") PFi _fi_,
-        @SuppressWarnings("hiding") TPc _pc_,
-        @SuppressWarnings("hiding") PStw _stw_,
-        @SuppressWarnings("hiding") TPc _a_,
-        @SuppressWarnings("hiding") PSt _st_)
+        @SuppressWarnings("hiding") PSp _sp_,
+        @SuppressWarnings("hiding") PSp0 _sp0_)
     {
         // Constructor
-        setFi(_fi_);
+        setSp(_sp_);
 
-        setPc(_pc_);
-
-        setStw(_stw_);
-
-        setA(_a_);
-
-        setSt(_st_);
+        setSp0(_sp0_);
 
     }
 
@@ -42,11 +30,8 @@ public final class ABSp extends PSp
     public Object clone()
     {
         return new ABSp(
-            cloneNode(this._fi_),
-            cloneNode(this._pc_),
-            cloneNode(this._stw_),
-            cloneNode(this._a_),
-            cloneNode(this._st_));
+            cloneNode(this._sp_),
+            cloneNode(this._sp0_));
     }
 
     @Override
@@ -55,16 +40,16 @@ public final class ABSp extends PSp
         ((Analysis) sw).caseABSp(this);
     }
 
-    public PFi getFi()
+    public PSp getSp()
     {
-        return this._fi_;
+        return this._sp_;
     }
 
-    public void setFi(PFi node)
+    public void setSp(PSp node)
     {
-        if(this._fi_ != null)
+        if(this._sp_ != null)
         {
-            this._fi_.parent(null);
+            this._sp_.parent(null);
         }
 
         if(node != null)
@@ -77,19 +62,19 @@ public final class ABSp extends PSp
             node.parent(this);
         }
 
-        this._fi_ = node;
+        this._sp_ = node;
     }
 
-    public TPc getPc()
+    public PSp0 getSp0()
     {
-        return this._pc_;
+        return this._sp0_;
     }
 
-    public void setPc(TPc node)
+    public void setSp0(PSp0 node)
     {
-        if(this._pc_ != null)
+        if(this._sp0_ != null)
         {
-            this._pc_.parent(null);
+            this._sp0_.parent(null);
         }
 
         if(node != null)
@@ -102,126 +87,30 @@ public final class ABSp extends PSp
             node.parent(this);
         }
 
-        this._pc_ = node;
-    }
-
-    public PStw getStw()
-    {
-        return this._stw_;
-    }
-
-    public void setStw(PStw node)
-    {
-        if(this._stw_ != null)
-        {
-            this._stw_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._stw_ = node;
-    }
-
-    public TPc getA()
-    {
-        return this._a_;
-    }
-
-    public void setA(TPc node)
-    {
-        if(this._a_ != null)
-        {
-            this._a_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._a_ = node;
-    }
-
-    public PSt getSt()
-    {
-        return this._st_;
-    }
-
-    public void setSt(PSt node)
-    {
-        if(this._st_ != null)
-        {
-            this._st_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._st_ = node;
+        this._sp0_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._fi_)
-            + toString(this._pc_)
-            + toString(this._stw_)
-            + toString(this._a_)
-            + toString(this._st_);
+            + toString(this._sp_)
+            + toString(this._sp0_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._fi_ == child)
+        if(this._sp_ == child)
         {
-            this._fi_ = null;
+            this._sp_ = null;
             return;
         }
 
-        if(this._pc_ == child)
+        if(this._sp0_ == child)
         {
-            this._pc_ = null;
-            return;
-        }
-
-        if(this._stw_ == child)
-        {
-            this._stw_ = null;
-            return;
-        }
-
-        if(this._a_ == child)
-        {
-            this._a_ = null;
-            return;
-        }
-
-        if(this._st_ == child)
-        {
-            this._st_ = null;
+            this._sp0_ = null;
             return;
         }
 
@@ -232,33 +121,15 @@ public final class ABSp extends PSp
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._fi_ == oldChild)
+        if(this._sp_ == oldChild)
         {
-            setFi((PFi) newChild);
+            setSp((PSp) newChild);
             return;
         }
 
-        if(this._pc_ == oldChild)
+        if(this._sp0_ == oldChild)
         {
-            setPc((TPc) newChild);
-            return;
-        }
-
-        if(this._stw_ == oldChild)
-        {
-            setStw((PStw) newChild);
-            return;
-        }
-
-        if(this._a_ == oldChild)
-        {
-            setA((TPc) newChild);
-            return;
-        }
-
-        if(this._st_ == oldChild)
-        {
-            setSt((PSt) newChild);
+            setSp0((PSp0) newChild);
             return;
         }
 

@@ -105,37 +105,91 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAAA(AAA node)
+    public void caseAAF(AAF node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseABA(ABA node)
+    public void caseABF(ABF node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseACA(ACA node)
+    public void caseACF(ACF node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseADA(ADA node)
+    public void caseADF(ADF node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAEA(AEA node)
+    public void caseAAD(AAD node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAFA(AFA node)
+    public void caseABD(ABD node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACD(ACD node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseADD(ADD node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAED(AED node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAFD(AFD node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAAAtt(AAAtt node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseABAtt(ABAtt node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAAAtt0(AAAtt0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseABAtt0(ABAtt0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACAtt0(ACAtt0 node)
     {
         defaultCase(node);
     }
@@ -195,73 +249,37 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAAS(AAS node)
+    public void caseAS(AS node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseABS(ABS node)
+    public void caseAASp(AASp node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAASp1(AASp1 node)
+    public void caseABSp(ABSp node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseABSp1(ABSp1 node)
+    public void caseAASp0(AASp0 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAASp2(AASp2 node)
+    public void caseABSp0(ABSp0 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseABSp2(ABSp2 node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAASp3(AASp3 node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseABSp3(ABSp3 node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseACSp3(ACSp3 node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAASp4(AASp4 node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseABSp4(ABSp4 node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseACSp4(ACSp4 node)
+    public void caseACSp0(ACSp0 node)
     {
         defaultCase(node);
     }

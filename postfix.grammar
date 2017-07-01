@@ -42,7 +42,7 @@ Ignored Tokens
 	blank;
 
 Productions
-start = svg1 props svg2;
+start = svg1 pr svg2;
 pr = {a} pr1 | {b} pr pr1;
 pr1 = {a} minus f s mayus | {b} minus f mayus;
 f = {a} d | {b} d att | {c} att d | {d} att d [a]:att;
@@ -62,6 +62,6 @@ p0 = {a} p1 | {b} p0 p1;
 p1 = n coma [a]:n;
 
 
-s = style ig co sp co;
+s = style ig co sp [a]:co;
 sp = {a} sp0 | {b} sp sp0;
 sp0 = {a} fill dosp c0 | {b} stroke dosp c0| {c} strokew dosp n;

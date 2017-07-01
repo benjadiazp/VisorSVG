@@ -8,7 +8,7 @@ import postfix.analysis.*;
 public final class ABPr1 extends PPr1
 {
     private TMinus _minus_;
-    private PA _a_;
+    private PF _f_;
     private TMayus _mayus_;
 
     public ABPr1()
@@ -18,13 +18,13 @@ public final class ABPr1 extends PPr1
 
     public ABPr1(
         @SuppressWarnings("hiding") TMinus _minus_,
-        @SuppressWarnings("hiding") PA _a_,
+        @SuppressWarnings("hiding") PF _f_,
         @SuppressWarnings("hiding") TMayus _mayus_)
     {
         // Constructor
         setMinus(_minus_);
 
-        setA(_a_);
+        setF(_f_);
 
         setMayus(_mayus_);
 
@@ -35,7 +35,7 @@ public final class ABPr1 extends PPr1
     {
         return new ABPr1(
             cloneNode(this._minus_),
-            cloneNode(this._a_),
+            cloneNode(this._f_),
             cloneNode(this._mayus_));
     }
 
@@ -70,16 +70,16 @@ public final class ABPr1 extends PPr1
         this._minus_ = node;
     }
 
-    public PA getA()
+    public PF getF()
     {
-        return this._a_;
+        return this._f_;
     }
 
-    public void setA(PA node)
+    public void setF(PF node)
     {
-        if(this._a_ != null)
+        if(this._f_ != null)
         {
-            this._a_.parent(null);
+            this._f_.parent(null);
         }
 
         if(node != null)
@@ -92,7 +92,7 @@ public final class ABPr1 extends PPr1
             node.parent(this);
         }
 
-        this._a_ = node;
+        this._f_ = node;
     }
 
     public TMayus getMayus()
@@ -125,7 +125,7 @@ public final class ABPr1 extends PPr1
     {
         return ""
             + toString(this._minus_)
-            + toString(this._a_)
+            + toString(this._f_)
             + toString(this._mayus_);
     }
 
@@ -139,9 +139,9 @@ public final class ABPr1 extends PPr1
             return;
         }
 
-        if(this._a_ == child)
+        if(this._f_ == child)
         {
-            this._a_ = null;
+            this._f_ = null;
             return;
         }
 
@@ -164,9 +164,9 @@ public final class ABPr1 extends PPr1
             return;
         }
 
-        if(this._a_ == oldChild)
+        if(this._f_ == oldChild)
         {
-            setA((PA) newChild);
+            setF((PF) newChild);
             return;
         }
 
