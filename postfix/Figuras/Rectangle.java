@@ -5,11 +5,17 @@ public class Rectangle
   int width;
   int height;
   String fill;
-  String strokewidth;
+  int strokewidth;
   String stroke;
 
-  public Rectangle (x, y, w, h, f, sw, s)
+  public Rectangle (int x, int y, int w, int h, String f, int sw, String s)
   {
-    
+    this.x = x;
+    this.y = y;
+    width = w;
+    height = h;
+    fill = f;
+    strokewidth = sw;
+    stroke = s;
   }
 }
