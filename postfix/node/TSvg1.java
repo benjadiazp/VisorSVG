@@ -9,12 +9,12 @@ public final class TSvg1 extends Token
 {
     public TSvg1()
     {
-        super.setText("<svg>");
+        super.setText("<svg");
     }
 
     public TSvg1(int line, int pos)
     {
-        super.setText("<svg>");
+        super.setText("<svg");
         setLine(line);
         setPos(pos);
     }

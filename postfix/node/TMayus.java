@@ -9,12 +9,12 @@ public final class TMayus extends Token
 {
     public TMayus()
     {
-        super.setText("/>");
+        super.setText(">");
     }
 
     public TMayus(int line, int pos)
     {
-        super.setText("/>");
+        super.setText(">");
         setLine(line);
         setPos(pos);
     }

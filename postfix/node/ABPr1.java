@@ -9,7 +9,7 @@ public final class ABPr1 extends PPr1
 {
     private TMinus _minus_;
     private PF _f_;
-    private TMayus _mayus_;
+    private PMayus0 _mayus0_;
 
     public ABPr1()
     {
@@ -19,14 +19,14 @@ public final class ABPr1 extends PPr1
     public ABPr1(
         @SuppressWarnings("hiding") TMinus _minus_,
         @SuppressWarnings("hiding") PF _f_,
-        @SuppressWarnings("hiding") TMayus _mayus_)
+        @SuppressWarnings("hiding") PMayus0 _mayus0_)
     {
         // Constructor
         setMinus(_minus_);
 
         setF(_f_);
 
-        setMayus(_mayus_);
+        setMayus0(_mayus0_);
 
     }
 
@@ -36,7 +36,7 @@ public final class ABPr1 extends PPr1
         return new ABPr1(
             cloneNode(this._minus_),
             cloneNode(this._f_),
-            cloneNode(this._mayus_));
+            cloneNode(this._mayus0_));
     }
 
     @Override
@@ -95,16 +95,16 @@ public final class ABPr1 extends PPr1
         this._f_ = node;
     }
 
-    public TMayus getMayus()
+    public PMayus0 getMayus0()
     {
-        return this._mayus_;
+        return this._mayus0_;
     }
 
-    public void setMayus(TMayus node)
+    public void setMayus0(PMayus0 node)
     {
-        if(this._mayus_ != null)
+        if(this._mayus0_ != null)
         {
-            this._mayus_.parent(null);
+            this._mayus0_.parent(null);
         }
 
         if(node != null)
@@ -117,7 +117,7 @@ public final class ABPr1 extends PPr1
             node.parent(this);
         }
 
-        this._mayus_ = node;
+        this._mayus0_ = node;
     }
 
     @Override
@@ -126,7 +126,7 @@ public final class ABPr1 extends PPr1
         return ""
             + toString(this._minus_)
             + toString(this._f_)
-            + toString(this._mayus_);
+            + toString(this._mayus0_);
     }
 
     @Override
@@ -145,9 +145,9 @@ public final class ABPr1 extends PPr1
             return;
         }
 
-        if(this._mayus_ == child)
+        if(this._mayus0_ == child)
         {
-            this._mayus_ = null;
+            this._mayus0_ = null;
             return;
         }
 
@@ -170,9 +170,9 @@ public final class ABPr1 extends PPr1
             return;
         }
 
-        if(this._mayus_ == oldChild)
+        if(this._mayus0_ == oldChild)
         {
-            setMayus((TMayus) newChild);
+            setMayus0((PMayus0) newChild);
             return;
         }
 

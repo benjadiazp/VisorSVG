@@ -7,11 +7,8 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class ACPr extends PPr
 {
-    private PPr1 _pr1_;
-    private TMinus _minus_;
-    private TSl _sl_;
-    private PFg _fg_;
-    private TMayus _mayus_;
+    private PPr _pr_;
+    private PFig1 _fig1_;
 
     public ACPr()
     {
@@ -19,22 +16,13 @@ public final class ACPr extends PPr
     }
 
     public ACPr(
-        @SuppressWarnings("hiding") PPr1 _pr1_,
-        @SuppressWarnings("hiding") TMinus _minus_,
-        @SuppressWarnings("hiding") TSl _sl_,
-        @SuppressWarnings("hiding") PFg _fg_,
-        @SuppressWarnings("hiding") TMayus _mayus_)
+        @SuppressWarnings("hiding") PPr _pr_,
+        @SuppressWarnings("hiding") PFig1 _fig1_)
     {
         // Constructor
-        setPr1(_pr1_);
+        setPr(_pr_);
 
-        setMinus(_minus_);
-
-        setSl(_sl_);
-
-        setFg(_fg_);
-
-        setMayus(_mayus_);
+        setFig1(_fig1_);
 
     }
 
@@ -42,11 +30,8 @@ public final class ACPr extends PPr
     public Object clone()
     {
         return new ACPr(
-            cloneNode(this._pr1_),
-            cloneNode(this._minus_),
-            cloneNode(this._sl_),
-            cloneNode(this._fg_),
-            cloneNode(this._mayus_));
+            cloneNode(this._pr_),
+            cloneNode(this._fig1_));
     }
 
     @Override
@@ -55,16 +40,16 @@ public final class ACPr extends PPr
         ((Analysis) sw).caseACPr(this);
     }
 
-    public PPr1 getPr1()
+    public PPr getPr()
     {
-        return this._pr1_;
+        return this._pr_;
     }
 
-    public void setPr1(PPr1 node)
+    public void setPr(PPr node)
     {
-        if(this._pr1_ != null)
+        if(this._pr_ != null)
         {
-            this._pr1_.parent(null);
+            this._pr_.parent(null);
         }
 
         if(node != null)
@@ -77,19 +62,19 @@ public final class ACPr extends PPr
             node.parent(this);
         }
 
-        this._pr1_ = node;
+        this._pr_ = node;
     }
 
-    public TMinus getMinus()
+    public PFig1 getFig1()
     {
-        return this._minus_;
+        return this._fig1_;
     }
 
-    public void setMinus(TMinus node)
+    public void setFig1(PFig1 node)
     {
-        if(this._minus_ != null)
+        if(this._fig1_ != null)
         {
-            this._minus_.parent(null);
+            this._fig1_.parent(null);
         }
 
         if(node != null)
@@ -102,126 +87,30 @@ public final class ACPr extends PPr
             node.parent(this);
         }
 
-        this._minus_ = node;
-    }
-
-    public TSl getSl()
-    {
-        return this._sl_;
-    }
-
-    public void setSl(TSl node)
-    {
-        if(this._sl_ != null)
-        {
-            this._sl_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._sl_ = node;
-    }
-
-    public PFg getFg()
-    {
-        return this._fg_;
-    }
-
-    public void setFg(PFg node)
-    {
-        if(this._fg_ != null)
-        {
-            this._fg_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._fg_ = node;
-    }
-
-    public TMayus getMayus()
-    {
-        return this._mayus_;
-    }
-
-    public void setMayus(TMayus node)
-    {
-        if(this._mayus_ != null)
-        {
-            this._mayus_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._mayus_ = node;
+        this._fig1_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._pr1_)
-            + toString(this._minus_)
-            + toString(this._sl_)
-            + toString(this._fg_)
-            + toString(this._mayus_);
+            + toString(this._pr_)
+            + toString(this._fig1_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._pr1_ == child)
+        if(this._pr_ == child)
         {
-            this._pr1_ = null;
+            this._pr_ = null;
             return;
         }
 
-        if(this._minus_ == child)
+        if(this._fig1_ == child)
         {
-            this._minus_ = null;
-            return;
-        }
-
-        if(this._sl_ == child)
-        {
-            this._sl_ = null;
-            return;
-        }
-
-        if(this._fg_ == child)
-        {
-            this._fg_ = null;
-            return;
-        }
-
-        if(this._mayus_ == child)
-        {
-            this._mayus_ = null;
+            this._fig1_ = null;
             return;
         }
 
@@ -232,33 +121,15 @@ public final class ACPr extends PPr
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._pr1_ == oldChild)
+        if(this._pr_ == oldChild)
         {
-            setPr1((PPr1) newChild);
+            setPr((PPr) newChild);
             return;
         }
 
-        if(this._minus_ == oldChild)
+        if(this._fig1_ == oldChild)
         {
-            setMinus((TMinus) newChild);
-            return;
-        }
-
-        if(this._sl_ == oldChild)
-        {
-            setSl((TSl) newChild);
-            return;
-        }
-
-        if(this._fg_ == oldChild)
-        {
-            setFg((PFg) newChild);
-            return;
-        }
-
-        if(this._mayus_ == oldChild)
-        {
-            setMayus((TMayus) newChild);
+            setFig1((PFig1) newChild);
             return;
         }
 

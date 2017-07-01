@@ -14,7 +14,7 @@ public class Analizer {
             System.out.println ("Ingrese la expresion aritmetica:");
             //Crear una instancia del parser
             line = in.readLine();
-            Parser p = new Parser( new Lexer( new PushbackReader(new StringReader(line))));
+            Parser p = new Parser( new Lexer( new PushbackReader(new StringReader(line), 1024)));
 
             //generar el arbol de parsing
             Start tree = p.parse();

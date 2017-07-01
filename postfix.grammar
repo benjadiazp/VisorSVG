@@ -3,12 +3,13 @@ Package postfix;
 Tokens
 	n = ['0' .. '9']+;
 	blank = ( ' ' | 13 | 10)+;
-	svg1 = '<svg>';
+	svg1 = '<svg';
 	svg2 = '</svg>';
 	minus = '<';
-	mayus = '/>';
+	mayus = '>';
 	co = '"';
 	ig = '=';
+	sl = '/';
 	line = 'line';
 	circle = 'circle';
 	rect = 'rect';
@@ -42,20 +43,25 @@ Ignored Tokens
 	blank;
 
 Productions
-start = svg1 pr svg2;
-pr = {a} pr1 | {b} pr pr1;
-pr1 = {a} minus f s mayus | {b} minus f mayus | {c} minus s f mayus;
+
+start = {a} svg1 mayus pr svg2 | {b} svg1 dim mayus pr svg2;
+dim = width ig num height [a]:ig [b]:num;
+pr = {a} pr1 | {b} pr pr1 |{c} pr fig1;
+pr1 = {a} minus f s mayus0 | {b} minus f mayus0 | {c} minus s f mayus0;
+mayus0 = {a} mayus | {b} sl mayus;
+fig1 = minus sl fig0 mayus;
+fig0 = {a} line| {b} circle| {c} rect| {d} ellipse| {e} polygon| {f} polyline;
 f = {a} line l1 | {b} circle c1 | {c} rect r1 | {d} ellipse e1 | {e} polygon p | {f} polyline [a]:p;
 att = {a} att0 | {b} att att0;
 att0 = {a} fill ig co c0 [a]:co | {b} stroke ig co c0 [a]:co | {c} strokew ig num;
 
-l1 = {a} att l0 | {b} l0 att | {c} att l0 [a]:att;
+l1 = {a} att l0 | {b} l0 att | {c} att l0 [a]:att | {d} l0;
 l0 = x1 ig num y1 [a]:ig [b]:num x2 [c]:ig [d]:num y2 [e]:ig [f]:num;
-c1 = {a} att c2 | {b} c2 att | {c} att c2 [a]:att;
+c1 = {a} att c2 | {b} c2 att | {c} att c2 [a]:att | {d} c2;
 c2 = cx ig num cy [a]:ig [b]:num r0 [c]:ig [d]:num;
-r1 = {a} att r2 | {b} r2 att | {c} att r2 [a]:att;
+r1 = {a} att r2 | {b} r2 att | {c} att r2 [a]:att | {d} r2;
 r2 = x0 ig num y0 [a]:ig [b]:num width [c]:ig [d]:num height [e]:ig [f]:num;
-e1 = {a} att e0 | {b} e0 att | {c} att e0 [a]:att;
+e1 = {a} att e0 | {b} e0 att | {c} att e0 [a]:att | {d} e0;
 e0 = cx ig num cy [a]:ig [b]:num rx [c]:ig [d]:num ry [e]:ig [f]:num;
 
 num = co n [a]:co;

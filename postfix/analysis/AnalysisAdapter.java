@@ -75,7 +75,19 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAStart(AStart node)
+    public void caseAAStart(AAStart node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseABStart(ABStart node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseADim(ADim node)
     {
         defaultCase(node);
     }
@@ -88,6 +100,12 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseABPr(ABPr node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACPr(ACPr node)
     {
         defaultCase(node);
     }
@@ -106,6 +124,60 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseACPr1(ACPr1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAAMayus0(AAMayus0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseABMayus0(ABMayus0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAFig1(AFig1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAAFig0(AAFig0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseABFig0(ABFig0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACFig0(ACFig0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseADFig0(ADFig0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAEFig0(AEFig0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAFFig0(AFFig0 node)
     {
         defaultCase(node);
     }
@@ -195,6 +267,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseADL1(ADL1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseAL0(AL0 node)
     {
         defaultCase(node);
@@ -214,6 +292,12 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseACC1(ACC1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseADC1(ADC1 node)
     {
         defaultCase(node);
     }
@@ -243,6 +327,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseADR1(ADR1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseAR2(AR2 node)
     {
         defaultCase(node);
@@ -262,6 +352,12 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseACE1(ACE1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseADE1(ADE1 node)
     {
         defaultCase(node);
     }
@@ -400,6 +496,12 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseTIg(TIg node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTSl(TSl node)
     {
         defaultCase(node);
     }
