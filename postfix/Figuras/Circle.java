@@ -1,4 +1,3 @@
-
 public class Circle {
   int cx;
   int cy;
