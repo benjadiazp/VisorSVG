@@ -1,0 +1,61 @@
+Package postfix;
+
+Tokens
+	n = ['0' .. '9']+;
+	blank = ( ' ' | 13 | 10)+;
+	svg1 = '<svg>';
+	svg2 = '</svg>';
+	minus = '<';
+	mayus = '/>';
+	co = '"';
+	ig = '=';
+	line = 'line';
+	circle = 'circle';
+	rect = 'rect';
+	ellipse = 'ellipse';
+	polygon = 'polygon';
+	polyline = 'polyline';
+	x1 = 'x1';
+	y1 = 'y1';
+	x2 = 'x2';
+	y2 = 'y2';
+	cx = 'cx';
+	cy = 'cy';
+	r0 = 'r';
+	x0 = 'x';
+	y0 = 'y';
+	width = 'width';
+	height = 'height';
+	rx = 'rx';
+	ry = 'ry';
+	points = 'points';
+	coma = ',';
+	style = 'style';
+	fill = 'fill';
+	stroke = 'stroke';
+	strokew = 'stroke-width';
+	c0 = ('none' | 'blue' | 'black' | 'green' | 'yellow' | 'white' | 'red' | 'brown' | 'pink' | 'purple' | 'lime' | 'skyblue');
+	pc = ';';
+	dosp = ':';
+
+Ignored Tokens
+	blank;
+
+Productions
+start = svg1 pr svg2;
+pr = {a} pr1 | {b} pr pr1;
+pr1 = {a} minus a s mayus | {b} minus a mayus;
+a = {a} line l1 | {b} circle c1 | {c} rect r1 | {d} ellipse e1 | {e} polygon p | {f} polyline [a]:p;
+l1 = x1 ig num y1 [a]:ig [b]:num x2 [c]:ig [d]:num y2 [e]:ig [f]:num;
+c1 = cx ig num cy [a]:ig [b]:num r0 [c]:ig [d]:num;
+r1 = x0 ig num y0 [a]:ig [b]:num width [c]:ig [d]:num height [e]:ig [f]:num;
+e1 = cx ig num cy [a]:ig [b]:num rx [c]:ig [d]:num ry [e]:ig [f]:num;
+num = co n [a]:co;
+p = points ig co p0 [a]:co;
+p0 = {a} p1 | {b} p0 p1;
+p1 = n coma [a]:n;
+s = {a} sp1 | {b} style ig co sp2 [a]:co;
+sp1 = {a} sp3 | {b} sp1 sp3;
+sp2 = {a} sp4 | {b} sp2 pc sp4;
+sp3 = {a} fill ig co c0 [a]:co| {b} stroke ig co c0 [a]:co| {c} strokew ig num;
+sp4 = {a} fill dosp c0| {b} stroke dosp c0| {c} strokew dosp n;
