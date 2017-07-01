@@ -7,15 +7,9 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class AC2 extends PC2
 {
-    private TCx _cx_;
-    private TIg _ig_;
-    private PNum _num_;
-    private TCy _cy_;
-    private TIg _a_;
-    private PNum _b_;
-    private TR0 _r0_;
-    private TIg _c_;
-    private PNum _d_;
+    private PCoorcx _coorcx_;
+    private PCoorcy _coorcy_;
+    private PRad _rad_;
 
     public AC2()
     {
@@ -23,34 +17,16 @@ public final class AC2 extends PC2
     }
 
     public AC2(
-        @SuppressWarnings("hiding") TCx _cx_,
-        @SuppressWarnings("hiding") TIg _ig_,
-        @SuppressWarnings("hiding") PNum _num_,
-        @SuppressWarnings("hiding") TCy _cy_,
-        @SuppressWarnings("hiding") TIg _a_,
-        @SuppressWarnings("hiding") PNum _b_,
-        @SuppressWarnings("hiding") TR0 _r0_,
-        @SuppressWarnings("hiding") TIg _c_,
-        @SuppressWarnings("hiding") PNum _d_)
+        @SuppressWarnings("hiding") PCoorcx _coorcx_,
+        @SuppressWarnings("hiding") PCoorcy _coorcy_,
+        @SuppressWarnings("hiding") PRad _rad_)
     {
         // Constructor
-        setCx(_cx_);
+        setCoorcx(_coorcx_);
 
-        setIg(_ig_);
+        setCoorcy(_coorcy_);
 
-        setNum(_num_);
-
-        setCy(_cy_);
-
-        setA(_a_);
-
-        setB(_b_);
-
-        setR0(_r0_);
-
-        setC(_c_);
-
-        setD(_d_);
+        setRad(_rad_);
 
     }
 
@@ -58,15 +34,9 @@ public final class AC2 extends PC2
     public Object clone()
     {
         return new AC2(
-            cloneNode(this._cx_),
-            cloneNode(this._ig_),
-            cloneNode(this._num_),
-            cloneNode(this._cy_),
-            cloneNode(this._a_),
-            cloneNode(this._b_),
-            cloneNode(this._r0_),
-            cloneNode(this._c_),
-            cloneNode(this._d_));
+            cloneNode(this._coorcx_),
+            cloneNode(this._coorcy_),
+            cloneNode(this._rad_));
     }
 
     @Override
@@ -75,16 +45,16 @@ public final class AC2 extends PC2
         ((Analysis) sw).caseAC2(this);
     }
 
-    public TCx getCx()
+    public PCoorcx getCoorcx()
     {
-        return this._cx_;
+        return this._coorcx_;
     }
 
-    public void setCx(TCx node)
+    public void setCoorcx(PCoorcx node)
     {
-        if(this._cx_ != null)
+        if(this._coorcx_ != null)
         {
-            this._cx_.parent(null);
+            this._coorcx_.parent(null);
         }
 
         if(node != null)
@@ -97,19 +67,19 @@ public final class AC2 extends PC2
             node.parent(this);
         }
 
-        this._cx_ = node;
+        this._coorcx_ = node;
     }
 
-    public TIg getIg()
+    public PCoorcy getCoorcy()
     {
-        return this._ig_;
+        return this._coorcy_;
     }
 
-    public void setIg(TIg node)
+    public void setCoorcy(PCoorcy node)
     {
-        if(this._ig_ != null)
+        if(this._coorcy_ != null)
         {
-            this._ig_.parent(null);
+            this._coorcy_.parent(null);
         }
 
         if(node != null)
@@ -122,19 +92,19 @@ public final class AC2 extends PC2
             node.parent(this);
         }
 
-        this._ig_ = node;
+        this._coorcy_ = node;
     }
 
-    public PNum getNum()
+    public PRad getRad()
     {
-        return this._num_;
+        return this._rad_;
     }
 
-    public void setNum(PNum node)
+    public void setRad(PRad node)
     {
-        if(this._num_ != null)
+        if(this._rad_ != null)
         {
-            this._num_.parent(null);
+            this._rad_.parent(null);
         }
 
         if(node != null)
@@ -147,229 +117,37 @@ public final class AC2 extends PC2
             node.parent(this);
         }
 
-        this._num_ = node;
-    }
-
-    public TCy getCy()
-    {
-        return this._cy_;
-    }
-
-    public void setCy(TCy node)
-    {
-        if(this._cy_ != null)
-        {
-            this._cy_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._cy_ = node;
-    }
-
-    public TIg getA()
-    {
-        return this._a_;
-    }
-
-    public void setA(TIg node)
-    {
-        if(this._a_ != null)
-        {
-            this._a_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._a_ = node;
-    }
-
-    public PNum getB()
-    {
-        return this._b_;
-    }
-
-    public void setB(PNum node)
-    {
-        if(this._b_ != null)
-        {
-            this._b_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._b_ = node;
-    }
-
-    public TR0 getR0()
-    {
-        return this._r0_;
-    }
-
-    public void setR0(TR0 node)
-    {
-        if(this._r0_ != null)
-        {
-            this._r0_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._r0_ = node;
-    }
-
-    public TIg getC()
-    {
-        return this._c_;
-    }
-
-    public void setC(TIg node)
-    {
-        if(this._c_ != null)
-        {
-            this._c_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._c_ = node;
-    }
-
-    public PNum getD()
-    {
-        return this._d_;
-    }
-
-    public void setD(PNum node)
-    {
-        if(this._d_ != null)
-        {
-            this._d_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._d_ = node;
+        this._rad_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._cx_)
-            + toString(this._ig_)
-            + toString(this._num_)
-            + toString(this._cy_)
-            + toString(this._a_)
-            + toString(this._b_)
-            + toString(this._r0_)
-            + toString(this._c_)
-            + toString(this._d_);
+            + toString(this._coorcx_)
+            + toString(this._coorcy_)
+            + toString(this._rad_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._cx_ == child)
+        if(this._coorcx_ == child)
         {
-            this._cx_ = null;
+            this._coorcx_ = null;
             return;
         }
 
-        if(this._ig_ == child)
+        if(this._coorcy_ == child)
         {
-            this._ig_ = null;
+            this._coorcy_ = null;
             return;
         }
 
-        if(this._num_ == child)
+        if(this._rad_ == child)
         {
-            this._num_ = null;
-            return;
-        }
-
-        if(this._cy_ == child)
-        {
-            this._cy_ = null;
-            return;
-        }
-
-        if(this._a_ == child)
-        {
-            this._a_ = null;
-            return;
-        }
-
-        if(this._b_ == child)
-        {
-            this._b_ = null;
-            return;
-        }
-
-        if(this._r0_ == child)
-        {
-            this._r0_ = null;
-            return;
-        }
-
-        if(this._c_ == child)
-        {
-            this._c_ = null;
-            return;
-        }
-
-        if(this._d_ == child)
-        {
-            this._d_ = null;
+            this._rad_ = null;
             return;
         }
 
@@ -380,57 +158,21 @@ public final class AC2 extends PC2
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._cx_ == oldChild)
+        if(this._coorcx_ == oldChild)
         {
-            setCx((TCx) newChild);
+            setCoorcx((PCoorcx) newChild);
             return;
         }
 
-        if(this._ig_ == oldChild)
+        if(this._coorcy_ == oldChild)
         {
-            setIg((TIg) newChild);
+            setCoorcy((PCoorcy) newChild);
             return;
         }
 
-        if(this._num_ == oldChild)
+        if(this._rad_ == oldChild)
         {
-            setNum((PNum) newChild);
-            return;
-        }
-
-        if(this._cy_ == oldChild)
-        {
-            setCy((TCy) newChild);
-            return;
-        }
-
-        if(this._a_ == oldChild)
-        {
-            setA((TIg) newChild);
-            return;
-        }
-
-        if(this._b_ == oldChild)
-        {
-            setB((PNum) newChild);
-            return;
-        }
-
-        if(this._r0_ == oldChild)
-        {
-            setR0((TR0) newChild);
-            return;
-        }
-
-        if(this._c_ == oldChild)
-        {
-            setC((TIg) newChild);
-            return;
-        }
-
-        if(this._d_ == oldChild)
-        {
-            setD((PNum) newChild);
+            setRad((PRad) newChild);
             return;
         }
 

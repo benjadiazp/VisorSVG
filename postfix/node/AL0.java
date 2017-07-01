@@ -7,18 +7,10 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class AL0 extends PL0
 {
-    private TX1 _x1_;
-    private TIg _ig_;
-    private PNum _num_;
-    private TY1 _y1_;
-    private TIg _a_;
-    private PNum _b_;
-    private TX2 _x2_;
-    private TIg _c_;
-    private PNum _d_;
-    private TY2 _y2_;
-    private TIg _e_;
-    private PNum _f_;
+    private PCoorx _coorx_;
+    private PCoory _coory_;
+    private PCoorx2 _coorx2_;
+    private PCoory2 _coory2_;
 
     public AL0()
     {
@@ -26,43 +18,19 @@ public final class AL0 extends PL0
     }
 
     public AL0(
-        @SuppressWarnings("hiding") TX1 _x1_,
-        @SuppressWarnings("hiding") TIg _ig_,
-        @SuppressWarnings("hiding") PNum _num_,
-        @SuppressWarnings("hiding") TY1 _y1_,
-        @SuppressWarnings("hiding") TIg _a_,
-        @SuppressWarnings("hiding") PNum _b_,
-        @SuppressWarnings("hiding") TX2 _x2_,
-        @SuppressWarnings("hiding") TIg _c_,
-        @SuppressWarnings("hiding") PNum _d_,
-        @SuppressWarnings("hiding") TY2 _y2_,
-        @SuppressWarnings("hiding") TIg _e_,
-        @SuppressWarnings("hiding") PNum _f_)
+        @SuppressWarnings("hiding") PCoorx _coorx_,
+        @SuppressWarnings("hiding") PCoory _coory_,
+        @SuppressWarnings("hiding") PCoorx2 _coorx2_,
+        @SuppressWarnings("hiding") PCoory2 _coory2_)
     {
         // Constructor
-        setX1(_x1_);
+        setCoorx(_coorx_);
 
-        setIg(_ig_);
+        setCoory(_coory_);
 
-        setNum(_num_);
+        setCoorx2(_coorx2_);
 
-        setY1(_y1_);
-
-        setA(_a_);
-
-        setB(_b_);
-
-        setX2(_x2_);
-
-        setC(_c_);
-
-        setD(_d_);
-
-        setY2(_y2_);
-
-        setE(_e_);
-
-        setF(_f_);
+        setCoory2(_coory2_);
 
     }
 
@@ -70,18 +38,10 @@ public final class AL0 extends PL0
     public Object clone()
     {
         return new AL0(
-            cloneNode(this._x1_),
-            cloneNode(this._ig_),
-            cloneNode(this._num_),
-            cloneNode(this._y1_),
-            cloneNode(this._a_),
-            cloneNode(this._b_),
-            cloneNode(this._x2_),
-            cloneNode(this._c_),
-            cloneNode(this._d_),
-            cloneNode(this._y2_),
-            cloneNode(this._e_),
-            cloneNode(this._f_));
+            cloneNode(this._coorx_),
+            cloneNode(this._coory_),
+            cloneNode(this._coorx2_),
+            cloneNode(this._coory2_));
     }
 
     @Override
@@ -90,16 +50,16 @@ public final class AL0 extends PL0
         ((Analysis) sw).caseAL0(this);
     }
 
-    public TX1 getX1()
+    public PCoorx getCoorx()
     {
-        return this._x1_;
+        return this._coorx_;
     }
 
-    public void setX1(TX1 node)
+    public void setCoorx(PCoorx node)
     {
-        if(this._x1_ != null)
+        if(this._coorx_ != null)
         {
-            this._x1_.parent(null);
+            this._coorx_.parent(null);
         }
 
         if(node != null)
@@ -112,19 +72,19 @@ public final class AL0 extends PL0
             node.parent(this);
         }
 
-        this._x1_ = node;
+        this._coorx_ = node;
     }
 
-    public TIg getIg()
+    public PCoory getCoory()
     {
-        return this._ig_;
+        return this._coory_;
     }
 
-    public void setIg(TIg node)
+    public void setCoory(PCoory node)
     {
-        if(this._ig_ != null)
+        if(this._coory_ != null)
         {
-            this._ig_.parent(null);
+            this._coory_.parent(null);
         }
 
         if(node != null)
@@ -137,19 +97,19 @@ public final class AL0 extends PL0
             node.parent(this);
         }
 
-        this._ig_ = node;
+        this._coory_ = node;
     }
 
-    public PNum getNum()
+    public PCoorx2 getCoorx2()
     {
-        return this._num_;
+        return this._coorx2_;
     }
 
-    public void setNum(PNum node)
+    public void setCoorx2(PCoorx2 node)
     {
-        if(this._num_ != null)
+        if(this._coorx2_ != null)
         {
-            this._num_.parent(null);
+            this._coorx2_.parent(null);
         }
 
         if(node != null)
@@ -162,19 +122,19 @@ public final class AL0 extends PL0
             node.parent(this);
         }
 
-        this._num_ = node;
+        this._coorx2_ = node;
     }
 
-    public TY1 getY1()
+    public PCoory2 getCoory2()
     {
-        return this._y1_;
+        return this._coory2_;
     }
 
-    public void setY1(TY1 node)
+    public void setCoory2(PCoory2 node)
     {
-        if(this._y1_ != null)
+        if(this._coory2_ != null)
         {
-            this._y1_.parent(null);
+            this._coory2_.parent(null);
         }
 
         if(node != null)
@@ -187,300 +147,44 @@ public final class AL0 extends PL0
             node.parent(this);
         }
 
-        this._y1_ = node;
-    }
-
-    public TIg getA()
-    {
-        return this._a_;
-    }
-
-    public void setA(TIg node)
-    {
-        if(this._a_ != null)
-        {
-            this._a_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._a_ = node;
-    }
-
-    public PNum getB()
-    {
-        return this._b_;
-    }
-
-    public void setB(PNum node)
-    {
-        if(this._b_ != null)
-        {
-            this._b_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._b_ = node;
-    }
-
-    public TX2 getX2()
-    {
-        return this._x2_;
-    }
-
-    public void setX2(TX2 node)
-    {
-        if(this._x2_ != null)
-        {
-            this._x2_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._x2_ = node;
-    }
-
-    public TIg getC()
-    {
-        return this._c_;
-    }
-
-    public void setC(TIg node)
-    {
-        if(this._c_ != null)
-        {
-            this._c_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._c_ = node;
-    }
-
-    public PNum getD()
-    {
-        return this._d_;
-    }
-
-    public void setD(PNum node)
-    {
-        if(this._d_ != null)
-        {
-            this._d_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._d_ = node;
-    }
-
-    public TY2 getY2()
-    {
-        return this._y2_;
-    }
-
-    public void setY2(TY2 node)
-    {
-        if(this._y2_ != null)
-        {
-            this._y2_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._y2_ = node;
-    }
-
-    public TIg getE()
-    {
-        return this._e_;
-    }
-
-    public void setE(TIg node)
-    {
-        if(this._e_ != null)
-        {
-            this._e_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._e_ = node;
-    }
-
-    public PNum getF()
-    {
-        return this._f_;
-    }
-
-    public void setF(PNum node)
-    {
-        if(this._f_ != null)
-        {
-            this._f_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._f_ = node;
+        this._coory2_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._x1_)
-            + toString(this._ig_)
-            + toString(this._num_)
-            + toString(this._y1_)
-            + toString(this._a_)
-            + toString(this._b_)
-            + toString(this._x2_)
-            + toString(this._c_)
-            + toString(this._d_)
-            + toString(this._y2_)
-            + toString(this._e_)
-            + toString(this._f_);
+            + toString(this._coorx_)
+            + toString(this._coory_)
+            + toString(this._coorx2_)
+            + toString(this._coory2_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._x1_ == child)
+        if(this._coorx_ == child)
         {
-            this._x1_ = null;
+            this._coorx_ = null;
             return;
         }
 
-        if(this._ig_ == child)
+        if(this._coory_ == child)
         {
-            this._ig_ = null;
+            this._coory_ = null;
             return;
         }
 
-        if(this._num_ == child)
+        if(this._coorx2_ == child)
         {
-            this._num_ = null;
+            this._coorx2_ = null;
             return;
         }
 
-        if(this._y1_ == child)
+        if(this._coory2_ == child)
         {
-            this._y1_ = null;
-            return;
-        }
-
-        if(this._a_ == child)
-        {
-            this._a_ = null;
-            return;
-        }
-
-        if(this._b_ == child)
-        {
-            this._b_ = null;
-            return;
-        }
-
-        if(this._x2_ == child)
-        {
-            this._x2_ = null;
-            return;
-        }
-
-        if(this._c_ == child)
-        {
-            this._c_ = null;
-            return;
-        }
-
-        if(this._d_ == child)
-        {
-            this._d_ = null;
-            return;
-        }
-
-        if(this._y2_ == child)
-        {
-            this._y2_ = null;
-            return;
-        }
-
-        if(this._e_ == child)
-        {
-            this._e_ = null;
-            return;
-        }
-
-        if(this._f_ == child)
-        {
-            this._f_ = null;
+            this._coory2_ = null;
             return;
         }
 
@@ -491,75 +195,27 @@ public final class AL0 extends PL0
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._x1_ == oldChild)
+        if(this._coorx_ == oldChild)
         {
-            setX1((TX1) newChild);
+            setCoorx((PCoorx) newChild);
             return;
         }
 
-        if(this._ig_ == oldChild)
+        if(this._coory_ == oldChild)
         {
-            setIg((TIg) newChild);
+            setCoory((PCoory) newChild);
             return;
         }
 
-        if(this._num_ == oldChild)
+        if(this._coorx2_ == oldChild)
         {
-            setNum((PNum) newChild);
+            setCoorx2((PCoorx2) newChild);
             return;
         }
 
-        if(this._y1_ == oldChild)
+        if(this._coory2_ == oldChild)
         {
-            setY1((TY1) newChild);
-            return;
-        }
-
-        if(this._a_ == oldChild)
-        {
-            setA((TIg) newChild);
-            return;
-        }
-
-        if(this._b_ == oldChild)
-        {
-            setB((PNum) newChild);
-            return;
-        }
-
-        if(this._x2_ == oldChild)
-        {
-            setX2((TX2) newChild);
-            return;
-        }
-
-        if(this._c_ == oldChild)
-        {
-            setC((TIg) newChild);
-            return;
-        }
-
-        if(this._d_ == oldChild)
-        {
-            setD((PNum) newChild);
-            return;
-        }
-
-        if(this._y2_ == oldChild)
-        {
-            setY2((TY2) newChild);
-            return;
-        }
-
-        if(this._e_ == oldChild)
-        {
-            setE((TIg) newChild);
-            return;
-        }
-
-        if(this._f_ == oldChild)
-        {
-            setF((PNum) newChild);
+            setCoory2((PCoory2) newChild);
             return;
         }
 

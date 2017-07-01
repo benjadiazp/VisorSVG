@@ -7,18 +7,9 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class AR2 extends PR2
 {
-    private TX0 _x0_;
-    private TIg _ig_;
-    private PNum _num_;
-    private TY0 _y0_;
-    private TIg _a_;
-    private PNum _b_;
-    private TWidth _width_;
-    private TIg _c_;
-    private PNum _d_;
-    private THeight _height_;
-    private TIg _e_;
-    private PNum _f_;
+    private PCoory0 _coory0_;
+    private PWid _wid_;
+    private PHei _hei_;
 
     public AR2()
     {
@@ -26,43 +17,16 @@ public final class AR2 extends PR2
     }
 
     public AR2(
-        @SuppressWarnings("hiding") TX0 _x0_,
-        @SuppressWarnings("hiding") TIg _ig_,
-        @SuppressWarnings("hiding") PNum _num_,
-        @SuppressWarnings("hiding") TY0 _y0_,
-        @SuppressWarnings("hiding") TIg _a_,
-        @SuppressWarnings("hiding") PNum _b_,
-        @SuppressWarnings("hiding") TWidth _width_,
-        @SuppressWarnings("hiding") TIg _c_,
-        @SuppressWarnings("hiding") PNum _d_,
-        @SuppressWarnings("hiding") THeight _height_,
-        @SuppressWarnings("hiding") TIg _e_,
-        @SuppressWarnings("hiding") PNum _f_)
+        @SuppressWarnings("hiding") PCoory0 _coory0_,
+        @SuppressWarnings("hiding") PWid _wid_,
+        @SuppressWarnings("hiding") PHei _hei_)
     {
         // Constructor
-        setX0(_x0_);
+        setCoory0(_coory0_);
 
-        setIg(_ig_);
+        setWid(_wid_);
 
-        setNum(_num_);
-
-        setY0(_y0_);
-
-        setA(_a_);
-
-        setB(_b_);
-
-        setWidth(_width_);
-
-        setC(_c_);
-
-        setD(_d_);
-
-        setHeight(_height_);
-
-        setE(_e_);
-
-        setF(_f_);
+        setHei(_hei_);
 
     }
 
@@ -70,18 +34,9 @@ public final class AR2 extends PR2
     public Object clone()
     {
         return new AR2(
-            cloneNode(this._x0_),
-            cloneNode(this._ig_),
-            cloneNode(this._num_),
-            cloneNode(this._y0_),
-            cloneNode(this._a_),
-            cloneNode(this._b_),
-            cloneNode(this._width_),
-            cloneNode(this._c_),
-            cloneNode(this._d_),
-            cloneNode(this._height_),
-            cloneNode(this._e_),
-            cloneNode(this._f_));
+            cloneNode(this._coory0_),
+            cloneNode(this._wid_),
+            cloneNode(this._hei_));
     }
 
     @Override
@@ -90,16 +45,16 @@ public final class AR2 extends PR2
         ((Analysis) sw).caseAR2(this);
     }
 
-    public TX0 getX0()
+    public PCoory0 getCoory0()
     {
-        return this._x0_;
+        return this._coory0_;
     }
 
-    public void setX0(TX0 node)
+    public void setCoory0(PCoory0 node)
     {
-        if(this._x0_ != null)
+        if(this._coory0_ != null)
         {
-            this._x0_.parent(null);
+            this._coory0_.parent(null);
         }
 
         if(node != null)
@@ -112,19 +67,19 @@ public final class AR2 extends PR2
             node.parent(this);
         }
 
-        this._x0_ = node;
+        this._coory0_ = node;
     }
 
-    public TIg getIg()
+    public PWid getWid()
     {
-        return this._ig_;
+        return this._wid_;
     }
 
-    public void setIg(TIg node)
+    public void setWid(PWid node)
     {
-        if(this._ig_ != null)
+        if(this._wid_ != null)
         {
-            this._ig_.parent(null);
+            this._wid_.parent(null);
         }
 
         if(node != null)
@@ -137,19 +92,19 @@ public final class AR2 extends PR2
             node.parent(this);
         }
 
-        this._ig_ = node;
+        this._wid_ = node;
     }
 
-    public PNum getNum()
+    public PHei getHei()
     {
-        return this._num_;
+        return this._hei_;
     }
 
-    public void setNum(PNum node)
+    public void setHei(PHei node)
     {
-        if(this._num_ != null)
+        if(this._hei_ != null)
         {
-            this._num_.parent(null);
+            this._hei_.parent(null);
         }
 
         if(node != null)
@@ -162,325 +117,37 @@ public final class AR2 extends PR2
             node.parent(this);
         }
 
-        this._num_ = node;
-    }
-
-    public TY0 getY0()
-    {
-        return this._y0_;
-    }
-
-    public void setY0(TY0 node)
-    {
-        if(this._y0_ != null)
-        {
-            this._y0_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._y0_ = node;
-    }
-
-    public TIg getA()
-    {
-        return this._a_;
-    }
-
-    public void setA(TIg node)
-    {
-        if(this._a_ != null)
-        {
-            this._a_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._a_ = node;
-    }
-
-    public PNum getB()
-    {
-        return this._b_;
-    }
-
-    public void setB(PNum node)
-    {
-        if(this._b_ != null)
-        {
-            this._b_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._b_ = node;
-    }
-
-    public TWidth getWidth()
-    {
-        return this._width_;
-    }
-
-    public void setWidth(TWidth node)
-    {
-        if(this._width_ != null)
-        {
-            this._width_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._width_ = node;
-    }
-
-    public TIg getC()
-    {
-        return this._c_;
-    }
-
-    public void setC(TIg node)
-    {
-        if(this._c_ != null)
-        {
-            this._c_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._c_ = node;
-    }
-
-    public PNum getD()
-    {
-        return this._d_;
-    }
-
-    public void setD(PNum node)
-    {
-        if(this._d_ != null)
-        {
-            this._d_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._d_ = node;
-    }
-
-    public THeight getHeight()
-    {
-        return this._height_;
-    }
-
-    public void setHeight(THeight node)
-    {
-        if(this._height_ != null)
-        {
-            this._height_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._height_ = node;
-    }
-
-    public TIg getE()
-    {
-        return this._e_;
-    }
-
-    public void setE(TIg node)
-    {
-        if(this._e_ != null)
-        {
-            this._e_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._e_ = node;
-    }
-
-    public PNum getF()
-    {
-        return this._f_;
-    }
-
-    public void setF(PNum node)
-    {
-        if(this._f_ != null)
-        {
-            this._f_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._f_ = node;
+        this._hei_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._x0_)
-            + toString(this._ig_)
-            + toString(this._num_)
-            + toString(this._y0_)
-            + toString(this._a_)
-            + toString(this._b_)
-            + toString(this._width_)
-            + toString(this._c_)
-            + toString(this._d_)
-            + toString(this._height_)
-            + toString(this._e_)
-            + toString(this._f_);
+            + toString(this._coory0_)
+            + toString(this._wid_)
+            + toString(this._hei_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._x0_ == child)
+        if(this._coory0_ == child)
         {
-            this._x0_ = null;
+            this._coory0_ = null;
             return;
         }
 
-        if(this._ig_ == child)
+        if(this._wid_ == child)
         {
-            this._ig_ = null;
+            this._wid_ = null;
             return;
         }
 
-        if(this._num_ == child)
+        if(this._hei_ == child)
         {
-            this._num_ = null;
-            return;
-        }
-
-        if(this._y0_ == child)
-        {
-            this._y0_ = null;
-            return;
-        }
-
-        if(this._a_ == child)
-        {
-            this._a_ = null;
-            return;
-        }
-
-        if(this._b_ == child)
-        {
-            this._b_ = null;
-            return;
-        }
-
-        if(this._width_ == child)
-        {
-            this._width_ = null;
-            return;
-        }
-
-        if(this._c_ == child)
-        {
-            this._c_ = null;
-            return;
-        }
-
-        if(this._d_ == child)
-        {
-            this._d_ = null;
-            return;
-        }
-
-        if(this._height_ == child)
-        {
-            this._height_ = null;
-            return;
-        }
-
-        if(this._e_ == child)
-        {
-            this._e_ = null;
-            return;
-        }
-
-        if(this._f_ == child)
-        {
-            this._f_ = null;
+            this._hei_ = null;
             return;
         }
 
@@ -491,75 +158,21 @@ public final class AR2 extends PR2
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._x0_ == oldChild)
+        if(this._coory0_ == oldChild)
         {
-            setX0((TX0) newChild);
+            setCoory0((PCoory0) newChild);
             return;
         }
 
-        if(this._ig_ == oldChild)
+        if(this._wid_ == oldChild)
         {
-            setIg((TIg) newChild);
+            setWid((PWid) newChild);
             return;
         }
 
-        if(this._num_ == oldChild)
+        if(this._hei_ == oldChild)
         {
-            setNum((PNum) newChild);
-            return;
-        }
-
-        if(this._y0_ == oldChild)
-        {
-            setY0((TY0) newChild);
-            return;
-        }
-
-        if(this._a_ == oldChild)
-        {
-            setA((TIg) newChild);
-            return;
-        }
-
-        if(this._b_ == oldChild)
-        {
-            setB((PNum) newChild);
-            return;
-        }
-
-        if(this._width_ == oldChild)
-        {
-            setWidth((TWidth) newChild);
-            return;
-        }
-
-        if(this._c_ == oldChild)
-        {
-            setC((TIg) newChild);
-            return;
-        }
-
-        if(this._d_ == oldChild)
-        {
-            setD((PNum) newChild);
-            return;
-        }
-
-        if(this._height_ == oldChild)
-        {
-            setHeight((THeight) newChild);
-            return;
-        }
-
-        if(this._e_ == oldChild)
-        {
-            setE((TIg) newChild);
-            return;
-        }
-
-        if(this._f_ == oldChild)
-        {
-            setF((PNum) newChild);
+            setHei((PHei) newChild);
             return;
         }
 

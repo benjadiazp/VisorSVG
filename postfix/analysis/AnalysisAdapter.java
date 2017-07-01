@@ -75,37 +75,37 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAAStart(AAStart node)
+    public void caseASindimStart(ASindimStart node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseABStart(ABStart node)
+    public void caseACondimStart(ACondimStart node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseADim(ADim node)
+    public void caseADimensiones(ADimensiones node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAAPr(AAPr node)
+    public void caseAUnafiguraFigura(AUnafiguraFigura node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseABPr(ABPr node)
+    public void caseAConcatfiguraFigura(AConcatfiguraFigura node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseACPr(ACPr node)
+    public void caseAFigurafinFigura(AFigurafinFigura node)
     {
         defaultCase(node);
     }
@@ -364,6 +364,84 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseAE0(AE0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACoorx(ACoorx node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACoory(ACoory node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACoorx2(ACoorx2 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACoory2(ACoory2 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACoorcx(ACoorcx node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACoorcy(ACoorcy node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseARad(ARad node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACoorx0(ACoorx0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACoory0(ACoory0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAWid(AWid node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAHei(AHei node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseARadx(ARadx node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseARady(ARady node)
     {
         defaultCase(node);
     }

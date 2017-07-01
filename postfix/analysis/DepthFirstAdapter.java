@@ -36,20 +36,20 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outStart(node);
     }
 
-    public void inAAStart(AAStart node)
+    public void inASindimStart(ASindimStart node)
     {
         defaultIn(node);
     }
 
-    public void outAAStart(AAStart node)
+    public void outASindimStart(ASindimStart node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAAStart(AAStart node)
+    public void caseASindimStart(ASindimStart node)
     {
-        inAAStart(node);
+        inASindimStart(node);
         if(node.getSvg1() != null)
         {
             node.getSvg1().apply(this);
@@ -58,68 +58,68 @@ public class DepthFirstAdapter extends AnalysisAdapter
         {
             node.getMayus().apply(this);
         }
-        if(node.getPr() != null)
+        if(node.getFigura() != null)
         {
-            node.getPr().apply(this);
+            node.getFigura().apply(this);
         }
         if(node.getSvg2() != null)
         {
             node.getSvg2().apply(this);
         }
-        outAAStart(node);
+        outASindimStart(node);
     }
 
-    public void inABStart(ABStart node)
+    public void inACondimStart(ACondimStart node)
     {
         defaultIn(node);
     }
 
-    public void outABStart(ABStart node)
+    public void outACondimStart(ACondimStart node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseABStart(ABStart node)
+    public void caseACondimStart(ACondimStart node)
     {
-        inABStart(node);
+        inACondimStart(node);
         if(node.getSvg1() != null)
         {
             node.getSvg1().apply(this);
         }
-        if(node.getDim() != null)
+        if(node.getDimensiones() != null)
         {
-            node.getDim().apply(this);
+            node.getDimensiones().apply(this);
         }
         if(node.getMayus() != null)
         {
             node.getMayus().apply(this);
         }
-        if(node.getPr() != null)
+        if(node.getFigura() != null)
         {
-            node.getPr().apply(this);
+            node.getFigura().apply(this);
         }
         if(node.getSvg2() != null)
         {
             node.getSvg2().apply(this);
         }
-        outABStart(node);
+        outACondimStart(node);
     }
 
-    public void inADim(ADim node)
+    public void inADimensiones(ADimensiones node)
     {
         defaultIn(node);
     }
 
-    public void outADim(ADim node)
+    public void outADimensiones(ADimensiones node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseADim(ADim node)
+    public void caseADimensiones(ADimensiones node)
     {
-        inADim(node);
+        inADimensiones(node);
         if(node.getWidth() != null)
         {
             node.getWidth().apply(this);
@@ -144,78 +144,78 @@ public class DepthFirstAdapter extends AnalysisAdapter
         {
             node.getB().apply(this);
         }
-        outADim(node);
+        outADimensiones(node);
     }
 
-    public void inAAPr(AAPr node)
+    public void inAUnafiguraFigura(AUnafiguraFigura node)
     {
         defaultIn(node);
     }
 
-    public void outAAPr(AAPr node)
+    public void outAUnafiguraFigura(AUnafiguraFigura node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAAPr(AAPr node)
+    public void caseAUnafiguraFigura(AUnafiguraFigura node)
     {
-        inAAPr(node);
+        inAUnafiguraFigura(node);
         if(node.getPr1() != null)
         {
             node.getPr1().apply(this);
         }
-        outAAPr(node);
+        outAUnafiguraFigura(node);
     }
 
-    public void inABPr(ABPr node)
+    public void inAConcatfiguraFigura(AConcatfiguraFigura node)
     {
         defaultIn(node);
     }
 
-    public void outABPr(ABPr node)
+    public void outAConcatfiguraFigura(AConcatfiguraFigura node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseABPr(ABPr node)
+    public void caseAConcatfiguraFigura(AConcatfiguraFigura node)
     {
-        inABPr(node);
-        if(node.getPr() != null)
+        inAConcatfiguraFigura(node);
+        if(node.getFigura() != null)
         {
-            node.getPr().apply(this);
+            node.getFigura().apply(this);
         }
         if(node.getPr1() != null)
         {
             node.getPr1().apply(this);
         }
-        outABPr(node);
+        outAConcatfiguraFigura(node);
     }
 
-    public void inACPr(ACPr node)
+    public void inAFigurafinFigura(AFigurafinFigura node)
     {
         defaultIn(node);
     }
 
-    public void outACPr(ACPr node)
+    public void outAFigurafinFigura(AFigurafinFigura node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseACPr(ACPr node)
+    public void caseAFigurafinFigura(AFigurafinFigura node)
     {
-        inACPr(node);
-        if(node.getPr() != null)
+        inAFigurafinFigura(node);
+        if(node.getFigura() != null)
         {
-            node.getPr().apply(this);
+            node.getFigura().apply(this);
         }
         if(node.getFig1() != null)
         {
             node.getFig1().apply(this);
         }
-        outACPr(node);
+        outAFigurafinFigura(node);
     }
 
     public void inAAPr1(AAPr1 node)
@@ -931,53 +931,21 @@ public class DepthFirstAdapter extends AnalysisAdapter
     public void caseAL0(AL0 node)
     {
         inAL0(node);
-        if(node.getX1() != null)
+        if(node.getCoorx() != null)
         {
-            node.getX1().apply(this);
+            node.getCoorx().apply(this);
         }
-        if(node.getIg() != null)
+        if(node.getCoory() != null)
         {
-            node.getIg().apply(this);
+            node.getCoory().apply(this);
         }
-        if(node.getNum() != null)
+        if(node.getCoorx2() != null)
         {
-            node.getNum().apply(this);
+            node.getCoorx2().apply(this);
         }
-        if(node.getY1() != null)
+        if(node.getCoory2() != null)
         {
-            node.getY1().apply(this);
-        }
-        if(node.getA() != null)
-        {
-            node.getA().apply(this);
-        }
-        if(node.getB() != null)
-        {
-            node.getB().apply(this);
-        }
-        if(node.getX2() != null)
-        {
-            node.getX2().apply(this);
-        }
-        if(node.getC() != null)
-        {
-            node.getC().apply(this);
-        }
-        if(node.getD() != null)
-        {
-            node.getD().apply(this);
-        }
-        if(node.getY2() != null)
-        {
-            node.getY2().apply(this);
-        }
-        if(node.getE() != null)
-        {
-            node.getE().apply(this);
-        }
-        if(node.getF() != null)
-        {
-            node.getF().apply(this);
+            node.getCoory2().apply(this);
         }
         outAL0(node);
     }
@@ -1096,41 +1064,17 @@ public class DepthFirstAdapter extends AnalysisAdapter
     public void caseAC2(AC2 node)
     {
         inAC2(node);
-        if(node.getCx() != null)
+        if(node.getCoorcx() != null)
         {
-            node.getCx().apply(this);
+            node.getCoorcx().apply(this);
         }
-        if(node.getIg() != null)
+        if(node.getCoorcy() != null)
         {
-            node.getIg().apply(this);
+            node.getCoorcy().apply(this);
         }
-        if(node.getNum() != null)
+        if(node.getRad() != null)
         {
-            node.getNum().apply(this);
-        }
-        if(node.getCy() != null)
-        {
-            node.getCy().apply(this);
-        }
-        if(node.getA() != null)
-        {
-            node.getA().apply(this);
-        }
-        if(node.getB() != null)
-        {
-            node.getB().apply(this);
-        }
-        if(node.getR0() != null)
-        {
-            node.getR0().apply(this);
-        }
-        if(node.getC() != null)
-        {
-            node.getC().apply(this);
-        }
-        if(node.getD() != null)
-        {
-            node.getD().apply(this);
+            node.getRad().apply(this);
         }
         outAC2(node);
     }
@@ -1249,53 +1193,17 @@ public class DepthFirstAdapter extends AnalysisAdapter
     public void caseAR2(AR2 node)
     {
         inAR2(node);
-        if(node.getX0() != null)
+        if(node.getCoory0() != null)
         {
-            node.getX0().apply(this);
+            node.getCoory0().apply(this);
         }
-        if(node.getIg() != null)
+        if(node.getWid() != null)
         {
-            node.getIg().apply(this);
+            node.getWid().apply(this);
         }
-        if(node.getNum() != null)
+        if(node.getHei() != null)
         {
-            node.getNum().apply(this);
-        }
-        if(node.getY0() != null)
-        {
-            node.getY0().apply(this);
-        }
-        if(node.getA() != null)
-        {
-            node.getA().apply(this);
-        }
-        if(node.getB() != null)
-        {
-            node.getB().apply(this);
-        }
-        if(node.getWidth() != null)
-        {
-            node.getWidth().apply(this);
-        }
-        if(node.getC() != null)
-        {
-            node.getC().apply(this);
-        }
-        if(node.getD() != null)
-        {
-            node.getD().apply(this);
-        }
-        if(node.getHeight() != null)
-        {
-            node.getHeight().apply(this);
-        }
-        if(node.getE() != null)
-        {
-            node.getE().apply(this);
-        }
-        if(node.getF() != null)
-        {
-            node.getF().apply(this);
+            node.getHei().apply(this);
         }
         outAR2(node);
     }
@@ -1414,6 +1322,155 @@ public class DepthFirstAdapter extends AnalysisAdapter
     public void caseAE0(AE0 node)
     {
         inAE0(node);
+        if(node.getCoorcx() != null)
+        {
+            node.getCoorcx().apply(this);
+        }
+        if(node.getCoorcy() != null)
+        {
+            node.getCoorcy().apply(this);
+        }
+        if(node.getRadx() != null)
+        {
+            node.getRadx().apply(this);
+        }
+        if(node.getRady() != null)
+        {
+            node.getRady().apply(this);
+        }
+        outAE0(node);
+    }
+
+    public void inACoorx(ACoorx node)
+    {
+        defaultIn(node);
+    }
+
+    public void outACoorx(ACoorx node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseACoorx(ACoorx node)
+    {
+        inACoorx(node);
+        if(node.getX1() != null)
+        {
+            node.getX1().apply(this);
+        }
+        if(node.getIg() != null)
+        {
+            node.getIg().apply(this);
+        }
+        if(node.getNum() != null)
+        {
+            node.getNum().apply(this);
+        }
+        outACoorx(node);
+    }
+
+    public void inACoory(ACoory node)
+    {
+        defaultIn(node);
+    }
+
+    public void outACoory(ACoory node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseACoory(ACoory node)
+    {
+        inACoory(node);
+        if(node.getY1() != null)
+        {
+            node.getY1().apply(this);
+        }
+        if(node.getIg() != null)
+        {
+            node.getIg().apply(this);
+        }
+        if(node.getNum() != null)
+        {
+            node.getNum().apply(this);
+        }
+        outACoory(node);
+    }
+
+    public void inACoorx2(ACoorx2 node)
+    {
+        defaultIn(node);
+    }
+
+    public void outACoorx2(ACoorx2 node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseACoorx2(ACoorx2 node)
+    {
+        inACoorx2(node);
+        if(node.getX2() != null)
+        {
+            node.getX2().apply(this);
+        }
+        if(node.getIg() != null)
+        {
+            node.getIg().apply(this);
+        }
+        if(node.getNum() != null)
+        {
+            node.getNum().apply(this);
+        }
+        outACoorx2(node);
+    }
+
+    public void inACoory2(ACoory2 node)
+    {
+        defaultIn(node);
+    }
+
+    public void outACoory2(ACoory2 node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseACoory2(ACoory2 node)
+    {
+        inACoory2(node);
+        if(node.getY2() != null)
+        {
+            node.getY2().apply(this);
+        }
+        if(node.getIg() != null)
+        {
+            node.getIg().apply(this);
+        }
+        if(node.getNum() != null)
+        {
+            node.getNum().apply(this);
+        }
+        outACoory2(node);
+    }
+
+    public void inACoorcx(ACoorcx node)
+    {
+        defaultIn(node);
+    }
+
+    public void outACoorcx(ACoorcx node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseACoorcx(ACoorcx node)
+    {
+        inACoorcx(node);
         if(node.getCx() != null)
         {
             node.getCx().apply(this);
@@ -1426,43 +1483,239 @@ public class DepthFirstAdapter extends AnalysisAdapter
         {
             node.getNum().apply(this);
         }
+        outACoorcx(node);
+    }
+
+    public void inACoorcy(ACoorcy node)
+    {
+        defaultIn(node);
+    }
+
+    public void outACoorcy(ACoorcy node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseACoorcy(ACoorcy node)
+    {
+        inACoorcy(node);
         if(node.getCy() != null)
         {
             node.getCy().apply(this);
         }
-        if(node.getA() != null)
+        if(node.getIg() != null)
         {
-            node.getA().apply(this);
+            node.getIg().apply(this);
         }
-        if(node.getB() != null)
+        if(node.getNum() != null)
         {
-            node.getB().apply(this);
+            node.getNum().apply(this);
         }
+        outACoorcy(node);
+    }
+
+    public void inARad(ARad node)
+    {
+        defaultIn(node);
+    }
+
+    public void outARad(ARad node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseARad(ARad node)
+    {
+        inARad(node);
+        if(node.getR0() != null)
+        {
+            node.getR0().apply(this);
+        }
+        if(node.getIg() != null)
+        {
+            node.getIg().apply(this);
+        }
+        if(node.getNum() != null)
+        {
+            node.getNum().apply(this);
+        }
+        outARad(node);
+    }
+
+    public void inACoorx0(ACoorx0 node)
+    {
+        defaultIn(node);
+    }
+
+    public void outACoorx0(ACoorx0 node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseACoorx0(ACoorx0 node)
+    {
+        inACoorx0(node);
+        if(node.getX0() != null)
+        {
+            node.getX0().apply(this);
+        }
+        if(node.getIg() != null)
+        {
+            node.getIg().apply(this);
+        }
+        if(node.getNum() != null)
+        {
+            node.getNum().apply(this);
+        }
+        outACoorx0(node);
+    }
+
+    public void inACoory0(ACoory0 node)
+    {
+        defaultIn(node);
+    }
+
+    public void outACoory0(ACoory0 node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseACoory0(ACoory0 node)
+    {
+        inACoory0(node);
+        if(node.getY0() != null)
+        {
+            node.getY0().apply(this);
+        }
+        if(node.getIg() != null)
+        {
+            node.getIg().apply(this);
+        }
+        if(node.getNum() != null)
+        {
+            node.getNum().apply(this);
+        }
+        outACoory0(node);
+    }
+
+    public void inAWid(AWid node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAWid(AWid node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAWid(AWid node)
+    {
+        inAWid(node);
+        if(node.getWidth() != null)
+        {
+            node.getWidth().apply(this);
+        }
+        if(node.getIg() != null)
+        {
+            node.getIg().apply(this);
+        }
+        if(node.getNum() != null)
+        {
+            node.getNum().apply(this);
+        }
+        outAWid(node);
+    }
+
+    public void inAHei(AHei node)
+    {
+        defaultIn(node);
+    }
+
+    public void outAHei(AHei node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseAHei(AHei node)
+    {
+        inAHei(node);
+        if(node.getHeight() != null)
+        {
+            node.getHeight().apply(this);
+        }
+        if(node.getIg() != null)
+        {
+            node.getIg().apply(this);
+        }
+        if(node.getNum() != null)
+        {
+            node.getNum().apply(this);
+        }
+        outAHei(node);
+    }
+
+    public void inARadx(ARadx node)
+    {
+        defaultIn(node);
+    }
+
+    public void outARadx(ARadx node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseARadx(ARadx node)
+    {
+        inARadx(node);
         if(node.getRx() != null)
         {
             node.getRx().apply(this);
         }
-        if(node.getC() != null)
+        if(node.getIg() != null)
         {
-            node.getC().apply(this);
+            node.getIg().apply(this);
         }
-        if(node.getD() != null)
+        if(node.getNum() != null)
         {
-            node.getD().apply(this);
+            node.getNum().apply(this);
         }
+        outARadx(node);
+    }
+
+    public void inARady(ARady node)
+    {
+        defaultIn(node);
+    }
+
+    public void outARady(ARady node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseARady(ARady node)
+    {
+        inARady(node);
         if(node.getRy() != null)
         {
             node.getRy().apply(this);
         }
-        if(node.getE() != null)
+        if(node.getIg() != null)
         {
-            node.getE().apply(this);
+            node.getIg().apply(this);
         }
-        if(node.getF() != null)
+        if(node.getNum() != null)
         {
-            node.getF().apply(this);
+            node.getNum().apply(this);
         }
-        outAE0(node);
+        outARady(node);
     }
 
     public void inANum(ANum node)

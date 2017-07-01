@@ -7,18 +7,10 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class AE0 extends PE0
 {
-    private TCx _cx_;
-    private TIg _ig_;
-    private PNum _num_;
-    private TCy _cy_;
-    private TIg _a_;
-    private PNum _b_;
-    private TRx _rx_;
-    private TIg _c_;
-    private PNum _d_;
-    private TRy _ry_;
-    private TIg _e_;
-    private PNum _f_;
+    private PCoorcx _coorcx_;
+    private PCoorcy _coorcy_;
+    private PRadx _radx_;
+    private PRady _rady_;
 
     public AE0()
     {
@@ -26,43 +18,19 @@ public final class AE0 extends PE0
     }
 
     public AE0(
-        @SuppressWarnings("hiding") TCx _cx_,
-        @SuppressWarnings("hiding") TIg _ig_,
-        @SuppressWarnings("hiding") PNum _num_,
-        @SuppressWarnings("hiding") TCy _cy_,
-        @SuppressWarnings("hiding") TIg _a_,
-        @SuppressWarnings("hiding") PNum _b_,
-        @SuppressWarnings("hiding") TRx _rx_,
-        @SuppressWarnings("hiding") TIg _c_,
-        @SuppressWarnings("hiding") PNum _d_,
-        @SuppressWarnings("hiding") TRy _ry_,
-        @SuppressWarnings("hiding") TIg _e_,
-        @SuppressWarnings("hiding") PNum _f_)
+        @SuppressWarnings("hiding") PCoorcx _coorcx_,
+        @SuppressWarnings("hiding") PCoorcy _coorcy_,
+        @SuppressWarnings("hiding") PRadx _radx_,
+        @SuppressWarnings("hiding") PRady _rady_)
     {
         // Constructor
-        setCx(_cx_);
+        setCoorcx(_coorcx_);
 
-        setIg(_ig_);
+        setCoorcy(_coorcy_);
 
-        setNum(_num_);
+        setRadx(_radx_);
 
-        setCy(_cy_);
-
-        setA(_a_);
-
-        setB(_b_);
-
-        setRx(_rx_);
-
-        setC(_c_);
-
-        setD(_d_);
-
-        setRy(_ry_);
-
-        setE(_e_);
-
-        setF(_f_);
+        setRady(_rady_);
 
     }
 
@@ -70,18 +38,10 @@ public final class AE0 extends PE0
     public Object clone()
     {
         return new AE0(
-            cloneNode(this._cx_),
-            cloneNode(this._ig_),
-            cloneNode(this._num_),
-            cloneNode(this._cy_),
-            cloneNode(this._a_),
-            cloneNode(this._b_),
-            cloneNode(this._rx_),
-            cloneNode(this._c_),
-            cloneNode(this._d_),
-            cloneNode(this._ry_),
-            cloneNode(this._e_),
-            cloneNode(this._f_));
+            cloneNode(this._coorcx_),
+            cloneNode(this._coorcy_),
+            cloneNode(this._radx_),
+            cloneNode(this._rady_));
     }
 
     @Override
@@ -90,16 +50,16 @@ public final class AE0 extends PE0
         ((Analysis) sw).caseAE0(this);
     }
 
-    public TCx getCx()
+    public PCoorcx getCoorcx()
     {
-        return this._cx_;
+        return this._coorcx_;
     }
 
-    public void setCx(TCx node)
+    public void setCoorcx(PCoorcx node)
     {
-        if(this._cx_ != null)
+        if(this._coorcx_ != null)
         {
-            this._cx_.parent(null);
+            this._coorcx_.parent(null);
         }
 
         if(node != null)
@@ -112,19 +72,19 @@ public final class AE0 extends PE0
             node.parent(this);
         }
 
-        this._cx_ = node;
+        this._coorcx_ = node;
     }
 
-    public TIg getIg()
+    public PCoorcy getCoorcy()
     {
-        return this._ig_;
+        return this._coorcy_;
     }
 
-    public void setIg(TIg node)
+    public void setCoorcy(PCoorcy node)
     {
-        if(this._ig_ != null)
+        if(this._coorcy_ != null)
         {
-            this._ig_.parent(null);
+            this._coorcy_.parent(null);
         }
 
         if(node != null)
@@ -137,19 +97,19 @@ public final class AE0 extends PE0
             node.parent(this);
         }
 
-        this._ig_ = node;
+        this._coorcy_ = node;
     }
 
-    public PNum getNum()
+    public PRadx getRadx()
     {
-        return this._num_;
+        return this._radx_;
     }
 
-    public void setNum(PNum node)
+    public void setRadx(PRadx node)
     {
-        if(this._num_ != null)
+        if(this._radx_ != null)
         {
-            this._num_.parent(null);
+            this._radx_.parent(null);
         }
 
         if(node != null)
@@ -162,19 +122,19 @@ public final class AE0 extends PE0
             node.parent(this);
         }
 
-        this._num_ = node;
+        this._radx_ = node;
     }
 
-    public TCy getCy()
+    public PRady getRady()
     {
-        return this._cy_;
+        return this._rady_;
     }
 
-    public void setCy(TCy node)
+    public void setRady(PRady node)
     {
-        if(this._cy_ != null)
+        if(this._rady_ != null)
         {
-            this._cy_.parent(null);
+            this._rady_.parent(null);
         }
 
         if(node != null)
@@ -187,300 +147,44 @@ public final class AE0 extends PE0
             node.parent(this);
         }
 
-        this._cy_ = node;
-    }
-
-    public TIg getA()
-    {
-        return this._a_;
-    }
-
-    public void setA(TIg node)
-    {
-        if(this._a_ != null)
-        {
-            this._a_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._a_ = node;
-    }
-
-    public PNum getB()
-    {
-        return this._b_;
-    }
-
-    public void setB(PNum node)
-    {
-        if(this._b_ != null)
-        {
-            this._b_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._b_ = node;
-    }
-
-    public TRx getRx()
-    {
-        return this._rx_;
-    }
-
-    public void setRx(TRx node)
-    {
-        if(this._rx_ != null)
-        {
-            this._rx_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._rx_ = node;
-    }
-
-    public TIg getC()
-    {
-        return this._c_;
-    }
-
-    public void setC(TIg node)
-    {
-        if(this._c_ != null)
-        {
-            this._c_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._c_ = node;
-    }
-
-    public PNum getD()
-    {
-        return this._d_;
-    }
-
-    public void setD(PNum node)
-    {
-        if(this._d_ != null)
-        {
-            this._d_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._d_ = node;
-    }
-
-    public TRy getRy()
-    {
-        return this._ry_;
-    }
-
-    public void setRy(TRy node)
-    {
-        if(this._ry_ != null)
-        {
-            this._ry_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._ry_ = node;
-    }
-
-    public TIg getE()
-    {
-        return this._e_;
-    }
-
-    public void setE(TIg node)
-    {
-        if(this._e_ != null)
-        {
-            this._e_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._e_ = node;
-    }
-
-    public PNum getF()
-    {
-        return this._f_;
-    }
-
-    public void setF(PNum node)
-    {
-        if(this._f_ != null)
-        {
-            this._f_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._f_ = node;
+        this._rady_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._cx_)
-            + toString(this._ig_)
-            + toString(this._num_)
-            + toString(this._cy_)
-            + toString(this._a_)
-            + toString(this._b_)
-            + toString(this._rx_)
-            + toString(this._c_)
-            + toString(this._d_)
-            + toString(this._ry_)
-            + toString(this._e_)
-            + toString(this._f_);
+            + toString(this._coorcx_)
+            + toString(this._coorcy_)
+            + toString(this._radx_)
+            + toString(this._rady_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._cx_ == child)
+        if(this._coorcx_ == child)
         {
-            this._cx_ = null;
+            this._coorcx_ = null;
             return;
         }
 
-        if(this._ig_ == child)
+        if(this._coorcy_ == child)
         {
-            this._ig_ = null;
+            this._coorcy_ = null;
             return;
         }
 
-        if(this._num_ == child)
+        if(this._radx_ == child)
         {
-            this._num_ = null;
+            this._radx_ = null;
             return;
         }
 
-        if(this._cy_ == child)
+        if(this._rady_ == child)
         {
-            this._cy_ = null;
-            return;
-        }
-
-        if(this._a_ == child)
-        {
-            this._a_ = null;
-            return;
-        }
-
-        if(this._b_ == child)
-        {
-            this._b_ = null;
-            return;
-        }
-
-        if(this._rx_ == child)
-        {
-            this._rx_ = null;
-            return;
-        }
-
-        if(this._c_ == child)
-        {
-            this._c_ = null;
-            return;
-        }
-
-        if(this._d_ == child)
-        {
-            this._d_ = null;
-            return;
-        }
-
-        if(this._ry_ == child)
-        {
-            this._ry_ = null;
-            return;
-        }
-
-        if(this._e_ == child)
-        {
-            this._e_ = null;
-            return;
-        }
-
-        if(this._f_ == child)
-        {
-            this._f_ = null;
+            this._rady_ = null;
             return;
         }
 
@@ -491,75 +195,27 @@ public final class AE0 extends PE0
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._cx_ == oldChild)
+        if(this._coorcx_ == oldChild)
         {
-            setCx((TCx) newChild);
+            setCoorcx((PCoorcx) newChild);
             return;
         }
 
-        if(this._ig_ == oldChild)
+        if(this._coorcy_ == oldChild)
         {
-            setIg((TIg) newChild);
+            setCoorcy((PCoorcy) newChild);
             return;
         }
 
-        if(this._num_ == oldChild)
+        if(this._radx_ == oldChild)
         {
-            setNum((PNum) newChild);
+            setRadx((PRadx) newChild);
             return;
         }
 
-        if(this._cy_ == oldChild)
+        if(this._rady_ == oldChild)
         {
-            setCy((TCy) newChild);
-            return;
-        }
-
-        if(this._a_ == oldChild)
-        {
-            setA((TIg) newChild);
-            return;
-        }
-
-        if(this._b_ == oldChild)
-        {
-            setB((PNum) newChild);
-            return;
-        }
-
-        if(this._rx_ == oldChild)
-        {
-            setRx((TRx) newChild);
-            return;
-        }
-
-        if(this._c_ == oldChild)
-        {
-            setC((TIg) newChild);
-            return;
-        }
-
-        if(this._d_ == oldChild)
-        {
-            setD((PNum) newChild);
-            return;
-        }
-
-        if(this._ry_ == oldChild)
-        {
-            setRy((TRy) newChild);
-            return;
-        }
-
-        if(this._e_ == oldChild)
-        {
-            setE((TIg) newChild);
-            return;
-        }
-
-        if(this._f_ == oldChild)
-        {
-            setF((PNum) newChild);
+            setRady((PRady) newChild);
             return;
         }
 

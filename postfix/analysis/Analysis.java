@@ -12,12 +12,12 @@ public interface Analysis extends Switch
     void setOut(Node node, Object o);
 
     void caseStart(Start node);
-    void caseAAStart(AAStart node);
-    void caseABStart(ABStart node);
-    void caseADim(ADim node);
-    void caseAAPr(AAPr node);
-    void caseABPr(ABPr node);
-    void caseACPr(ACPr node);
+    void caseASindimStart(ASindimStart node);
+    void caseACondimStart(ACondimStart node);
+    void caseADimensiones(ADimensiones node);
+    void caseAUnafiguraFigura(AUnafiguraFigura node);
+    void caseAConcatfiguraFigura(AConcatfiguraFigura node);
+    void caseAFigurafinFigura(AFigurafinFigura node);
     void caseAAPr1(AAPr1 node);
     void caseABPr1(ABPr1 node);
     void caseACPr1(ACPr1 node);
@@ -61,6 +61,19 @@ public interface Analysis extends Switch
     void caseACE1(ACE1 node);
     void caseADE1(ADE1 node);
     void caseAE0(AE0 node);
+    void caseACoorx(ACoorx node);
+    void caseACoory(ACoory node);
+    void caseACoorx2(ACoorx2 node);
+    void caseACoory2(ACoory2 node);
+    void caseACoorcx(ACoorcx node);
+    void caseACoorcy(ACoorcy node);
+    void caseARad(ARad node);
+    void caseACoorx0(ACoorx0 node);
+    void caseACoory0(ACoory0 node);
+    void caseAWid(AWid node);
+    void caseAHei(AHei node);
+    void caseARadx(ARadx node);
+    void caseARady(ARady node);
     void caseANum(ANum node);
     void caseAAP(AAP node);
     void caseABP(ABP node);
