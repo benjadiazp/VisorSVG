@@ -7,8 +7,8 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class ABF extends PF
 {
-    private PD _d_;
-    private PAtt _att_;
+    private TCircle _circle_;
+    private PC1 _c1_;
 
     public ABF()
     {
@@ -16,13 +16,13 @@ public final class ABF extends PF
     }
 
     public ABF(
-        @SuppressWarnings("hiding") PD _d_,
-        @SuppressWarnings("hiding") PAtt _att_)
+        @SuppressWarnings("hiding") TCircle _circle_,
+        @SuppressWarnings("hiding") PC1 _c1_)
     {
         // Constructor
-        setD(_d_);
+        setCircle(_circle_);
 
-        setAtt(_att_);
+        setC1(_c1_);
 
     }
 
@@ -30,8 +30,8 @@ public final class ABF extends PF
     public Object clone()
     {
         return new ABF(
-            cloneNode(this._d_),
-            cloneNode(this._att_));
+            cloneNode(this._circle_),
+            cloneNode(this._c1_));
     }
 
     @Override
@@ -40,16 +40,16 @@ public final class ABF extends PF
         ((Analysis) sw).caseABF(this);
     }
 
-    public PD getD()
+    public TCircle getCircle()
     {
-        return this._d_;
+        return this._circle_;
     }
 
-    public void setD(PD node)
+    public void setCircle(TCircle node)
     {
-        if(this._d_ != null)
+        if(this._circle_ != null)
         {
-            this._d_.parent(null);
+            this._circle_.parent(null);
         }
 
         if(node != null)
@@ -62,19 +62,19 @@ public final class ABF extends PF
             node.parent(this);
         }
 
-        this._d_ = node;
+        this._circle_ = node;
     }
 
-    public PAtt getAtt()
+    public PC1 getC1()
     {
-        return this._att_;
+        return this._c1_;
     }
 
-    public void setAtt(PAtt node)
+    public void setC1(PC1 node)
     {
-        if(this._att_ != null)
+        if(this._c1_ != null)
         {
-            this._att_.parent(null);
+            this._c1_.parent(null);
         }
 
         if(node != null)
@@ -87,30 +87,30 @@ public final class ABF extends PF
             node.parent(this);
         }
 
-        this._att_ = node;
+        this._c1_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._d_)
-            + toString(this._att_);
+            + toString(this._circle_)
+            + toString(this._c1_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._d_ == child)
+        if(this._circle_ == child)
         {
-            this._d_ = null;
+            this._circle_ = null;
             return;
         }
 
-        if(this._att_ == child)
+        if(this._c1_ == child)
         {
-            this._att_ = null;
+            this._c1_ = null;
             return;
         }
 
@@ -121,15 +121,15 @@ public final class ABF extends PF
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._d_ == oldChild)
+        if(this._circle_ == oldChild)
         {
-            setD((PD) newChild);
+            setCircle((TCircle) newChild);
             return;
         }
 
-        if(this._att_ == oldChild)
+        if(this._c1_ == oldChild)
         {
-            setAtt((PAtt) newChild);
+            setC1((PC1) newChild);
             return;
         }
 

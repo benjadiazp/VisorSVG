@@ -7,9 +7,8 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class ADF extends PF
 {
-    private PAtt _att_;
-    private PD _d_;
-    private PAtt _a_;
+    private TEllipse _ellipse_;
+    private PE1 _e1_;
 
     public ADF()
     {
@@ -17,16 +16,13 @@ public final class ADF extends PF
     }
 
     public ADF(
-        @SuppressWarnings("hiding") PAtt _att_,
-        @SuppressWarnings("hiding") PD _d_,
-        @SuppressWarnings("hiding") PAtt _a_)
+        @SuppressWarnings("hiding") TEllipse _ellipse_,
+        @SuppressWarnings("hiding") PE1 _e1_)
     {
         // Constructor
-        setAtt(_att_);
+        setEllipse(_ellipse_);
 
-        setD(_d_);
-
-        setA(_a_);
+        setE1(_e1_);
 
     }
 
@@ -34,9 +30,8 @@ public final class ADF extends PF
     public Object clone()
     {
         return new ADF(
-            cloneNode(this._att_),
-            cloneNode(this._d_),
-            cloneNode(this._a_));
+            cloneNode(this._ellipse_),
+            cloneNode(this._e1_));
     }
 
     @Override
@@ -45,16 +40,16 @@ public final class ADF extends PF
         ((Analysis) sw).caseADF(this);
     }
 
-    public PAtt getAtt()
+    public TEllipse getEllipse()
     {
-        return this._att_;
+        return this._ellipse_;
     }
 
-    public void setAtt(PAtt node)
+    public void setEllipse(TEllipse node)
     {
-        if(this._att_ != null)
+        if(this._ellipse_ != null)
         {
-            this._att_.parent(null);
+            this._ellipse_.parent(null);
         }
 
         if(node != null)
@@ -67,19 +62,19 @@ public final class ADF extends PF
             node.parent(this);
         }
 
-        this._att_ = node;
+        this._ellipse_ = node;
     }
 
-    public PD getD()
+    public PE1 getE1()
     {
-        return this._d_;
+        return this._e1_;
     }
 
-    public void setD(PD node)
+    public void setE1(PE1 node)
     {
-        if(this._d_ != null)
+        if(this._e1_ != null)
         {
-            this._d_.parent(null);
+            this._e1_.parent(null);
         }
 
         if(node != null)
@@ -92,62 +87,30 @@ public final class ADF extends PF
             node.parent(this);
         }
 
-        this._d_ = node;
-    }
-
-    public PAtt getA()
-    {
-        return this._a_;
-    }
-
-    public void setA(PAtt node)
-    {
-        if(this._a_ != null)
-        {
-            this._a_.parent(null);
-        }
-
-        if(node != null)
-        {
-            if(node.parent() != null)
-            {
-                node.parent().removeChild(node);
-            }
-
-            node.parent(this);
-        }
-
-        this._a_ = node;
+        this._e1_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._att_)
-            + toString(this._d_)
-            + toString(this._a_);
+            + toString(this._ellipse_)
+            + toString(this._e1_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._att_ == child)
+        if(this._ellipse_ == child)
         {
-            this._att_ = null;
+            this._ellipse_ = null;
             return;
         }
 
-        if(this._d_ == child)
+        if(this._e1_ == child)
         {
-            this._d_ = null;
-            return;
-        }
-
-        if(this._a_ == child)
-        {
-            this._a_ = null;
+            this._e1_ = null;
             return;
         }
 
@@ -158,21 +121,15 @@ public final class ADF extends PF
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._att_ == oldChild)
+        if(this._ellipse_ == oldChild)
         {
-            setAtt((PAtt) newChild);
+            setEllipse((TEllipse) newChild);
             return;
         }
 
-        if(this._d_ == oldChild)
+        if(this._e1_ == oldChild)
         {
-            setD((PD) newChild);
-            return;
-        }
-
-        if(this._a_ == oldChild)
-        {
-            setA((PAtt) newChild);
+            setE1((PE1) newChild);
             return;
         }
 

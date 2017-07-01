@@ -7,8 +7,8 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class ACF extends PF
 {
-    private PAtt _att_;
-    private PD _d_;
+    private TRect _rect_;
+    private PR1 _r1_;
 
     public ACF()
     {
@@ -16,13 +16,13 @@ public final class ACF extends PF
     }
 
     public ACF(
-        @SuppressWarnings("hiding") PAtt _att_,
-        @SuppressWarnings("hiding") PD _d_)
+        @SuppressWarnings("hiding") TRect _rect_,
+        @SuppressWarnings("hiding") PR1 _r1_)
     {
         // Constructor
-        setAtt(_att_);
+        setRect(_rect_);
 
-        setD(_d_);
+        setR1(_r1_);
 
     }
 
@@ -30,8 +30,8 @@ public final class ACF extends PF
     public Object clone()
     {
         return new ACF(
-            cloneNode(this._att_),
-            cloneNode(this._d_));
+            cloneNode(this._rect_),
+            cloneNode(this._r1_));
     }
 
     @Override
@@ -40,16 +40,16 @@ public final class ACF extends PF
         ((Analysis) sw).caseACF(this);
     }
 
-    public PAtt getAtt()
+    public TRect getRect()
     {
-        return this._att_;
+        return this._rect_;
     }
 
-    public void setAtt(PAtt node)
+    public void setRect(TRect node)
     {
-        if(this._att_ != null)
+        if(this._rect_ != null)
         {
-            this._att_.parent(null);
+            this._rect_.parent(null);
         }
 
         if(node != null)
@@ -62,19 +62,19 @@ public final class ACF extends PF
             node.parent(this);
         }
 
-        this._att_ = node;
+        this._rect_ = node;
     }
 
-    public PD getD()
+    public PR1 getR1()
     {
-        return this._d_;
+        return this._r1_;
     }
 
-    public void setD(PD node)
+    public void setR1(PR1 node)
     {
-        if(this._d_ != null)
+        if(this._r1_ != null)
         {
-            this._d_.parent(null);
+            this._r1_.parent(null);
         }
 
         if(node != null)
@@ -87,30 +87,30 @@ public final class ACF extends PF
             node.parent(this);
         }
 
-        this._d_ = node;
+        this._r1_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._att_)
-            + toString(this._d_);
+            + toString(this._rect_)
+            + toString(this._r1_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._att_ == child)
+        if(this._rect_ == child)
         {
-            this._att_ = null;
+            this._rect_ = null;
             return;
         }
 
-        if(this._d_ == child)
+        if(this._r1_ == child)
         {
-            this._d_ = null;
+            this._r1_ = null;
             return;
         }
 
@@ -121,15 +121,15 @@ public final class ACF extends PF
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._att_ == oldChild)
+        if(this._rect_ == oldChild)
         {
-            setAtt((PAtt) newChild);
+            setRect((TRect) newChild);
             return;
         }
 
-        if(this._d_ == oldChild)
+        if(this._r1_ == oldChild)
         {
-            setD((PD) newChild);
+            setR1((PR1) newChild);
             return;
         }
 

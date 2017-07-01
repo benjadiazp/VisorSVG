@@ -7,7 +7,8 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class AAF extends PF
 {
-    private PD _d_;
+    private TLine _line_;
+    private PL1 _l1_;
 
     public AAF()
     {
@@ -15,10 +16,13 @@ public final class AAF extends PF
     }
 
     public AAF(
-        @SuppressWarnings("hiding") PD _d_)
+        @SuppressWarnings("hiding") TLine _line_,
+        @SuppressWarnings("hiding") PL1 _l1_)
     {
         // Constructor
-        setD(_d_);
+        setLine(_line_);
+
+        setL1(_l1_);
 
     }
 
@@ -26,7 +30,8 @@ public final class AAF extends PF
     public Object clone()
     {
         return new AAF(
-            cloneNode(this._d_));
+            cloneNode(this._line_),
+            cloneNode(this._l1_));
     }
 
     @Override
@@ -35,16 +40,16 @@ public final class AAF extends PF
         ((Analysis) sw).caseAAF(this);
     }
 
-    public PD getD()
+    public TLine getLine()
     {
-        return this._d_;
+        return this._line_;
     }
 
-    public void setD(PD node)
+    public void setLine(TLine node)
     {
-        if(this._d_ != null)
+        if(this._line_ != null)
         {
-            this._d_.parent(null);
+            this._line_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +62,55 @@ public final class AAF extends PF
             node.parent(this);
         }
 
-        this._d_ = node;
+        this._line_ = node;
+    }
+
+    public PL1 getL1()
+    {
+        return this._l1_;
+    }
+
+    public void setL1(PL1 node)
+    {
+        if(this._l1_ != null)
+        {
+            this._l1_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._l1_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._d_);
+            + toString(this._line_)
+            + toString(this._l1_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._d_ == child)
+        if(this._line_ == child)
         {
-            this._d_ = null;
+            this._line_ = null;
+            return;
+        }
+
+        if(this._l1_ == child)
+        {
+            this._l1_ = null;
             return;
         }
 
@@ -84,9 +121,15 @@ public final class AAF extends PF
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._d_ == oldChild)
+        if(this._line_ == oldChild)
         {
-            setD((PD) newChild);
+            setLine((TLine) newChild);
+            return;
+        }
+
+        if(this._l1_ == oldChild)
+        {
+            setL1((PL1) newChild);
             return;
         }
 

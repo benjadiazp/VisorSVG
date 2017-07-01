@@ -8,6 +8,7 @@ import postfix.analysis.*;
 public final class ABSp extends PSp
 {
     private PSp _sp_;
+    private TPc _pc_;
     private PSp0 _sp0_;
 
     public ABSp()
@@ -17,10 +18,13 @@ public final class ABSp extends PSp
 
     public ABSp(
         @SuppressWarnings("hiding") PSp _sp_,
+        @SuppressWarnings("hiding") TPc _pc_,
         @SuppressWarnings("hiding") PSp0 _sp0_)
     {
         // Constructor
         setSp(_sp_);
+
+        setPc(_pc_);
 
         setSp0(_sp0_);
 
@@ -31,6 +35,7 @@ public final class ABSp extends PSp
     {
         return new ABSp(
             cloneNode(this._sp_),
+            cloneNode(this._pc_),
             cloneNode(this._sp0_));
     }
 
@@ -65,6 +70,31 @@ public final class ABSp extends PSp
         this._sp_ = node;
     }
 
+    public TPc getPc()
+    {
+        return this._pc_;
+    }
+
+    public void setPc(TPc node)
+    {
+        if(this._pc_ != null)
+        {
+            this._pc_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._pc_ = node;
+    }
+
     public PSp0 getSp0()
     {
         return this._sp0_;
@@ -95,6 +125,7 @@ public final class ABSp extends PSp
     {
         return ""
             + toString(this._sp_)
+            + toString(this._pc_)
             + toString(this._sp0_);
     }
 
@@ -105,6 +136,12 @@ public final class ABSp extends PSp
         if(this._sp_ == child)
         {
             this._sp_ = null;
+            return;
+        }
+
+        if(this._pc_ == child)
+        {
+            this._pc_ = null;
             return;
         }
 
@@ -124,6 +161,12 @@ public final class ABSp extends PSp
         if(this._sp_ == oldChild)
         {
             setSp((PSp) newChild);
+            return;
+        }
+
+        if(this._pc_ == oldChild)
+        {
+            setPc((TPc) newChild);
             return;
         }
 

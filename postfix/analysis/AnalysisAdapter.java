@@ -105,6 +105,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseACPr1(ACPr1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseAAF(AAF node)
     {
         defaultCase(node);
@@ -129,37 +135,13 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAAD(AAD node)
+    public void caseAEF(AEF node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseABD(ABD node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseACD(ACD node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseADD(ADD node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAED(AED node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAFD(AFD node)
+    public void caseAFF(AFF node)
     {
         defaultCase(node);
     }
@@ -195,25 +177,97 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAL1(AL1 node)
+    public void caseAAL1(AAL1 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAC1(AC1 node)
+    public void caseABL1(ABL1 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAR1(AR1 node)
+    public void caseACL1(ACL1 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAE1(AE1 node)
+    public void caseAL0(AL0 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAAC1(AAC1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseABC1(ABC1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACC1(ACC1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAC2(AC2 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAAR1(AAR1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseABR1(ABR1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACR1(ACR1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAR2(AR2 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAAE1(AAE1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseABE1(ABE1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACE1(ACE1 node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAE0(AE0 node)
     {
         defaultCase(node);
     }
@@ -225,7 +279,25 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAP(AP node)
+    public void caseAAP(AAP node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseABP(ABP node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseACP(ACP node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseAP3(AP3 node)
     {
         defaultCase(node);
     }
