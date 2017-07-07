@@ -44,9 +44,9 @@ Ignored Tokens
 
 Productions
 
-start = {sindim} svg1 mayus figura svg2 | {condim} svg1 dimensiones mayus figura svg2;
+start = {sin_dim} svg1 mayus figura svg2 | {condim} svg1 dimensiones mayus figura svg2;
 dimensiones = width ig num height [a]:ig [b]:num;
-figura = {unafigura} pr1 | {concatfigura} figura pr1 |{figurafin} figura fig1;
+figura = {una_figura} pr1 | {contatenar_figura} figura pr1 |{etiqueta_figurafinal} figura fig1;
 pr1 = {a} minus f s mayus0 | {b} minus f mayus0 | {c} minus s f mayus0;
 mayus0 = {a} mayus | {b} sl mayus;
 fig1 = minus sl fig0 mayus;
@@ -78,14 +78,12 @@ hei = height ig num;
 radx = rx ig num;
 rady =  ry ig num;
 
-
-num = co n [a]:co;
+num = co n [a]:co [b]:co;
 
 p = {a} att p3 | {b} p3 att | {c} att p3 [a]:att;
 p3 = points ig co p0 [a]:co;
 p0 = {a} p1 | {b} p0 p1;
 p1 = n coma [a]:n;
-
 
 s = style ig co sp [a]:co;
 sp = {a} sp0 | {b} sp pc sp0;
