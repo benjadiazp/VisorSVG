@@ -75,37 +75,19 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseASindimStart(ASindimStart node)
+    public void caseAStart(AStart node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseACondimStart(ACondimStart node)
+    public void caseAUnaFiguraExp(AUnaFiguraExp node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseADimensiones(ADimensiones node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAUnafiguraFigura(AUnafiguraFigura node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAConcatfiguraFigura(AConcatfiguraFigura node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseAFigurafinFigura(AFigurafinFigura node)
+    public void caseAConcatenarFiguraExp(AConcatenarFiguraExp node)
     {
         defaultCase(node);
     }
@@ -141,43 +123,43 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAFig1(AFig1 node)
+    public void caseAFinFigura(AFinFigura node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAAFig0(AAFig0 node)
+    public void caseAANombreFigura(AANombreFigura node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseABFig0(ABFig0 node)
+    public void caseABNombreFigura(ABNombreFigura node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseACFig0(ACFig0 node)
+    public void caseACNombreFigura(ACNombreFigura node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseADFig0(ADFig0 node)
+    public void caseADNombreFigura(ADNombreFigura node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAEFig0(AEFig0 node)
+    public void caseAENombreFigura(AENombreFigura node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAFFig0(AFFig0 node)
+    public void caseAFNombreFigura(AFNombreFigura node)
     {
         defaultCase(node);
     }
@@ -538,18 +520,6 @@ public class AnalysisAdapter implements Analysis
 
     @Override
     public void caseTBlank(TBlank node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTSvg1(TSvg1 node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTSvg2(TSvg2 node)
     {
         defaultCase(node);
     }

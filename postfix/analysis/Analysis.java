@@ -12,24 +12,21 @@ public interface Analysis extends Switch
     void setOut(Node node, Object o);
 
     void caseStart(Start node);
-    void caseASindimStart(ASindimStart node);
-    void caseACondimStart(ACondimStart node);
-    void caseADimensiones(ADimensiones node);
-    void caseAUnafiguraFigura(AUnafiguraFigura node);
-    void caseAConcatfiguraFigura(AConcatfiguraFigura node);
-    void caseAFigurafinFigura(AFigurafinFigura node);
+    void caseAStart(AStart node);
+    void caseAUnaFiguraExp(AUnaFiguraExp node);
+    void caseAConcatenarFiguraExp(AConcatenarFiguraExp node);
     void caseAAPr1(AAPr1 node);
     void caseABPr1(ABPr1 node);
     void caseACPr1(ACPr1 node);
     void caseAAMayus0(AAMayus0 node);
     void caseABMayus0(ABMayus0 node);
-    void caseAFig1(AFig1 node);
-    void caseAAFig0(AAFig0 node);
-    void caseABFig0(ABFig0 node);
-    void caseACFig0(ACFig0 node);
-    void caseADFig0(ADFig0 node);
-    void caseAEFig0(AEFig0 node);
-    void caseAFFig0(AFFig0 node);
+    void caseAFinFigura(AFinFigura node);
+    void caseAANombreFigura(AANombreFigura node);
+    void caseABNombreFigura(ABNombreFigura node);
+    void caseACNombreFigura(ACNombreFigura node);
+    void caseADNombreFigura(ADNombreFigura node);
+    void caseAENombreFigura(AENombreFigura node);
+    void caseAFNombreFigura(AFNombreFigura node);
     void caseAAF(AAF node);
     void caseABF(ABF node);
     void caseACF(ACF node);
@@ -91,8 +88,6 @@ public interface Analysis extends Switch
 
     void caseTN(TN node);
     void caseTBlank(TBlank node);
-    void caseTSvg1(TSvg1 node);
-    void caseTSvg2(TSvg2 node);
     void caseTMinus(TMinus node);
     void caseTMayus(TMayus node);
     void caseTCo(TCo node);

@@ -3,8 +3,6 @@ Package postfix;
 Tokens
 	n = ['0' .. '9']+;
 	blank = ( ' ' | 13 | 10)+;
-	svg1 = '<svg';
-	svg2 = '</svg>';
 	minus = '<';
 	mayus = '>';
 	co = '"';
@@ -44,13 +42,12 @@ Ignored Tokens
 
 Productions
 
-start = {sin_dim} svg1 mayus figura svg2 | {condim} svg1 dimensiones mayus figura svg2;
-dimensiones = width ig num height [a]:ig [b]:num;
-figura = {una_figura} pr1 | {contatenar_figura} figura pr1 |{etiqueta_figurafinal} figura fig1;
+start = exp;
+exp = {una_figura} pr1 | {concatenar_figura} exp pr1;
 pr1 = {a} minus f s mayus0 | {b} minus f mayus0 | {c} minus s f mayus0;
 mayus0 = {a} mayus | {b} sl mayus;
-fig1 = minus sl fig0 mayus;
-fig0 = {a} line| {b} circle| {c} rect| {d} ellipse| {e} polygon| {f} polyline;
+fin_figura = minus sl nombre_figura mayus;
+nombre_figura = {a} line| {b} circle| {c} rect| {d} ellipse| {e} polygon| {f} polyline;
 f = {a} line l1 | {b} circle c1 | {c} rect r1 | {d} ellipse e1 | {e} polygon p | {f} polyline [a]:p;
 att = {a} att0 | {b} att att0;
 att0 = {a} fill ig co c0 [a]:co | {b} stroke ig co c0 [a]:co | {c} strokew ig num;

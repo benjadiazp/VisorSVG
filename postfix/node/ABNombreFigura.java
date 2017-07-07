@@ -5,46 +5,46 @@ package postfix.node;
 import postfix.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AStart extends PStart
+public final class ABNombreFigura extends PNombreFigura
 {
-    private PExp _exp_;
+    private TCircle _circle_;
 
-    public AStart()
+    public ABNombreFigura()
     {
         // Constructor
     }
 
-    public AStart(
-        @SuppressWarnings("hiding") PExp _exp_)
+    public ABNombreFigura(
+        @SuppressWarnings("hiding") TCircle _circle_)
     {
         // Constructor
-        setExp(_exp_);
+        setCircle(_circle_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AStart(
-            cloneNode(this._exp_));
+        return new ABNombreFigura(
+            cloneNode(this._circle_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAStart(this);
+        ((Analysis) sw).caseABNombreFigura(this);
     }
 
-    public PExp getExp()
+    public TCircle getCircle()
     {
-        return this._exp_;
+        return this._circle_;
     }
 
-    public void setExp(PExp node)
+    public void setCircle(TCircle node)
     {
-        if(this._exp_ != null)
+        if(this._circle_ != null)
         {
-            this._exp_.parent(null);
+            this._circle_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AStart extends PStart
             node.parent(this);
         }
 
-        this._exp_ = node;
+        this._circle_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._exp_);
+            + toString(this._circle_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._exp_ == child)
+        if(this._circle_ == child)
         {
-            this._exp_ = null;
+            this._circle_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AStart extends PStart
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._exp_ == oldChild)
+        if(this._circle_ == oldChild)
         {
-            setExp((PExp) newChild);
+            setCircle((TCircle) newChild);
             return;
         }
 

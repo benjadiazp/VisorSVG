@@ -5,46 +5,46 @@ package postfix.node;
 import postfix.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AStart extends PStart
+public final class ADNombreFigura extends PNombreFigura
 {
-    private PExp _exp_;
+    private TEllipse _ellipse_;
 
-    public AStart()
+    public ADNombreFigura()
     {
         // Constructor
     }
 
-    public AStart(
-        @SuppressWarnings("hiding") PExp _exp_)
+    public ADNombreFigura(
+        @SuppressWarnings("hiding") TEllipse _ellipse_)
     {
         // Constructor
-        setExp(_exp_);
+        setEllipse(_ellipse_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AStart(
-            cloneNode(this._exp_));
+        return new ADNombreFigura(
+            cloneNode(this._ellipse_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAStart(this);
+        ((Analysis) sw).caseADNombreFigura(this);
     }
 
-    public PExp getExp()
+    public TEllipse getEllipse()
     {
-        return this._exp_;
+        return this._ellipse_;
     }
 
-    public void setExp(PExp node)
+    public void setEllipse(TEllipse node)
     {
-        if(this._exp_ != null)
+        if(this._ellipse_ != null)
         {
-            this._exp_.parent(null);
+            this._ellipse_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AStart extends PStart
             node.parent(this);
         }
 
-        this._exp_ = node;
+        this._ellipse_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._exp_);
+            + toString(this._ellipse_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._exp_ == child)
+        if(this._ellipse_ == child)
         {
-            this._exp_ = null;
+            this._ellipse_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AStart extends PStart
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._exp_ == oldChild)
+        if(this._ellipse_ == oldChild)
         {
-            setExp((PExp) newChild);
+            setEllipse((TEllipse) newChild);
             return;
         }
 

@@ -5,46 +5,46 @@ package postfix.node;
 import postfix.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AStart extends PStart
+public final class ACNombreFigura extends PNombreFigura
 {
-    private PExp _exp_;
+    private TRect _rect_;
 
-    public AStart()
+    public ACNombreFigura()
     {
         // Constructor
     }
 
-    public AStart(
-        @SuppressWarnings("hiding") PExp _exp_)
+    public ACNombreFigura(
+        @SuppressWarnings("hiding") TRect _rect_)
     {
         // Constructor
-        setExp(_exp_);
+        setRect(_rect_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AStart(
-            cloneNode(this._exp_));
+        return new ACNombreFigura(
+            cloneNode(this._rect_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAStart(this);
+        ((Analysis) sw).caseACNombreFigura(this);
     }
 
-    public PExp getExp()
+    public TRect getRect()
     {
-        return this._exp_;
+        return this._rect_;
     }
 
-    public void setExp(PExp node)
+    public void setRect(TRect node)
     {
-        if(this._exp_ != null)
+        if(this._rect_ != null)
         {
-            this._exp_.parent(null);
+            this._rect_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AStart extends PStart
             node.parent(this);
         }
 
-        this._exp_ = node;
+        this._rect_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._exp_);
+            + toString(this._rect_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._exp_ == child)
+        if(this._rect_ == child)
         {
-            this._exp_ = null;
+            this._rect_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AStart extends PStart
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._exp_ == oldChild)
+        if(this._rect_ == oldChild)
         {
-            setExp((PExp) newChild);
+            setRect((TRect) newChild);
             return;
         }
 

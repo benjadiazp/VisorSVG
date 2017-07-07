@@ -36,186 +36,71 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outStart(node);
     }
 
-    public void inASindimStart(ASindimStart node)
+    public void inAStart(AStart node)
     {
         defaultIn(node);
     }
 
-    public void outASindimStart(ASindimStart node)
+    public void outAStart(AStart node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseASindimStart(ASindimStart node)
+    public void caseAStart(AStart node)
     {
-        inASindimStart(node);
-        if(node.getSvg2() != null)
+        inAStart(node);
+        if(node.getExp() != null)
         {
-            node.getSvg2().apply(this);
+            node.getExp().apply(this);
         }
-        if(node.getFigura() != null)
-        {
-            node.getFigura().apply(this);
-        }
-        if(node.getMayus() != null)
-        {
-            node.getMayus().apply(this);
-        }
-        if(node.getSvg1() != null)
-        {
-            node.getSvg1().apply(this);
-        }
-        outASindimStart(node);
+        outAStart(node);
     }
 
-    public void inACondimStart(ACondimStart node)
+    public void inAUnaFiguraExp(AUnaFiguraExp node)
     {
         defaultIn(node);
     }
 
-    public void outACondimStart(ACondimStart node)
+    public void outAUnaFiguraExp(AUnaFiguraExp node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseACondimStart(ACondimStart node)
+    public void caseAUnaFiguraExp(AUnaFiguraExp node)
     {
-        inACondimStart(node);
-        if(node.getSvg2() != null)
-        {
-            node.getSvg2().apply(this);
-        }
-        if(node.getFigura() != null)
-        {
-            node.getFigura().apply(this);
-        }
-        if(node.getMayus() != null)
-        {
-            node.getMayus().apply(this);
-        }
-        if(node.getDimensiones() != null)
-        {
-            node.getDimensiones().apply(this);
-        }
-        if(node.getSvg1() != null)
-        {
-            node.getSvg1().apply(this);
-        }
-        outACondimStart(node);
-    }
-
-    public void inADimensiones(ADimensiones node)
-    {
-        defaultIn(node);
-    }
-
-    public void outADimensiones(ADimensiones node)
-    {
-        defaultOut(node);
-    }
-
-    @Override
-    public void caseADimensiones(ADimensiones node)
-    {
-        inADimensiones(node);
-        if(node.getB() != null)
-        {
-            node.getB().apply(this);
-        }
-        if(node.getA() != null)
-        {
-            node.getA().apply(this);
-        }
-        if(node.getHeight() != null)
-        {
-            node.getHeight().apply(this);
-        }
-        if(node.getNum() != null)
-        {
-            node.getNum().apply(this);
-        }
-        if(node.getIg() != null)
-        {
-            node.getIg().apply(this);
-        }
-        if(node.getWidth() != null)
-        {
-            node.getWidth().apply(this);
-        }
-        outADimensiones(node);
-    }
-
-    public void inAUnafiguraFigura(AUnafiguraFigura node)
-    {
-        defaultIn(node);
-    }
-
-    public void outAUnafiguraFigura(AUnafiguraFigura node)
-    {
-        defaultOut(node);
-    }
-
-    @Override
-    public void caseAUnafiguraFigura(AUnafiguraFigura node)
-    {
-        inAUnafiguraFigura(node);
+        inAUnaFiguraExp(node);
         if(node.getPr1() != null)
         {
             node.getPr1().apply(this);
         }
-        outAUnafiguraFigura(node);
+        outAUnaFiguraExp(node);
     }
 
-    public void inAConcatfiguraFigura(AConcatfiguraFigura node)
+    public void inAConcatenarFiguraExp(AConcatenarFiguraExp node)
     {
         defaultIn(node);
     }
 
-    public void outAConcatfiguraFigura(AConcatfiguraFigura node)
+    public void outAConcatenarFiguraExp(AConcatenarFiguraExp node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAConcatfiguraFigura(AConcatfiguraFigura node)
+    public void caseAConcatenarFiguraExp(AConcatenarFiguraExp node)
     {
-        inAConcatfiguraFigura(node);
+        inAConcatenarFiguraExp(node);
         if(node.getPr1() != null)
         {
             node.getPr1().apply(this);
         }
-        if(node.getFigura() != null)
+        if(node.getExp() != null)
         {
-            node.getFigura().apply(this);
+            node.getExp().apply(this);
         }
-        outAConcatfiguraFigura(node);
-    }
-
-    public void inAFigurafinFigura(AFigurafinFigura node)
-    {
-        defaultIn(node);
-    }
-
-    public void outAFigurafinFigura(AFigurafinFigura node)
-    {
-        defaultOut(node);
-    }
-
-    @Override
-    public void caseAFigurafinFigura(AFigurafinFigura node)
-    {
-        inAFigurafinFigura(node);
-        if(node.getFig1() != null)
-        {
-            node.getFig1().apply(this);
-        }
-        if(node.getFigura() != null)
-        {
-            node.getFigura().apply(this);
-        }
-        outAFigurafinFigura(node);
+        outAConcatenarFiguraExp(node);
     }
 
     public void inAAPr1(AAPr1 node)
@@ -359,27 +244,27 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outABMayus0(node);
     }
 
-    public void inAFig1(AFig1 node)
+    public void inAFinFigura(AFinFigura node)
     {
         defaultIn(node);
     }
 
-    public void outAFig1(AFig1 node)
+    public void outAFinFigura(AFinFigura node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAFig1(AFig1 node)
+    public void caseAFinFigura(AFinFigura node)
     {
-        inAFig1(node);
+        inAFinFigura(node);
         if(node.getMayus() != null)
         {
             node.getMayus().apply(this);
         }
-        if(node.getFig0() != null)
+        if(node.getNombreFigura() != null)
         {
-            node.getFig0().apply(this);
+            node.getNombreFigura().apply(this);
         }
         if(node.getSl() != null)
         {
@@ -389,133 +274,133 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getMinus().apply(this);
         }
-        outAFig1(node);
+        outAFinFigura(node);
     }
 
-    public void inAAFig0(AAFig0 node)
+    public void inAANombreFigura(AANombreFigura node)
     {
         defaultIn(node);
     }
 
-    public void outAAFig0(AAFig0 node)
+    public void outAANombreFigura(AANombreFigura node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAAFig0(AAFig0 node)
+    public void caseAANombreFigura(AANombreFigura node)
     {
-        inAAFig0(node);
+        inAANombreFigura(node);
         if(node.getLine() != null)
         {
             node.getLine().apply(this);
         }
-        outAAFig0(node);
+        outAANombreFigura(node);
     }
 
-    public void inABFig0(ABFig0 node)
+    public void inABNombreFigura(ABNombreFigura node)
     {
         defaultIn(node);
     }
 
-    public void outABFig0(ABFig0 node)
+    public void outABNombreFigura(ABNombreFigura node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseABFig0(ABFig0 node)
+    public void caseABNombreFigura(ABNombreFigura node)
     {
-        inABFig0(node);
+        inABNombreFigura(node);
         if(node.getCircle() != null)
         {
             node.getCircle().apply(this);
         }
-        outABFig0(node);
+        outABNombreFigura(node);
     }
 
-    public void inACFig0(ACFig0 node)
+    public void inACNombreFigura(ACNombreFigura node)
     {
         defaultIn(node);
     }
 
-    public void outACFig0(ACFig0 node)
+    public void outACNombreFigura(ACNombreFigura node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseACFig0(ACFig0 node)
+    public void caseACNombreFigura(ACNombreFigura node)
     {
-        inACFig0(node);
+        inACNombreFigura(node);
         if(node.getRect() != null)
         {
             node.getRect().apply(this);
         }
-        outACFig0(node);
+        outACNombreFigura(node);
     }
 
-    public void inADFig0(ADFig0 node)
+    public void inADNombreFigura(ADNombreFigura node)
     {
         defaultIn(node);
     }
 
-    public void outADFig0(ADFig0 node)
+    public void outADNombreFigura(ADNombreFigura node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseADFig0(ADFig0 node)
+    public void caseADNombreFigura(ADNombreFigura node)
     {
-        inADFig0(node);
+        inADNombreFigura(node);
         if(node.getEllipse() != null)
         {
             node.getEllipse().apply(this);
         }
-        outADFig0(node);
+        outADNombreFigura(node);
     }
 
-    public void inAEFig0(AEFig0 node)
+    public void inAENombreFigura(AENombreFigura node)
     {
         defaultIn(node);
     }
 
-    public void outAEFig0(AEFig0 node)
+    public void outAENombreFigura(AENombreFigura node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAEFig0(AEFig0 node)
+    public void caseAENombreFigura(AENombreFigura node)
     {
-        inAEFig0(node);
+        inAENombreFigura(node);
         if(node.getPolygon() != null)
         {
             node.getPolygon().apply(this);
         }
-        outAEFig0(node);
+        outAENombreFigura(node);
     }
 
-    public void inAFFig0(AFFig0 node)
+    public void inAFNombreFigura(AFNombreFigura node)
     {
         defaultIn(node);
     }
 
-    public void outAFFig0(AFFig0 node)
+    public void outAFNombreFigura(AFNombreFigura node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAFFig0(AFFig0 node)
+    public void caseAFNombreFigura(AFNombreFigura node)
     {
-        inAFFig0(node);
+        inAFNombreFigura(node);
         if(node.getPolyline() != null)
         {
             node.getPolyline().apply(this);
         }
-        outAFFig0(node);
+        outAFNombreFigura(node);
     }
 
     public void inAAF(AAF node)
@@ -1732,6 +1617,10 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
     public void caseANum(ANum node)
     {
         inANum(node);
+        if(node.getB() != null)
+        {
+            node.getB().apply(this);
+        }
         if(node.getA() != null)
         {
             node.getA().apply(this);

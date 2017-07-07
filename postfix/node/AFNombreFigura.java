@@ -5,46 +5,46 @@ package postfix.node;
 import postfix.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AStart extends PStart
+public final class AFNombreFigura extends PNombreFigura
 {
-    private PExp _exp_;
+    private TPolyline _polyline_;
 
-    public AStart()
+    public AFNombreFigura()
     {
         // Constructor
     }
 
-    public AStart(
-        @SuppressWarnings("hiding") PExp _exp_)
+    public AFNombreFigura(
+        @SuppressWarnings("hiding") TPolyline _polyline_)
     {
         // Constructor
-        setExp(_exp_);
+        setPolyline(_polyline_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AStart(
-            cloneNode(this._exp_));
+        return new AFNombreFigura(
+            cloneNode(this._polyline_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAStart(this);
+        ((Analysis) sw).caseAFNombreFigura(this);
     }
 
-    public PExp getExp()
+    public TPolyline getPolyline()
     {
-        return this._exp_;
+        return this._polyline_;
     }
 
-    public void setExp(PExp node)
+    public void setPolyline(TPolyline node)
     {
-        if(this._exp_ != null)
+        if(this._polyline_ != null)
         {
-            this._exp_.parent(null);
+            this._polyline_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AStart extends PStart
             node.parent(this);
         }
 
-        this._exp_ = node;
+        this._polyline_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._exp_);
+            + toString(this._polyline_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._exp_ == child)
+        if(this._polyline_ == child)
         {
-            this._exp_ = null;
+            this._polyline_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AStart extends PStart
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._exp_ == oldChild)
+        if(this._polyline_ == oldChild)
         {
-            setExp((PExp) newChild);
+            setPolyline((TPolyline) newChild);
             return;
         }
 

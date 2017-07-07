@@ -5,46 +5,46 @@ package postfix.node;
 import postfix.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AStart extends PStart
+public final class AENombreFigura extends PNombreFigura
 {
-    private PExp _exp_;
+    private TPolygon _polygon_;
 
-    public AStart()
+    public AENombreFigura()
     {
         // Constructor
     }
 
-    public AStart(
-        @SuppressWarnings("hiding") PExp _exp_)
+    public AENombreFigura(
+        @SuppressWarnings("hiding") TPolygon _polygon_)
     {
         // Constructor
-        setExp(_exp_);
+        setPolygon(_polygon_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AStart(
-            cloneNode(this._exp_));
+        return new AENombreFigura(
+            cloneNode(this._polygon_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAStart(this);
+        ((Analysis) sw).caseAENombreFigura(this);
     }
 
-    public PExp getExp()
+    public TPolygon getPolygon()
     {
-        return this._exp_;
+        return this._polygon_;
     }
 
-    public void setExp(PExp node)
+    public void setPolygon(TPolygon node)
     {
-        if(this._exp_ != null)
+        if(this._polygon_ != null)
         {
-            this._exp_.parent(null);
+            this._polygon_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AStart extends PStart
             node.parent(this);
         }
 
-        this._exp_ = node;
+        this._polygon_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._exp_);
+            + toString(this._polygon_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._exp_ == child)
+        if(this._polygon_ == child)
         {
-            this._exp_ = null;
+            this._polygon_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AStart extends PStart
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._exp_ == oldChild)
+        if(this._polygon_ == oldChild)
         {
-            setExp((PExp) newChild);
+            setPolygon((TPolygon) newChild);
             return;
         }
 

@@ -5,46 +5,46 @@ package postfix.node;
 import postfix.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AStart extends PStart
+public final class APr1 extends PPr1
 {
-    private PExp _exp_;
+    private PFinFigura _finFigura_;
 
-    public AStart()
+    public APr1()
     {
         // Constructor
     }
 
-    public AStart(
-        @SuppressWarnings("hiding") PExp _exp_)
+    public APr1(
+        @SuppressWarnings("hiding") PFinFigura _finFigura_)
     {
         // Constructor
-        setExp(_exp_);
+        setFinFigura(_finFigura_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AStart(
-            cloneNode(this._exp_));
+        return new APr1(
+            cloneNode(this._finFigura_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAStart(this);
+        ((Analysis) sw).caseAPr1(this);
     }
 
-    public PExp getExp()
+    public PFinFigura getFinFigura()
     {
-        return this._exp_;
+        return this._finFigura_;
     }
 
-    public void setExp(PExp node)
+    public void setFinFigura(PFinFigura node)
     {
-        if(this._exp_ != null)
+        if(this._finFigura_ != null)
         {
-            this._exp_.parent(null);
+            this._finFigura_.parent(null);
         }
 
         if(node != null)
@@ -57,23 +57,23 @@ public final class AStart extends PStart
             node.parent(this);
         }
 
-        this._exp_ = node;
+        this._finFigura_ = node;
     }
 
     @Override
     public String toString()
     {
         return ""
-            + toString(this._exp_);
+            + toString(this._finFigura_);
     }
 
     @Override
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
-        if(this._exp_ == child)
+        if(this._finFigura_ == child)
         {
-            this._exp_ = null;
+            this._finFigura_ = null;
             return;
         }
 
@@ -84,9 +84,9 @@ public final class AStart extends PStart
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
-        if(this._exp_ == oldChild)
+        if(this._finFigura_ == oldChild)
         {
-            setExp((PExp) newChild);
+            setFinFigura((PFinFigura) newChild);
             return;
         }
 

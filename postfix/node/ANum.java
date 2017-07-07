@@ -10,6 +10,7 @@ public final class ANum extends PNum
     private TCo _co_;
     private TN _n_;
     private TCo _a_;
+    private TCo _b_;
 
     public ANum()
     {
@@ -19,7 +20,8 @@ public final class ANum extends PNum
     public ANum(
         @SuppressWarnings("hiding") TCo _co_,
         @SuppressWarnings("hiding") TN _n_,
-        @SuppressWarnings("hiding") TCo _a_)
+        @SuppressWarnings("hiding") TCo _a_,
+        @SuppressWarnings("hiding") TCo _b_)
     {
         // Constructor
         setCo(_co_);
@@ -27,6 +29,8 @@ public final class ANum extends PNum
         setN(_n_);
 
         setA(_a_);
+
+        setB(_b_);
 
     }
 
@@ -36,7 +40,8 @@ public final class ANum extends PNum
         return new ANum(
             cloneNode(this._co_),
             cloneNode(this._n_),
-            cloneNode(this._a_));
+            cloneNode(this._a_),
+            cloneNode(this._b_));
     }
 
     @Override
@@ -120,13 +125,39 @@ public final class ANum extends PNum
         this._a_ = node;
     }
 
+    public TCo getB()
+    {
+        return this._b_;
+    }
+
+    public void setB(TCo node)
+    {
+        if(this._b_ != null)
+        {
+            this._b_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._b_ = node;
+    }
+
     @Override
     public String toString()
     {
         return ""
             + toString(this._co_)
             + toString(this._n_)
-            + toString(this._a_);
+            + toString(this._a_)
+            + toString(this._b_);
     }
 
     @Override
@@ -148,6 +179,12 @@ public final class ANum extends PNum
         if(this._a_ == child)
         {
             this._a_ = null;
+            return;
+        }
+
+        if(this._b_ == child)
+        {
+            this._b_ = null;
             return;
         }
 
@@ -173,6 +210,12 @@ public final class ANum extends PNum
         if(this._a_ == oldChild)
         {
             setA((TCo) newChild);
+            return;
+        }
+
+        if(this._b_ == oldChild)
+        {
+            setB((TCo) newChild);
             return;
         }
 

@@ -5,34 +5,39 @@ package postfix.node;
 import postfix.analysis.*;
 
 @SuppressWarnings("nls")
-public final class AStart extends PStart
+public final class AConcatenarFiguraExp extends PExp
 {
     private PExp _exp_;
+    private PPr1 _pr1_;
 
-    public AStart()
+    public AConcatenarFiguraExp()
     {
         // Constructor
     }
 
-    public AStart(
-        @SuppressWarnings("hiding") PExp _exp_)
+    public AConcatenarFiguraExp(
+        @SuppressWarnings("hiding") PExp _exp_,
+        @SuppressWarnings("hiding") PPr1 _pr1_)
     {
         // Constructor
         setExp(_exp_);
+
+        setPr1(_pr1_);
 
     }
 
     @Override
     public Object clone()
     {
-        return new AStart(
-            cloneNode(this._exp_));
+        return new AConcatenarFiguraExp(
+            cloneNode(this._exp_),
+            cloneNode(this._pr1_));
     }
 
     @Override
     public void apply(Switch sw)
     {
-        ((Analysis) sw).caseAStart(this);
+        ((Analysis) sw).caseAConcatenarFiguraExp(this);
     }
 
     public PExp getExp()
@@ -60,11 +65,37 @@ public final class AStart extends PStart
         this._exp_ = node;
     }
 
+    public PPr1 getPr1()
+    {
+        return this._pr1_;
+    }
+
+    public void setPr1(PPr1 node)
+    {
+        if(this._pr1_ != null)
+        {
+            this._pr1_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._pr1_ = node;
+    }
+
     @Override
     public String toString()
     {
         return ""
-            + toString(this._exp_);
+            + toString(this._exp_)
+            + toString(this._pr1_);
     }
 
     @Override
@@ -74,6 +105,12 @@ public final class AStart extends PStart
         if(this._exp_ == child)
         {
             this._exp_ = null;
+            return;
+        }
+
+        if(this._pr1_ == child)
+        {
+            this._pr1_ = null;
             return;
         }
 
@@ -87,6 +124,12 @@ public final class AStart extends PStart
         if(this._exp_ == oldChild)
         {
             setExp((PExp) newChild);
+            return;
+        }
+
+        if(this._pr1_ == oldChild)
+        {
+            setPr1((PPr1) newChild);
             return;
         }
 
