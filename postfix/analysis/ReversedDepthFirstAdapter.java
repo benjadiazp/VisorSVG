@@ -1830,6 +1830,27 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         outACP(node);
     }
 
+    public void inADP(ADP node)
+    {
+        defaultIn(node);
+    }
+
+    public void outADP(ADP node)
+    {
+        defaultOut(node);
+    }
+
+    @Override
+    public void caseADP(ADP node)
+    {
+        inADP(node);
+        if(node.getP3() != null)
+        {
+            node.getP3().apply(this);
+        }
+        outADP(node);
+    }
+
     public void inAP3(AP3 node)
     {
         defaultIn(node);

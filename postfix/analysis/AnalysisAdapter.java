@@ -471,6 +471,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseADP(ADP node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseAP3(AP3 node)
     {
         defaultCase(node);
