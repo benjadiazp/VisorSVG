@@ -7,6 +7,7 @@ import postfix.analysis.*;
 @SuppressWarnings("nls")
 public final class AR2 extends PR2
 {
+    private PCoorx0 _coorx0_;
     private PCoory0 _coory0_;
     private PWid _wid_;
     private PHei _hei_;
@@ -17,11 +18,14 @@ public final class AR2 extends PR2
     }
 
     public AR2(
+        @SuppressWarnings("hiding") PCoorx0 _coorx0_,
         @SuppressWarnings("hiding") PCoory0 _coory0_,
         @SuppressWarnings("hiding") PWid _wid_,
         @SuppressWarnings("hiding") PHei _hei_)
     {
         // Constructor
+        setCoorx0(_coorx0_);
+
         setCoory0(_coory0_);
 
         setWid(_wid_);
@@ -34,6 +38,7 @@ public final class AR2 extends PR2
     public Object clone()
     {
         return new AR2(
+            cloneNode(this._coorx0_),
             cloneNode(this._coory0_),
             cloneNode(this._wid_),
             cloneNode(this._hei_));
@@ -43,6 +48,31 @@ public final class AR2 extends PR2
     public void apply(Switch sw)
     {
         ((Analysis) sw).caseAR2(this);
+    }
+
+    public PCoorx0 getCoorx0()
+    {
+        return this._coorx0_;
+    }
+
+    public void setCoorx0(PCoorx0 node)
+    {
+        if(this._coorx0_ != null)
+        {
+            this._coorx0_.parent(null);
+        }
+
+        if(node != null)
+        {
+            if(node.parent() != null)
+            {
+                node.parent().removeChild(node);
+            }
+
+            node.parent(this);
+        }
+
+        this._coorx0_ = node;
     }
 
     public PCoory0 getCoory0()
@@ -124,6 +154,7 @@ public final class AR2 extends PR2
     public String toString()
     {
         return ""
+            + toString(this._coorx0_)
             + toString(this._coory0_)
             + toString(this._wid_)
             + toString(this._hei_);
@@ -133,6 +164,12 @@ public final class AR2 extends PR2
     void removeChild(@SuppressWarnings("unused") Node child)
     {
         // Remove child
+        if(this._coorx0_ == child)
+        {
+            this._coorx0_ = null;
+            return;
+        }
+
         if(this._coory0_ == child)
         {
             this._coory0_ = null;
@@ -158,6 +195,12 @@ public final class AR2 extends PR2
     void replaceChild(@SuppressWarnings("unused") Node oldChild, @SuppressWarnings("unused") Node newChild)
     {
         // Replace child
+        if(this._coorx0_ == oldChild)
+        {
+            setCoorx0((PCoorx0) newChild);
+            return;
+        }
+
         if(this._coory0_ == oldChild)
         {
             setCoory0((PCoory0) newChild);

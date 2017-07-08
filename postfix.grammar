@@ -60,7 +60,7 @@ l0 = coorx coory coorx2 coory2;
 c1 = {a} att c2 | {b} c2 att | {c} att c2 [a]:att | {d} c2;
 c2 = coorcx coorcy rad;
 r1 = {a} att r2 | {b} r2 att | {c} att r2 [a]:att | {d} r2;
-r2 = coory0  wid hei;
+r2 = coorx0 coory0  wid hei;
 e1 = {a} att e0 | {b} e0 att | {c} att e0 [a]:att | {d} e0;
 e0 = coorcx coorcy radx rady;
 

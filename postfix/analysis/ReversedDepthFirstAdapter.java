@@ -1205,6 +1205,10 @@ public class ReversedDepthFirstAdapter extends AnalysisAdapter
         {
             node.getCoory0().apply(this);
         }
+        if(node.getCoorx0() != null)
+        {
+            node.getCoorx0().apply(this);
+        }
         outAR2(node);
     }
 

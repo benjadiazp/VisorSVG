@@ -1193,6 +1193,10 @@ public class DepthFirstAdapter extends AnalysisAdapter
     public void caseAR2(AR2 node)
     {
         inAR2(node);
+        if(node.getCoorx0() != null)
+        {
+            node.getCoorx0().apply(this);
+        }
         if(node.getCoory0() != null)
         {
             node.getCoory0().apply(this);
