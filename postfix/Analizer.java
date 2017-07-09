@@ -18,6 +18,7 @@ public class Analizer {
 
             //generar el arbol de parsing
             Start tree = p.parse();
+            tree.apply(new Visitador());
             tree.apply(new ASTPrinter());
             tree.apply(new ASTDisplay());
         }
