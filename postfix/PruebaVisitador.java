@@ -6,7 +6,7 @@ import postfix.node.*;
 import java.io.*;
 import java.io.BufferedReader;
 
-public class Analizer {
+public class PruebaVisitador {
     public static void main(String[] arguments) {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         String line;
@@ -18,8 +18,7 @@ public class Analizer {
 
             //generar el arbol de parsing
             Start tree = p.parse();
-            tree.apply(new ASTPrinter());
-            tree.apply(new ASTDisplay());
+            tree.apply(new Visitador());
         }
         catch(Exception e) {
             System.out.println(e.getMessage());

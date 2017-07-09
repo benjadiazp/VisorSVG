@@ -1,17 +1,27 @@
+package postfix;
+
 import postfix.node.*;
-import postfix.DepthFirstAdapter.*;
+import postfix.analysis.*;
+import postfix.analysis.DepthFirstAdapter.*;
 import java.util.LinkedList;
 
 public class Visitador extends DepthFirstAdapter {
   public LinkedList<String> lista = new LinkedList<>();
 
-  @Override
+  public Visitador()
+  {
+    
+  }
 
+
+  @Override
   public void caseALineF(ALineF node)
   {
       inALineF(node);
       if(node.getLine() != null)
       {
+
+        System.out.println("Línea creada.");
           node.getLine().apply(this);
       }
       if(node.getL1() != null)
