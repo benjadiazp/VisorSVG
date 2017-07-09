@@ -18,7 +18,9 @@ public class Rectangle
     strokewidth = sw;
     stroke = s;
   }
-
+public Rectangle () {
+  
+}
     public int getX() {
         return x;
     }
@@ -74,5 +76,5 @@ public class Rectangle
     public void setStroke(String stroke) {
         this.stroke = stroke;
     }
-  
+
 }

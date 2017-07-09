@@ -11,6 +11,9 @@ public class Polyline {
     stroke = s;
 
   }
+  public Polyline () {
+
+  }
 
     public int getPoints() {
         return points;
@@ -43,5 +46,5 @@ public class Polyline {
     public void setStroke(String stroke) {
         this.stroke = stroke;
     }
-  
+
 }

@@ -16,6 +16,9 @@ public class Circle {
     fill = f;
 
   }
+  public Circle () {
+
+  }
 
     public void setCx(int cx) {
         this.cx = cx;
@@ -64,5 +67,5 @@ public class Circle {
     public String getFill() {
         return fill;
     }
-  
+
 }

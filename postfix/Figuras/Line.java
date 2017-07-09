@@ -15,6 +15,9 @@ public class Line {
     stroke = s;
 
   }
+  public Line () {
+    
+  }
 
     public int getX1() {
         return x1;
@@ -63,5 +66,5 @@ public class Line {
     public void setStroke(String stroke) {
         this.stroke = stroke;
     }
-  
+
 }

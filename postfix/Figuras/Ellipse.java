@@ -17,6 +17,9 @@ public class Ellipse {
     stroke = s;
 
   }
+  public Ellipse () {
+
+  }
 
     public int getCx() {
         return cx;
@@ -73,5 +76,5 @@ public class Ellipse {
     public void setStroke(String stroke) {
         this.stroke = stroke;
     }
-  
+
 }

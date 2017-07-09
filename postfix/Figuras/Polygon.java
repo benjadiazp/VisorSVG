@@ -11,6 +11,9 @@ public class Polygon {
     stroke = s;
 
   }
+  public Polygon () {
+    
+  }
 
     public int getPoints() {
         return points;
@@ -43,5 +46,5 @@ public class Polygon {
     public void setStroke(String stroke) {
         this.stroke = stroke;
     }
-  
+
 }
