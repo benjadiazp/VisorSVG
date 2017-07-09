@@ -81,7 +81,7 @@ rady =  ry ig num;
 
 num = co n [a]:co;
 
-p = {a} att p3 | {b} p3 att | {c} att p3 [a]:att;
+p = {a} att p3 | {b} p3 att | {c} att p3 [a]:att | {d} p3;
 p3 = points ig co p0 [a]:co;
 p0 = {a} p1 | {b} p0 p1;
 p1 = n coma [a]:n;

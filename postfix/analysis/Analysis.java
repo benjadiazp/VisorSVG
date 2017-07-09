@@ -78,6 +78,7 @@ public interface Analysis extends Switch
     void caseAAP(AAP node);
     void caseABP(ABP node);
     void caseACP(ACP node);
+    void caseADP(ADP node);
     void caseAP3(AP3 node);
     void caseAAP0(AAP0 node);
     void caseABP0(ABP0 node);
