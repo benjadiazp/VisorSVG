@@ -17,6 +17,30 @@ public class Circle {
 
   }
 
+    public void setCx(int cx) {
+        this.cx = cx;
+    }
+
+    public void setCy(int cy) {
+        this.cy = cy;
+    }
+
+    public void setR(int r) {
+        this.r = r;
+    }
+
+    public void setStrokewidth(int strokewidth) {
+        this.strokewidth = strokewidth;
+    }
+
+    public void setStroke(String stroke) {
+        this.stroke = stroke;
+    }
+
+    public void setFill(String fill) {
+        this.fill = fill;
+    }
+
     public int getCx() {
         return cx;
     }
