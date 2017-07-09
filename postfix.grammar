@@ -50,8 +50,8 @@ figura = {unafigura} pr1 | {concatfigura} figura pr1 |{figurafin} figura fig1;
 pr1 = {a} minus f s mayus0 | {b} minus f mayus0 | {c} minus s f mayus0;
 mayus0 = {a} mayus | {b} sl mayus;
 fig1 = minus sl fig0 mayus;
-fig0 = {a} line| {b} circle| {c} rect| {d} ellipse| {e} polygon| {f} polyline;
-f = {a} line l1 | {b} circle c1 | {c} rect r1 | {d} ellipse e1 | {e} polygon p | {f} polyline [a]:p;
+fig0 = {line} line| {circle} circle| {rect} rect| {ellipse} ellipse| {polygon} polygon| {polyline} polyline;
+f = {line} line l1 | {circle} circle c1 | {rect} rect r1 | {ellipse} ellipse e1 | {polygon} polygon p | {polyline} polyline [a]:p;
 att = {a} att0 | {b} att att0;
 att0 = {a} fill ig co c0 [a]:co | {b} stroke ig co c0 [a]:co | {c} strokew ig num;
 

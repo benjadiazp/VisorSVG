@@ -270,73 +270,73 @@ public class Parser
                 push(goTo(5), list, false);
             }
             break;
-            case 12: /* reduce AAFig0 */
+            case 12: /* reduce ALineFig0 */
             {
                 ArrayList<Object> list = new12();
                 push(goTo(6), list, false);
             }
             break;
-            case 13: /* reduce ABFig0 */
+            case 13: /* reduce ACircleFig0 */
             {
                 ArrayList<Object> list = new13();
                 push(goTo(6), list, false);
             }
             break;
-            case 14: /* reduce ACFig0 */
+            case 14: /* reduce ARectFig0 */
             {
                 ArrayList<Object> list = new14();
                 push(goTo(6), list, false);
             }
             break;
-            case 15: /* reduce ADFig0 */
+            case 15: /* reduce AEllipseFig0 */
             {
                 ArrayList<Object> list = new15();
                 push(goTo(6), list, false);
             }
             break;
-            case 16: /* reduce AEFig0 */
+            case 16: /* reduce APolygonFig0 */
             {
                 ArrayList<Object> list = new16();
                 push(goTo(6), list, false);
             }
             break;
-            case 17: /* reduce AFFig0 */
+            case 17: /* reduce APolylineFig0 */
             {
                 ArrayList<Object> list = new17();
                 push(goTo(6), list, false);
             }
             break;
-            case 18: /* reduce AAF */
+            case 18: /* reduce ALineF */
             {
                 ArrayList<Object> list = new18();
                 push(goTo(7), list, false);
             }
             break;
-            case 19: /* reduce ABF */
+            case 19: /* reduce ACircleF */
             {
                 ArrayList<Object> list = new19();
                 push(goTo(7), list, false);
             }
             break;
-            case 20: /* reduce ACF */
+            case 20: /* reduce ARectF */
             {
                 ArrayList<Object> list = new20();
                 push(goTo(7), list, false);
             }
             break;
-            case 21: /* reduce ADF */
+            case 21: /* reduce AEllipseF */
             {
                 ArrayList<Object> list = new21();
                 push(goTo(7), list, false);
             }
             break;
-            case 22: /* reduce AEF */
+            case 22: /* reduce APolygonF */
             {
                 ArrayList<Object> list = new22();
                 push(goTo(7), list, false);
             }
             break;
-            case 23: /* reduce AFF */
+            case 23: /* reduce APolylineF */
             {
                 ArrayList<Object> list = new23();
                 push(goTo(7), list, false);
@@ -984,7 +984,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new12() /* reduce AAFig0 */
+    ArrayList<Object> new12() /* reduce ALineFig0 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -995,7 +995,7 @@ public class Parser
         TLine tlineNode2;
         tlineNode2 = (TLine)nodeArrayList1.get(0);
 
-        pfig0Node1 = new AAFig0(tlineNode2);
+        pfig0Node1 = new ALineFig0(tlineNode2);
         }
 	nodeList.add(pfig0Node1);
         return nodeList;
@@ -1004,7 +1004,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new13() /* reduce ABFig0 */
+    ArrayList<Object> new13() /* reduce ACircleFig0 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1015,7 +1015,7 @@ public class Parser
         TCircle tcircleNode2;
         tcircleNode2 = (TCircle)nodeArrayList1.get(0);
 
-        pfig0Node1 = new ABFig0(tcircleNode2);
+        pfig0Node1 = new ACircleFig0(tcircleNode2);
         }
 	nodeList.add(pfig0Node1);
         return nodeList;
@@ -1024,7 +1024,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new14() /* reduce ACFig0 */
+    ArrayList<Object> new14() /* reduce ARectFig0 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1035,7 +1035,7 @@ public class Parser
         TRect trectNode2;
         trectNode2 = (TRect)nodeArrayList1.get(0);
 
-        pfig0Node1 = new ACFig0(trectNode2);
+        pfig0Node1 = new ARectFig0(trectNode2);
         }
 	nodeList.add(pfig0Node1);
         return nodeList;
@@ -1044,7 +1044,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new15() /* reduce ADFig0 */
+    ArrayList<Object> new15() /* reduce AEllipseFig0 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1055,7 +1055,7 @@ public class Parser
         TEllipse tellipseNode2;
         tellipseNode2 = (TEllipse)nodeArrayList1.get(0);
 
-        pfig0Node1 = new ADFig0(tellipseNode2);
+        pfig0Node1 = new AEllipseFig0(tellipseNode2);
         }
 	nodeList.add(pfig0Node1);
         return nodeList;
@@ -1064,7 +1064,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new16() /* reduce AEFig0 */
+    ArrayList<Object> new16() /* reduce APolygonFig0 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1075,7 +1075,7 @@ public class Parser
         TPolygon tpolygonNode2;
         tpolygonNode2 = (TPolygon)nodeArrayList1.get(0);
 
-        pfig0Node1 = new AEFig0(tpolygonNode2);
+        pfig0Node1 = new APolygonFig0(tpolygonNode2);
         }
 	nodeList.add(pfig0Node1);
         return nodeList;
@@ -1084,7 +1084,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new17() /* reduce AFFig0 */
+    ArrayList<Object> new17() /* reduce APolylineFig0 */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1095,7 +1095,7 @@ public class Parser
         TPolyline tpolylineNode2;
         tpolylineNode2 = (TPolyline)nodeArrayList1.get(0);
 
-        pfig0Node1 = new AFFig0(tpolylineNode2);
+        pfig0Node1 = new APolylineFig0(tpolylineNode2);
         }
 	nodeList.add(pfig0Node1);
         return nodeList;
@@ -1104,7 +1104,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new18() /* reduce AAF */
+    ArrayList<Object> new18() /* reduce ALineF */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1118,7 +1118,7 @@ public class Parser
         tlineNode2 = (TLine)nodeArrayList1.get(0);
         pl1Node3 = (PL1)nodeArrayList2.get(0);
 
-        pfNode1 = new AAF(tlineNode2, pl1Node3);
+        pfNode1 = new ALineF(tlineNode2, pl1Node3);
         }
 	nodeList.add(pfNode1);
         return nodeList;
@@ -1127,7 +1127,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new19() /* reduce ABF */
+    ArrayList<Object> new19() /* reduce ACircleF */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1141,7 +1141,7 @@ public class Parser
         tcircleNode2 = (TCircle)nodeArrayList1.get(0);
         pc1Node3 = (PC1)nodeArrayList2.get(0);
 
-        pfNode1 = new ABF(tcircleNode2, pc1Node3);
+        pfNode1 = new ACircleF(tcircleNode2, pc1Node3);
         }
 	nodeList.add(pfNode1);
         return nodeList;
@@ -1150,7 +1150,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new20() /* reduce ACF */
+    ArrayList<Object> new20() /* reduce ARectF */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1164,7 +1164,7 @@ public class Parser
         trectNode2 = (TRect)nodeArrayList1.get(0);
         pr1Node3 = (PR1)nodeArrayList2.get(0);
 
-        pfNode1 = new ACF(trectNode2, pr1Node3);
+        pfNode1 = new ARectF(trectNode2, pr1Node3);
         }
 	nodeList.add(pfNode1);
         return nodeList;
@@ -1173,7 +1173,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new21() /* reduce ADF */
+    ArrayList<Object> new21() /* reduce AEllipseF */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1187,7 +1187,7 @@ public class Parser
         tellipseNode2 = (TEllipse)nodeArrayList1.get(0);
         pe1Node3 = (PE1)nodeArrayList2.get(0);
 
-        pfNode1 = new ADF(tellipseNode2, pe1Node3);
+        pfNode1 = new AEllipseF(tellipseNode2, pe1Node3);
         }
 	nodeList.add(pfNode1);
         return nodeList;
@@ -1196,7 +1196,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new22() /* reduce AEF */
+    ArrayList<Object> new22() /* reduce APolygonF */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1210,7 +1210,7 @@ public class Parser
         tpolygonNode2 = (TPolygon)nodeArrayList1.get(0);
         ppNode3 = (PP)nodeArrayList2.get(0);
 
-        pfNode1 = new AEF(tpolygonNode2, ppNode3);
+        pfNode1 = new APolygonF(tpolygonNode2, ppNode3);
         }
 	nodeList.add(pfNode1);
         return nodeList;
@@ -1219,7 +1219,7 @@ public class Parser
 
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    ArrayList<Object> new23() /* reduce AFF */
+    ArrayList<Object> new23() /* reduce APolylineF */
     {
         @SuppressWarnings("hiding") ArrayList<Object> nodeList = new ArrayList<Object>();
 
@@ -1233,7 +1233,7 @@ public class Parser
         tpolylineNode2 = (TPolyline)nodeArrayList1.get(0);
         ppNode3 = (PP)nodeArrayList2.get(0);
 
-        pfNode1 = new AFF(tpolylineNode2, ppNode3);
+        pfNode1 = new APolylineF(tpolylineNode2, ppNode3);
         }
 	nodeList.add(pfNode1);
         return nodeList;

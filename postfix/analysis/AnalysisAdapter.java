@@ -147,73 +147,73 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseAAFig0(AAFig0 node)
+    public void caseALineFig0(ALineFig0 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseABFig0(ABFig0 node)
+    public void caseACircleFig0(ACircleFig0 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseACFig0(ACFig0 node)
+    public void caseARectFig0(ARectFig0 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseADFig0(ADFig0 node)
+    public void caseAEllipseFig0(AEllipseFig0 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAEFig0(AEFig0 node)
+    public void caseAPolygonFig0(APolygonFig0 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAFFig0(AFFig0 node)
+    public void caseAPolylineFig0(APolylineFig0 node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAAF(AAF node)
+    public void caseALineF(ALineF node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseABF(ABF node)
+    public void caseACircleF(ACircleF node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseACF(ACF node)
+    public void caseARectF(ARectF node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseADF(ADF node)
+    public void caseAEllipseF(AEllipseF node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAEF(AEF node)
+    public void caseAPolygonF(APolygonF node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseAFF(AFF node)
+    public void caseAPolylineF(APolylineF node)
     {
         defaultCase(node);
     }

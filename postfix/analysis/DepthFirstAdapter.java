@@ -392,146 +392,146 @@ public class DepthFirstAdapter extends AnalysisAdapter
         outAFig1(node);
     }
 
-    public void inAAFig0(AAFig0 node)
+    public void inALineFig0(ALineFig0 node)
     {
         defaultIn(node);
     }
 
-    public void outAAFig0(AAFig0 node)
+    public void outALineFig0(ALineFig0 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAAFig0(AAFig0 node)
+    public void caseALineFig0(ALineFig0 node)
     {
-        inAAFig0(node);
+        inALineFig0(node);
         if(node.getLine() != null)
         {
             node.getLine().apply(this);
         }
-        outAAFig0(node);
+        outALineFig0(node);
     }
 
-    public void inABFig0(ABFig0 node)
+    public void inACircleFig0(ACircleFig0 node)
     {
         defaultIn(node);
     }
 
-    public void outABFig0(ABFig0 node)
+    public void outACircleFig0(ACircleFig0 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseABFig0(ABFig0 node)
+    public void caseACircleFig0(ACircleFig0 node)
     {
-        inABFig0(node);
+        inACircleFig0(node);
         if(node.getCircle() != null)
         {
             node.getCircle().apply(this);
         }
-        outABFig0(node);
+        outACircleFig0(node);
     }
 
-    public void inACFig0(ACFig0 node)
+    public void inARectFig0(ARectFig0 node)
     {
         defaultIn(node);
     }
 
-    public void outACFig0(ACFig0 node)
+    public void outARectFig0(ARectFig0 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseACFig0(ACFig0 node)
+    public void caseARectFig0(ARectFig0 node)
     {
-        inACFig0(node);
+        inARectFig0(node);
         if(node.getRect() != null)
         {
             node.getRect().apply(this);
         }
-        outACFig0(node);
+        outARectFig0(node);
     }
 
-    public void inADFig0(ADFig0 node)
+    public void inAEllipseFig0(AEllipseFig0 node)
     {
         defaultIn(node);
     }
 
-    public void outADFig0(ADFig0 node)
+    public void outAEllipseFig0(AEllipseFig0 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseADFig0(ADFig0 node)
+    public void caseAEllipseFig0(AEllipseFig0 node)
     {
-        inADFig0(node);
+        inAEllipseFig0(node);
         if(node.getEllipse() != null)
         {
             node.getEllipse().apply(this);
         }
-        outADFig0(node);
+        outAEllipseFig0(node);
     }
 
-    public void inAEFig0(AEFig0 node)
+    public void inAPolygonFig0(APolygonFig0 node)
     {
         defaultIn(node);
     }
 
-    public void outAEFig0(AEFig0 node)
+    public void outAPolygonFig0(APolygonFig0 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAEFig0(AEFig0 node)
+    public void caseAPolygonFig0(APolygonFig0 node)
     {
-        inAEFig0(node);
+        inAPolygonFig0(node);
         if(node.getPolygon() != null)
         {
             node.getPolygon().apply(this);
         }
-        outAEFig0(node);
+        outAPolygonFig0(node);
     }
 
-    public void inAFFig0(AFFig0 node)
+    public void inAPolylineFig0(APolylineFig0 node)
     {
         defaultIn(node);
     }
 
-    public void outAFFig0(AFFig0 node)
+    public void outAPolylineFig0(APolylineFig0 node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAFFig0(AFFig0 node)
+    public void caseAPolylineFig0(APolylineFig0 node)
     {
-        inAFFig0(node);
+        inAPolylineFig0(node);
         if(node.getPolyline() != null)
         {
             node.getPolyline().apply(this);
         }
-        outAFFig0(node);
+        outAPolylineFig0(node);
     }
 
-    public void inAAF(AAF node)
+    public void inALineF(ALineF node)
     {
         defaultIn(node);
     }
 
-    public void outAAF(AAF node)
+    public void outALineF(ALineF node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAAF(AAF node)
+    public void caseALineF(ALineF node)
     {
-        inAAF(node);
+        inALineF(node);
         if(node.getLine() != null)
         {
             node.getLine().apply(this);
@@ -540,23 +540,23 @@ public class DepthFirstAdapter extends AnalysisAdapter
         {
             node.getL1().apply(this);
         }
-        outAAF(node);
+        outALineF(node);
     }
 
-    public void inABF(ABF node)
+    public void inACircleF(ACircleF node)
     {
         defaultIn(node);
     }
 
-    public void outABF(ABF node)
+    public void outACircleF(ACircleF node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseABF(ABF node)
+    public void caseACircleF(ACircleF node)
     {
-        inABF(node);
+        inACircleF(node);
         if(node.getCircle() != null)
         {
             node.getCircle().apply(this);
@@ -565,23 +565,23 @@ public class DepthFirstAdapter extends AnalysisAdapter
         {
             node.getC1().apply(this);
         }
-        outABF(node);
+        outACircleF(node);
     }
 
-    public void inACF(ACF node)
+    public void inARectF(ARectF node)
     {
         defaultIn(node);
     }
 
-    public void outACF(ACF node)
+    public void outARectF(ARectF node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseACF(ACF node)
+    public void caseARectF(ARectF node)
     {
-        inACF(node);
+        inARectF(node);
         if(node.getRect() != null)
         {
             node.getRect().apply(this);
@@ -590,23 +590,23 @@ public class DepthFirstAdapter extends AnalysisAdapter
         {
             node.getR1().apply(this);
         }
-        outACF(node);
+        outARectF(node);
     }
 
-    public void inADF(ADF node)
+    public void inAEllipseF(AEllipseF node)
     {
         defaultIn(node);
     }
 
-    public void outADF(ADF node)
+    public void outAEllipseF(AEllipseF node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseADF(ADF node)
+    public void caseAEllipseF(AEllipseF node)
     {
-        inADF(node);
+        inAEllipseF(node);
         if(node.getEllipse() != null)
         {
             node.getEllipse().apply(this);
@@ -615,23 +615,23 @@ public class DepthFirstAdapter extends AnalysisAdapter
         {
             node.getE1().apply(this);
         }
-        outADF(node);
+        outAEllipseF(node);
     }
 
-    public void inAEF(AEF node)
+    public void inAPolygonF(APolygonF node)
     {
         defaultIn(node);
     }
 
-    public void outAEF(AEF node)
+    public void outAPolygonF(APolygonF node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAEF(AEF node)
+    public void caseAPolygonF(APolygonF node)
     {
-        inAEF(node);
+        inAPolygonF(node);
         if(node.getPolygon() != null)
         {
             node.getPolygon().apply(this);
@@ -640,23 +640,23 @@ public class DepthFirstAdapter extends AnalysisAdapter
         {
             node.getP().apply(this);
         }
-        outAEF(node);
+        outAPolygonF(node);
     }
 
-    public void inAFF(AFF node)
+    public void inAPolylineF(APolylineF node)
     {
         defaultIn(node);
     }
 
-    public void outAFF(AFF node)
+    public void outAPolylineF(APolylineF node)
     {
         defaultOut(node);
     }
 
     @Override
-    public void caseAFF(AFF node)
+    public void caseAPolylineF(APolylineF node)
     {
-        inAFF(node);
+        inAPolylineF(node);
         if(node.getPolyline() != null)
         {
             node.getPolyline().apply(this);
@@ -665,7 +665,7 @@ public class DepthFirstAdapter extends AnalysisAdapter
         {
             node.getA().apply(this);
         }
-        outAFF(node);
+        outAPolylineF(node);
     }
 
     public void inAAAtt(AAAtt node)
