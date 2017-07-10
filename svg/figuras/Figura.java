@@ -5,6 +5,42 @@ public abstract class Figura
   protected String stroke;
   protected String fill;
   protected int strokewidth;
+  public Figura(int sw, String s, String f)
+  {
+    stroke = s;
+    strokewidth = sw;
+    fill = f;
+  }
+
+  public void setStroke(String s)
+  {
+    stroke = s;
+  }
+
+  public void setStrokewidth(int sw)
+  {
+    strokewidth = sw;
+  }
+
+  public void setFill(String fill)
+  {
+    fill = f;
+  }
+
+  public String getStroke(String s)
+  {
+    return stroke;
+  }
+
+  public String getStrokewidth(int sw)
+  {
+    return strokewidth;
+  }
+
+  public String getFill(String fill)
+  {
+    return fill;
+  }
 /*  public void setX1(){return;}
   public void setY1(){return;}
   public void setX2(){return;}
