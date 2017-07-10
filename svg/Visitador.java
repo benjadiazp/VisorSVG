@@ -91,7 +91,7 @@ public class Visitador extends DepthFirstAdapter {
       case "rady": ellipse.setRy(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
-
+      case "fill": line.Fill("red");
 
       default: break;
     }

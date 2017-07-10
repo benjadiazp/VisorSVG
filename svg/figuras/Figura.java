@@ -27,17 +27,17 @@ public abstract class Figura
     fill = f;
   }
 
-  public String getStroke(String s)
+  public String getStroke()
   {
     return stroke;
   }
 
-  public String getStrokewidth(int sw)
+  public int getStrokewidth()
   {
     return strokewidth;
   }
 
-  public String getFill(String fill)
+  public String getFill()
   {
     return fill;
   }
