@@ -1,8 +1,17 @@
 /SVGSVG/nbproject/private/
 .DS_Store
 postfix/.DS_Store
+<<<<<<< HEAD
+postfix/.DS_Store
+.DS_Store
+postfix/.DS_Store
+=======
+.DS_Store
+.DS_Store
+<<<<<<< HEAD
 .DS_Store
 .DS_Store
 .DS_Store
-.DS_Store
-.DS_Store
+=======
+>>>>>>> dcdc5b7e8c654386c20d45d2dd41cc7a52e3622e
+>>>>>>> c2a1722d3a703312fb10fc2a64a1d1c25b7b904c
