@@ -5,19 +5,16 @@ public class Rectangle extends Figura  {
   int y;
   int width;
   int height;
-  String fill;
-  int strokewidth;
-  String stroke;
 
-  public Rectangle (int x, int y, int w, int h, String f, int sw, String s)
+
+  public Rectangle (int x, int y, int w, int h, int strokewidth, String stroke, String fill)
   {
     this.x = x;
     this.y = y;
     width = w;
     height = h;
-    fill = f;
-    strokewidth = sw;
-    stroke = s;
+    super(strokewidth, stroke, fill);
+
   }
 public Rectangle () {
 
@@ -52,30 +49,6 @@ public Rectangle () {
 
     public void setHeight(int height) {
         this.height = height;
-    }
-
-    public String getFill() {
-        return fill;
-    }
-
-    public void setFill(String fill) {
-        this.fill = fill;
-    }
-
-    public int getStrokewidth() {
-        return strokewidth;
-    }
-
-    public void setStrokewidth(int strokewidth) {
-        this.strokewidth = strokewidth;
-    }
-
-    public String getStroke() {
-        return stroke;
-    }
-
-    public void setStroke(String stroke) {
-        this.stroke = stroke;
     }
 
 }

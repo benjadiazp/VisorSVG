@@ -1,12 +1,14 @@
 package svg.figuras;
 
+import java.util.LinkedList;
+
 public class Polyline extends Figura {
-  int points;
+  LinkedList<String> points = new LinkedList();
   int strokewidth;
   String fill;
   String stroke;
 
-  public Polyline (int p, int sw, String f, String s){
+  public Polyline (LinkedList p, int sw, String f, String s){
     points = p;
     strokewidth = sw;
     fill = f;

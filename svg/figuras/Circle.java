@@ -5,18 +5,13 @@ public class Circle extends Figura{
   int cx;
   int cy;
   int r;
-  int strokewidth;
-  String stroke;
-  String fill;
 
 
-  public Circle (int cx, int cy, int r, int sw, String s, String f) {
+  public Circle (int cx, int cy, int r, int strokewidth, String stroke, String fill) {
     this.cx = cx;
     this.cy = cy;
     this.r = r;
-    strokewidth = sw;
-    stroke = s;
-    fill = f;
+    super(strokewidth, stroke, fill); 
 
   }
   public Circle () {
@@ -31,22 +26,6 @@ public class Circle extends Figura{
         this.cy = cy;
     }
 
-    public void setR(int r) {
-        this.r = r;
-    }
-
-    public void setStrokewidth(int strokewidth) {
-        this.strokewidth = strokewidth;
-    }
-
-    public void setStroke(String stroke) {
-        this.stroke = stroke;
-    }
-
-    public void setFill(String fill) {
-        this.fill = fill;
-    }
-
     public int getCx() {
         return cx;
     }
@@ -57,18 +36,6 @@ public class Circle extends Figura{
 
     public int getR() {
         return r;
-    }
-
-    public int getStrokewidth() {
-        return strokewidth;
-    }
-
-    public String getStroke() {
-        return stroke;
-    }
-
-    public String getFill() {
-        return fill;
     }
 
 }

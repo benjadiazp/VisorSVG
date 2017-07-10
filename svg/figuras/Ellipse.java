@@ -5,18 +5,13 @@ public class Ellipse extends Figura{
   int cy;
   int rx;
   int ry;
-  int strokewidth;
-  String fill;
-  String stroke;
 
-  public Ellipse (int cx, int cy, int rx, int ry, int sw, String f, String s){
+  public Ellipse (int cx, int cy, int rx, int ry, int strokewidth, String stroke, String fill){
     this.cx = cx;
     this.cy = cy;
     this.rx = rx;
     this.ry = ry;
-    strokewidth = sw;
-    fill = f;
-    stroke = s;
+    super(strokewidth, stroke, fill);
 
   }
   public Ellipse () {
@@ -53,30 +48,6 @@ public class Ellipse extends Figura{
 
     public void setRy(int ry) {
         this.ry = ry;
-    }
-
-    public int getStrokewidth() {
-        return strokewidth;
-    }
-
-    public void setStrokewidth(int strokewidth) {
-        this.strokewidth = strokewidth;
-    }
-
-    public String getFill() {
-        return fill;
-    }
-
-    public void setFill(String fill) {
-        this.fill = fill;
-    }
-
-    public String getStroke() {
-        return stroke;
-    }
-
-    public void setStroke(String stroke) {
-        this.stroke = stroke;
     }
 
 }

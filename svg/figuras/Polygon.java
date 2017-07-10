@@ -1,27 +1,26 @@
 package svg.figuras;
 
-public class Polygon extends Figura{
-  int points;
-  int strokewidth;
-  String fill;
-  String stroke;
+import java.util.LinkedList;
 
-  public Polygon (int p, int sw, String f, String s){
+public class Polygon extends Figura{
+
+  LinkedList<String> points = new LinkedList();
+
+
+  public Polygon (LinkedList p, int strokewidth, String stroke, String fill){
     points = p;
-    strokewidth = sw;
-    fill = f;
-    stroke = s;
+    super(strokewidth, stroke, fill);
 
   }
   public Polygon () {
 
   }
 
-    public int getPoints() {
+    public String getPoints() {
         return points;
     }
 
-    public void setPoints(int points) {
+    public void setPoints(String points) {
         this.points = points;
     }
 
