@@ -25,7 +25,7 @@ public abstract class Figura
 
   public void setFill(String fill)
   {
-    fill = f;
+    this.fill = fill;
   }
 
   public String getStroke()
