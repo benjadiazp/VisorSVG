@@ -7,11 +7,12 @@ public class Ellipse extends Figura{
   int ry;
 
   public Ellipse (int cx, int cy, int rx, int ry, int strokewidth, String stroke, String fill){
+    super(strokewidth, stroke, fill);
     this.cx = cx;
     this.cy = cy;
     this.rx = rx;
     this.ry = ry;
-    super(strokewidth, stroke, fill);
+
 
   }
   public Ellipse () {

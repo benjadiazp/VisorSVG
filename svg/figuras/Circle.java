@@ -8,10 +8,11 @@ public class Circle extends Figura{
 
 
   public Circle (int cx, int cy, int r, int strokewidth, String stroke, String fill) {
+    super(strokewidth, stroke, fill);
     this.cx = cx;
     this.cy = cy;
     this.r = r;
-    super(strokewidth, stroke, fill); 
+
 
   }
   public Circle () {

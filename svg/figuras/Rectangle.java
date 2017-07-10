@@ -9,11 +9,11 @@ public class Rectangle extends Figura  {
 
   public Rectangle (int x, int y, int w, int h, int strokewidth, String stroke, String fill)
   {
+    super(strokewidth, stroke, fill);
     this.x = x;
     this.y = y;
     width = w;
     height = h;
-    super(strokewidth, stroke, fill);
 
   }
 public Rectangle () {

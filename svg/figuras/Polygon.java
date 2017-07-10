@@ -8,8 +8,8 @@ public class Polygon extends Figura{
 
 
   public Polygon (LinkedList p, int strokewidth, String stroke, String fill){
-    points = p;
     super(strokewidth, stroke, fill);
+    points = p;
 
   }
   public Polygon () {

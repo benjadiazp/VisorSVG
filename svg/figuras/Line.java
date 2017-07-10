@@ -7,11 +7,12 @@ public class Line extends Figura{
   int y2;
 
   public Line (int x1, int x2, int y1, int y2, int strokewidth, String stroke, String fill) {
+    super(strokewidth, stroke, fill);
     this.x1 = x1;
     this.x2 = x2;
     this.y1 = y1;
     this.y2 = y2;
-    super(strokewidth, stroke, fill);
+
 
   }
   public Line () {

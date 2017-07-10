@@ -8,7 +8,8 @@ public class Polyline extends Figura {
   String fill;
   String stroke;
 
-  public Polyline (LinkedList p, int sw, String f, String s){
+  public Polyline (LinkedList p, int strokewidth, String stroke, String fill){
+    super(strokewidth, stroke, fill);
     points = p;
     strokewidth = sw;
     fill = f;
