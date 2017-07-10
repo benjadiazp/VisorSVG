@@ -16,7 +16,7 @@ public class Circle extends Figura{
 
   }
   public Circle () {
-    super(0, null, null); 
+    super(0, null, null);
   }
 
     public void setCx(int cx) {
@@ -38,5 +38,6 @@ public class Circle extends Figura{
     public int getR() {
         return r;
     }
+
 
 }
