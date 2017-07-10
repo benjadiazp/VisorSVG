@@ -3,14 +3,16 @@ package postfix;
 import postfix.node.*;
 import postfix.analysis.*;
 import postfix.analysis.DepthFirstAdapter.*;
+import postfix.figuras.*;
+import postfix.figuras.Figura;
 import java.util.LinkedList;
 
 public class Visitador extends DepthFirstAdapter {
-  public LinkedList<String> lista = new LinkedList<>();
+  public LinkedList<Figura> lista = new LinkedList<>();
 
   public Visitador()
   {
-    
+
   }
 
 
@@ -21,7 +23,7 @@ public class Visitador extends DepthFirstAdapter {
       if(node.getLine() != null)
       {
 
-        System.out.println("Línea creada.");
+        System.out.println("Crear línea.");
           node.getLine().apply(this);
       }
       if(node.getL1() != null)
@@ -35,6 +37,7 @@ public class Visitador extends DepthFirstAdapter {
       inACircleF(node);
       if(node.getCircle() != null)
       {
+        System.out.println("Crear círculo.");
           node.getCircle().apply(this);
       }
       if(node.getC1() != null)
@@ -48,6 +51,7 @@ public class Visitador extends DepthFirstAdapter {
       inARectF(node);
       if(node.getRect() != null)
       {
+        System.out.println("Crear rectángulo.");
           node.getRect().apply(this);
       }
       if(node.getR1() != null)
@@ -61,6 +65,7 @@ public class Visitador extends DepthFirstAdapter {
       inAEllipseF(node);
       if(node.getEllipse() != null)
       {
+        System.out.println("Crear ellipse.");
           node.getEllipse().apply(this);
       }
       if(node.getE1() != null)
@@ -74,6 +79,7 @@ public class Visitador extends DepthFirstAdapter {
       inAPolygonF(node);
       if(node.getPolygon() != null)
       {
+        System.out.println("Crear polygon.");
           node.getPolygon().apply(this);
       }
       if(node.getP() != null)
@@ -84,6 +90,7 @@ public class Visitador extends DepthFirstAdapter {
   }
   public void caseAPolylineF(APolylineF node)
   {
+    System.out.println("Crear polyline.");
       inAPolylineF(node);
       if(node.getPolyline() != null)
       {
