@@ -102,5 +102,136 @@ public class Visitador extends DepthFirstAdapter {
       outAPolylineF(node);
   }
 
+  @Override
+  public void caseACoorx(ACoorx node)
+  {
+      inACoorx(node);
+      if(node.getNum() != null)
+      {
+          node.getNum().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getX1() != null)
+      {
+          node.getX1().apply(this);
+      }
+      outACoorx(node);
+  }
 
+  @Override
+  public void caseACoory(ACoory node)
+  {
+      inACoory(node);
+      if(node.getNum() != null)
+      {
+          node.getNum().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getY1() != null)
+      {
+          node.getY1().apply(this);
+      }
+      outACoory(node);
+  }
+
+  @Override
+  public void caseACoorx2(ACoorx2 node)
+  {
+      inACoorx2(node);
+      if(node.getNum() != null)
+      {
+          node.getNum().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getX2() != null)
+      {
+          node.getX2().apply(this);
+      }
+      outACoorx2(node);
+  }
+
+  @Override
+  public void caseACoory2(ACoory2 node)
+  {
+      inACoory2(node);
+      if(node.getNum() != null)
+      {
+          node.getNum().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getY2() != null)
+      {
+          node.getY2().apply(this);
+      }
+      outACoory2(node);
+  }
+
+  @Override
+  public void caseACoorcx(ACoorcx node)
+  {
+      inACoorcx(node);
+      if(node.getNum() != null)
+      {
+          node.getNum().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getCx() != null)
+      {
+          node.getCx().apply(this);
+      }
+      outACoorcx(node);
+  }
+
+  @Override
+  public void caseACoorcy(ACoorcy node)
+  {
+      inACoorcy(node);
+      if(node.getNum() != null)
+      {
+          node.getNum().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getCy() != null)
+      {
+          node.getCy().apply(this);
+      }
+      outACoorcy(node);
+  }
+
+  @Override
+  public void caseARad(ARad node)
+  {
+      inARad(node);
+      if(node.getNum() != null)
+      {
+          node.getNum().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getR0() != null)
+      {
+          node.getR0().apply(this);
+      }
+      outARad(node);
+  }
 }
