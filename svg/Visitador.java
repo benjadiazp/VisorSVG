@@ -23,6 +23,7 @@ public class Visitador extends DepthFirstAdapter {
   Ellipse ellipse;
   Polygon polygon;
   Polyline polyline;
+
   /*
 
   1: línea
@@ -36,27 +37,32 @@ public class Visitador extends DepthFirstAdapter {
 
   void asignarValor(String val)
   {
-    int val2;
-    val2 = Integer.parseInt(val);
+    int val2=0;
     switch (attActual)
     {
       case "coorx": line.setX1(val2);
+      val2 = Integer.parseInt(val);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "coory": line.setY1(val2);
+      val2 = Integer.parseInt(val);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "coorx2": line.setX2(val2);
+      val2 = Integer.parseInt(val);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "coory2": line.setY2(val2);
+      val2 = Integer.parseInt(val);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "coorcx": switch (tipoFig)
       {
         case 2: circle.setCx(val2);
+        val2 = Integer.parseInt(val);
         System.out.print(attActual + ": " + val + " "); break; //Círculo
         case 4: ellipse.setCx(val2);
+        val2 = Integer.parseInt(val);
         System.out.print(attActual + ": " + val + " "); break; //Elipse
         default: break;
       }
@@ -64,34 +70,111 @@ public class Visitador extends DepthFirstAdapter {
       case "coorcy": switch (tipoFig)
       {
         case 2: circle.setCy(val2);
+        val2 = Integer.parseInt(val);
         System.out.print(attActual + ": " + val + " "); break; //Círculo
         case 4: ellipse.setCy(val2);
+        val2 = Integer.parseInt(val);
         System.out.print(attActual + ": " + val + " "); break; //Elipse
         default: break;
       }
       break;
       case "rad": circle.setR(val2);
+      val2 = Integer.parseInt(val);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "coorx0": rect.setX(val2);
+      val2 = Integer.parseInt(val);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "coory0": rect.setY(val2);
+      val2 = Integer.parseInt(val);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "wid": rect.setWidth(val2);
+      val2 = Integer.parseInt(val);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "hei": rect.setHeight(val2);
+      val2 = Integer.parseInt(val);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "radx": ellipse.setRx(val2);
+      val2 = Integer.parseInt(val);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "rady": ellipse.setRy(val2);
+      val2 = Integer.parseInt(val);
       System.out.print(attActual + ": " + val + " ");
       break;
-      case "fill": line.Fill("red");
+      case "fill": switch (tipoFig)
+      {
+
+        case 1: line.setFill(val);
+        System.out.print(attActual + ": " + val + " ");
+        break;
+        case 2: circle.setFill(val);
+        System.out.print(attActual + ": " + val + " ");
+        break;
+        case 3: rect.setFill(val);
+        System.out.print(attActual + ": " + val + " ");
+        break;
+        case 4: ellipse.setFill(val);
+        System.out.print(attActual + ": " + val + " ");
+        break;
+        case 5: polygon.setFill(val);
+        System.out.print(attActual + ": " + val + " ");
+        break;
+        case 6: polyline.setFill(val);
+        System.out.print(attActual + ": " + val + " ");
+        break;
+        default: break;
+      } break;
+      case "stroke": switch (tipoFig)
+      {
+
+        case 1: line.setStroke(val);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        case 2: circle.setStroke(val);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        case 3: rect.setStroke(val);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        case 4: ellipse.setStroke(val);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        case 5: polygon.setStroke(val);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        case 6: polyline.setStroke(val);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        default: break;
+      } break;
+      case "strokewidth": val2 = Integer.parseInt(val);
+      switch (tipoFig)
+      {
+        case 1: line.setStrokewidth(val2);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        case 2: circle.setStrokewidth(val2);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        case 3: rect.setStrokewidth(val2);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        case 4: ellipse.setStrokewidth(val2);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        case 5: polygon.setStrokewidth(val2);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        case 6: polyline.setStrokewidth(val2);
+        System.out.println(attActual + ": " + val + " ");
+        break;
+        default: break;
+      } break;
 
       default: break;
     }
@@ -542,6 +625,7 @@ public class Visitador extends DepthFirstAdapter {
       inAAAtt0(node);
       if(node.getFill() != null)
       {
+        attActual = "fill";
           node.getFill().apply(this);
       }
       if(node.getIg() != null)
@@ -554,6 +638,7 @@ public class Visitador extends DepthFirstAdapter {
       }
       if(node.getC0() != null)
       {
+        asignarValor(node.getC0().getText());
           node.getC0().apply(this);
       }
       if(node.getA() != null)
@@ -569,6 +654,7 @@ public class Visitador extends DepthFirstAdapter {
       inABAtt0(node);
       if(node.getStroke() != null)
       {
+        attActual = "stroke";
           node.getStroke().apply(this);
       }
       if(node.getIg() != null)
@@ -581,6 +667,7 @@ public class Visitador extends DepthFirstAdapter {
       }
       if(node.getC0() != null)
       {
+        asignarValor(node.getC0().getText());
           node.getC0().apply(this);
       }
       if(node.getA() != null)
@@ -596,6 +683,7 @@ public class Visitador extends DepthFirstAdapter {
       inACAtt0(node);
       if(node.getStrokew() != null)
       {
+        attActual = "strokewidth";
           node.getStrokew().apply(this);
       }
       if(node.getIg() != null)
@@ -615,6 +703,7 @@ public class Visitador extends DepthFirstAdapter {
       inAASp0(node);
       if(node.getFill() != null)
       {
+        attActual = "fill";
           node.getFill().apply(this);
       }
       if(node.getDosp() != null)
@@ -623,6 +712,7 @@ public class Visitador extends DepthFirstAdapter {
       }
       if(node.getC0() != null)
       {
+        asignarValor(node.getC0().getText());
           node.getC0().apply(this);
       }
       outAASp0(node);
@@ -634,6 +724,7 @@ public class Visitador extends DepthFirstAdapter {
       inABSp0(node);
       if(node.getStroke() != null)
       {
+        attActual = "stroke";
           node.getStroke().apply(this);
       }
       if(node.getDosp() != null)
@@ -642,6 +733,7 @@ public class Visitador extends DepthFirstAdapter {
       }
       if(node.getC0() != null)
       {
+        asignarValor(node.getC0().getText());
           node.getC0().apply(this);
       }
       outABSp0(node);
@@ -653,6 +745,7 @@ public class Visitador extends DepthFirstAdapter {
       inACSp0(node);
       if(node.getStrokew() != null)
       {
+        attActual = "strokewidth";
           node.getStrokew().apply(this);
       }
       if(node.getDosp() != null)
@@ -661,6 +754,7 @@ public class Visitador extends DepthFirstAdapter {
       }
       if(node.getN() != null)
       {
+        asignarValor(node.getN().getText());
           node.getN().apply(this);
       }
       outACSp0(node);
