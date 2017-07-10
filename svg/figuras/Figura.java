@@ -5,6 +5,7 @@ public abstract class Figura
   protected String stroke;
   protected String fill;
   protected int strokewidth;
+
   public Figura(int sw, String s, String f)
   {
     stroke = s;
