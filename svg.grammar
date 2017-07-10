@@ -1,4 +1,4 @@
-Package postfix;
+Package svg;
 
 Tokens
 	n = ['0' .. '9']+;
