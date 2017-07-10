@@ -1,6 +1,6 @@
-package svg.figuras; 
+package svg.figuras;
 
-public class Ellipse {
+public class Ellipse extends Figura{
   int cx;
   int cy;
   int rx;

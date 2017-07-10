@@ -1,6 +1,6 @@
-package svg.figuras; 
+package svg.figuras;
 
-public class Line {
+public class Line extends Figura{
   int x1;
   int x2;
   int y1;

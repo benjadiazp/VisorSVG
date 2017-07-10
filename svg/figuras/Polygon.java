@@ -1,6 +1,6 @@
-package svg.figuras; 
+package svg.figuras;
 
-public class Polygon {
+public class Polygon extends Figura{
   int points;
   int strokewidth;
   String fill;

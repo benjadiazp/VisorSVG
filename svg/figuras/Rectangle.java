@@ -1,7 +1,6 @@
-package svg.figuras; 
+package svg.figuras;
 
-public class Rectangle
-{
+public class Rectangle extends Figura  {
   int x;
   int y;
   int width;
