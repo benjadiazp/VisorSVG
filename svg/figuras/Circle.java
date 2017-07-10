@@ -39,5 +39,9 @@ public class Circle extends Figura{
         return r;
     }
 
+    public void setR(int r) {
+      this.r = r; 
+    }
+
 
 }
