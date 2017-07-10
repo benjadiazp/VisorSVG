@@ -1,20 +1,13 @@
 package svg;
-
-<<<<<<< HEAD:svg/Visitador.java
 import svg.node.*;
 import svg.analysis.*;
 import svg.analysis.DepthFirstAdapter.*;
 import svg.figuras.*;
 import svg.figuras.Figura;
-=======
-import postfix.node.*;
-import postfix.analysis.*;
-import postfix.analysis.DepthFirstAdapter.*;
->>>>>>> 0acbb43a79168c03d9059ebeb7fcf2df4707a35d:postfix/Visitador.java
 import java.util.LinkedList;
 
 public class Visitador extends DepthFirstAdapter {
-  public LinkedList<String> lista = new LinkedList<>();
+  public LinkedList<Figura> lista = new LinkedList<>();
 
   public Visitador()
   {
@@ -43,6 +36,7 @@ public class Visitador extends DepthFirstAdapter {
       inACircleF(node);
       if(node.getCircle() != null)
       {
+        System.out.println("Crear círculo.");
           node.getCircle().apply(this);
       }
       if(node.getC1() != null)
@@ -56,6 +50,7 @@ public class Visitador extends DepthFirstAdapter {
       inARectF(node);
       if(node.getRect() != null)
       {
+        System.out.println("Crear círculo.");
           node.getRect().apply(this);
       }
       if(node.getR1() != null)
@@ -69,6 +64,7 @@ public class Visitador extends DepthFirstAdapter {
       inAEllipseF(node);
       if(node.getEllipse() != null)
       {
+        System.out.println("Crear círculo.");
           node.getEllipse().apply(this);
       }
       if(node.getE1() != null)
@@ -82,6 +78,7 @@ public class Visitador extends DepthFirstAdapter {
       inAPolygonF(node);
       if(node.getPolygon() != null)
       {
+        System.out.println("Crear círculo.");
           node.getPolygon().apply(this);
       }
       if(node.getP() != null)
@@ -95,6 +92,7 @@ public class Visitador extends DepthFirstAdapter {
       inAPolylineF(node);
       if(node.getPolyline() != null)
       {
+        System.out.println("Crear círculo.");
           node.getPolyline().apply(this);
       }
       if(node.getA() != null)
