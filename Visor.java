@@ -18,7 +18,7 @@ public class Visor extends JPanel {
 	}// M�todo principal de la clase
 
 	public static void main( String[] args ) {
-		
+
 		//leer archivo html con instrucciones svg
 		//parsear el archivo de entrada
 		//indicar errores si el formato no corresponde, y abortar
