@@ -8,6 +8,19 @@ import java.util.LinkedList;
 
 public class Visitador extends DepthFirstAdapter {
   public LinkedList<Figura> lista = new LinkedList<>();
+  private Figura figActual;
+  private int tipoFig;
+
+  /*
+
+  1: línea
+  2: círculo
+  3: elipse
+  4: polígono
+  5: polilínea
+  6: rectángulo
+
+  */
 
   public Visitador()
   {
@@ -23,6 +36,7 @@ public class Visitador extends DepthFirstAdapter {
       {
 
         System.out.println("Crear línea...");
+        figActual = new Line();
           node.getLine().apply(this);
       }
       if(node.getL1() != null)
