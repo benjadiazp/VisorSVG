@@ -16,6 +16,7 @@ public class Ellipse extends Figura{
 
   }
   public Ellipse () {
+    super(0, null, null); 
 
   }
 

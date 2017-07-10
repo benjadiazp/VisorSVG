@@ -14,6 +14,7 @@ public class Line extends Figura{
     this.y2 = y2;
   }
   public Line (){
+    super(0, null, null); 
 
   }
 

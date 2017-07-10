@@ -12,7 +12,9 @@ public class Polygon extends Figura{
     points = p;
 
   }
+
   public Polygon () {
+    super(0, null, null); 
 
   }
 
@@ -23,6 +25,4 @@ public class Polygon extends Figura{
     public void setPoints(LinkedList points) {
         this.points = points;
     }
-
-
 }

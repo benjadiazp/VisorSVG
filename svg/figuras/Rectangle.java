@@ -16,9 +16,9 @@ public class Rectangle extends Figura  {
     height = h;
 
   }
-public Rectangle () {
-
-}
+  public Rectangle () {
+    super(0, null, null); 
+  }
     public int getX() {
         return x;
     }
