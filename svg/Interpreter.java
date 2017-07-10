@@ -1,6 +1,6 @@
-package postfix;
-import postfix.analysis.*;
-import postfix.node.*;
+package svg;
+import svg.analysis.*;
+import svg.node.*;
 import java.util.Stack;
 
 class Interpreter extends DepthFirstAdapter {

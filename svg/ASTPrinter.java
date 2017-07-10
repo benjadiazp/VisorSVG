@@ -1,14 +1,14 @@
 /* -*- jde -*- ASTPrinter.java.in */
 
-package postfix;
+package svg;
 
 import java.util.*;
 
 /*
  * Import your grammar packages here
  */
-import postfix.analysis.*;
-import postfix.node.*;
+import svg.analysis.*;
+import svg.node.*;
 
 /**
  * Text display of the AST, with (optionally) color output.

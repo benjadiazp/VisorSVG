@@ -1,10 +1,10 @@
 package svg;
 
-import postfix.node.*;
-import postfix.analysis.*;
-import postfix.analysis.DepthFirstAdapter.*;
-import postfix.figuras.*;
-import postfix.figuras.Figura;
+import svg.node.*;
+import svg.analysis.*;
+import svg.analysis.DepthFirstAdapter.*;
+import svg.figuras.*;
+import svg.figuras.Figura;
 import java.util.LinkedList;
 
 public class Visitador extends DepthFirstAdapter {

@@ -9,8 +9,8 @@ import java.util.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.tree.*;
-import postfix.analysis.*;
-import postfix.node.*;
+import svg.analysis.*;
+import svg.node.*;
 
 public class ASTDisplay extends DepthFirstAdapter
 {

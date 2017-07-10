@@ -1,8 +1,8 @@
-package postfix;
-import postfix.analysis.*;
-import postfix.parser.*;
-import postfix.lexer.*;
-import postfix.node.*;
+package svg;
+import svg.analysis.*;
+import svg.parser.*;
+import svg.lexer.*;
+import svg.node.*;
 import java.io.*;
 import java.io.BufferedReader;
 
