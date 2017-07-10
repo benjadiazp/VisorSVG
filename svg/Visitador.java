@@ -4,23 +4,93 @@ import svg.analysis.*;
 import svg.analysis.DepthFirstAdapter.*;
 import svg.figuras.*;
 import svg.figuras.Figura;
+import svg.figuras.Line;
+import svg.figuras.Circle;
+import svg.figuras.Rectangle;
+import svg.figuras.Ellipse;
+import svg.figuras.Polygon;
+import svg.figuras.Polyline;
 import java.util.LinkedList;
 
 public class Visitador extends DepthFirstAdapter {
   public LinkedList<Figura> lista = new LinkedList<>();
   private Figura figActual;
   private int tipoFig;
-
+  String attActual;
   /*
 
   1: línea
   2: círculo
-  3: elipse
-  4: polígono
-  5: polilínea
-  6: rectángulo
+  3: rectángulo
+  4: elipse
+  5: polígono
+  6: polilínea
 
   */
+
+  void asignarValor(String val)
+  {
+    int val2;
+    switch (attActual)
+    {
+      case "coorx": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setX1(val2);
+      break;
+      /*case "coory": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setY1(val2);
+      break;
+      case "coorx2": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setX2(val2);
+      break;
+      case "coory2": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setY2(val2);
+      break;
+      case "coorcx": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setCx(val2);
+      break;
+      case "coorcy": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setCy(val2);
+      break;
+      case "rad": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setRad(val2);
+      break;
+      case "coorx0": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setX0(val2);
+      break;
+      case "coory0": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setY0(val2);
+      break;
+      case "wid": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setWid(val2);
+      break;
+      case "hei": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setHei(val2);
+      break;
+      case "radx": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setRadx(val2);
+      break;
+      case "rady": System.out.print(attActual + ": " + val);
+      val2 = Integer.parseInt(val);
+      figActual.setRady(val2);
+      break;
+*/
+      default: break;
+    }
+  }
+
+
 
   public Visitador()
   {
@@ -37,6 +107,7 @@ public class Visitador extends DepthFirstAdapter {
 
         System.out.println("Crear línea...");
         figActual = new Line();
+        tipoFig = 1;
           node.getLine().apply(this);
       }
       if(node.getL1() != null)
@@ -51,6 +122,8 @@ public class Visitador extends DepthFirstAdapter {
       if(node.getCircle() != null)
       {
         System.out.println("Crear círculo...");
+          figActual = new Circle();
+          tipoFig = 2;
           node.getCircle().apply(this);
       }
       if(node.getC1() != null)
@@ -65,6 +138,8 @@ public class Visitador extends DepthFirstAdapter {
       if(node.getRect() != null)
       {
         System.out.println("Crear rectángulo...");
+        tipoFig = 3;
+          figActual = new Rectangle();
           node.getRect().apply(this);
       }
       if(node.getR1() != null)
@@ -79,6 +154,8 @@ public class Visitador extends DepthFirstAdapter {
       if(node.getEllipse() != null)
       {
         System.out.println("Crear elipse...");
+        tipoFig = 4;
+          figActual = new Ellipse();
           node.getEllipse().apply(this);
       }
       if(node.getE1() != null)
@@ -93,6 +170,8 @@ public class Visitador extends DepthFirstAdapter {
       if(node.getPolygon() != null)
       {
         System.out.println("Crear polígono...");
+        tipoFig = 5;
+          figActual = new Polygon();
           node.getPolygon().apply(this);
       }
       if(node.getP() != null)
@@ -107,6 +186,8 @@ public class Visitador extends DepthFirstAdapter {
       if(node.getPolyline() != null)
       {
         System.out.println("Crear polilínea...");
+          figActual = new Polyline();
+          tipoFig = 6;
           node.getPolyline().apply(this);
       }
       if(node.getA() != null)
@@ -122,6 +203,7 @@ public class Visitador extends DepthFirstAdapter {
       inACoorx(node);
       if(node.getNum() != null)
       {
+        attActual = "coorx";
           node.getNum().apply(this);
       }
       if(node.getIg() != null)
@@ -141,6 +223,7 @@ public class Visitador extends DepthFirstAdapter {
       inACoory(node);
       if(node.getNum() != null)
       {
+        attActual = "coory";
           node.getNum().apply(this);
       }
       if(node.getIg() != null)
@@ -160,6 +243,7 @@ public class Visitador extends DepthFirstAdapter {
       inACoorx2(node);
       if(node.getNum() != null)
       {
+        attActual = "coorx2";
           node.getNum().apply(this);
       }
       if(node.getIg() != null)
@@ -179,6 +263,7 @@ public class Visitador extends DepthFirstAdapter {
       inACoory2(node);
       if(node.getNum() != null)
       {
+        attActual = "coory2";
           node.getNum().apply(this);
       }
       if(node.getIg() != null)
@@ -198,6 +283,7 @@ public class Visitador extends DepthFirstAdapter {
       inACoorcx(node);
       if(node.getNum() != null)
       {
+        attActual = "coorcx";
           node.getNum().apply(this);
       }
       if(node.getIg() != null)
@@ -217,6 +303,7 @@ public class Visitador extends DepthFirstAdapter {
       inACoorcy(node);
       if(node.getNum() != null)
       {
+        attActual = "coorcy";
           node.getNum().apply(this);
       }
       if(node.getIg() != null)
@@ -236,6 +323,7 @@ public class Visitador extends DepthFirstAdapter {
       inARad(node);
       if(node.getNum() != null)
       {
+        attActual = "rad";
           node.getNum().apply(this);
       }
       if(node.getIg() != null)
@@ -248,4 +336,148 @@ public class Visitador extends DepthFirstAdapter {
       }
       outARad(node);
   }
+  @Override
+  public void caseACoorx0(ACoorx0 node)
+  {
+      inACoorx0(node);
+      if(node.getNum() != null)
+      {
+        attActual = "coorx0";
+          node.getNum().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getX0() != null)
+      {
+          node.getX0().apply(this);
+      }
+      outACoorx0(node);
+  }
+
+  @Override
+  public void caseACoory0(ACoory0 node)
+  {
+      inACoory0(node);
+      if(node.getNum() != null)
+      {
+        attActual = "coory0";
+          node.getNum().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getY0() != null)
+      {
+          node.getY0().apply(this);
+      }
+      outACoory0(node);
+  }
+
+  @Override
+  public void caseAWid(AWid node)
+  {
+      inAWid(node);
+      if(node.getWidth() != null)
+      {
+        attActual = "wid";
+          node.getWidth().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getNum() != null)
+      {
+          node.getNum().apply(this);
+      }
+      outAWid(node);
+  }
+
+  @Override
+  public void caseAHei(AHei node)
+  {
+      inAHei(node);
+      if(node.getHeight() != null)
+      {
+        attActual = "hei";
+          node.getHeight().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getNum() != null)
+      {
+          node.getNum().apply(this);
+      }
+      outAHei(node);
+  }
+
+  @Override
+  public void caseARadx(ARadx node)
+  {
+      inARadx(node);
+      if(node.getNum() != null)
+      {
+        attActual = "radx";
+          node.getNum().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getRx() != null)
+      {
+          node.getRx().apply(this);
+      }
+      outARadx(node);
+  }
+
+  @Override
+  public void caseARady(ARady node)
+  {
+      inARady(node);
+      if(node.getNum() != null)
+      {
+        attActual = "rady";
+          node.getNum().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getRy() != null)
+      {
+          node.getRy().apply(this);
+      }
+      outARady(node);
+  }
+
+
+
+  @Override
+  public void caseANum(ANum node) //IMPORTANTE
+  {
+      inANum(node);
+      if(node.getA() != null)
+      {
+          node.getA().apply(this);
+      }
+      if(node.getN() != null)
+      {
+        //Modificar acá.
+        asignarValor(node.getN().toString());
+          node.getN().apply(this);
+      }
+      if(node.getCo() != null)
+      {
+          node.getCo().apply(this);
+      }
+      outANum(node);
+  }
+
+
 }
