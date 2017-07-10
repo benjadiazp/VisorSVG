@@ -1,3 +1,5 @@
+package svg.figuras; 
+
 public class Polyline {
   int points;
   int strokewidth;

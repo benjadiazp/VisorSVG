@@ -1,3 +1,5 @@
+package svg.figuras; 
+
 public class Ellipse {
   int cx;
   int cy;

@@ -1,3 +1,5 @@
+package svg.figuras; 
+
 public class Rectangle
 {
   int x;
@@ -19,7 +21,7 @@ public class Rectangle
     stroke = s;
   }
 public Rectangle () {
-  
+
 }
     public int getX() {
         return x;

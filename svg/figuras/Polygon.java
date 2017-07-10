@@ -1,3 +1,5 @@
+package svg.figuras; 
+
 public class Polygon {
   int points;
   int strokewidth;
@@ -12,7 +14,7 @@ public class Polygon {
 
   }
   public Polygon () {
-    
+
   }
 
     public int getPoints() {

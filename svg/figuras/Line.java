@@ -1,3 +1,5 @@
+package svg.figuras; 
+
 public class Line {
   int x1;
   int x2;
@@ -16,7 +18,7 @@ public class Line {
 
   }
   public Line () {
-    
+
   }
 
     public int getX1() {

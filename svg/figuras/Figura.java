@@ -1,4 +1,4 @@
-package postfix.figuras;
+package svg.figuras;
 
 public abstract class Figura
 {

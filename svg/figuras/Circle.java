@@ -1,4 +1,5 @@
-package svg;
+package svg.figuras;
+
 public class Circle {
   int cx;
   int cy;
