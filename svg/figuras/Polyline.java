@@ -1,6 +1,6 @@
-package svg.figuras; 
+package svg.figuras;
 
-public class Polyline {
+public class Polyline extends Figura {
   int points;
   int strokewidth;
   String fill;

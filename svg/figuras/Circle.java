@@ -1,9 +1,7 @@
-<<<<<<< HEAD:svg/figuras/Circle.java
+
 package svg.figuras;
 
-=======
->>>>>>> c2a1722d3a703312fb10fc2a64a1d1c25b7b904c:postfix/Figuras/Circle.java
-public class Circle {
+public class Circle extends Figura{
   int cx;
   int cy;
   int r;
