@@ -14,9 +14,15 @@ import java.util.LinkedList;
 
 public class Visitador extends DepthFirstAdapter {
   public LinkedList<Figura> lista = new LinkedList<>();
-  private Figura figActual;
   private int tipoFig;
+  int contFig = -1;
   String attActual;
+  Line line;
+  Circle circle;
+  Rectangle rect;
+  Ellipse ellipse;
+  Polygon polygon;
+  Polyline polyline;
   /*
 
   1: línea
@@ -31,61 +37,62 @@ public class Visitador extends DepthFirstAdapter {
   void asignarValor(String val)
   {
     int val2;
+    val2 = Integer.parseInt(val);
     switch (attActual)
     {
-      case "coorx": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setX1(val2);
+      case "coorx": line.setX1(val2);
+      System.out.print(attActual + ": " + val + " ");
       break;
-      /*case "coory": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setY1(val2);
+      case "coory": line.setY1(val2);
+      System.out.print(attActual + ": " + val + " ");
       break;
-      case "coorx2": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setX2(val2);
+      case "coorx2": line.setX2(val2);
+      System.out.print(attActual + ": " + val + " ");
       break;
-      case "coory2": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setY2(val2);
+      case "coory2": line.setY2(val2);
+      System.out.print(attActual + ": " + val + " ");
       break;
-      case "coorcx": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setCx(val2);
+      case "coorcx": switch (tipoFig)
+      {
+        case 2: circle.setCx(val2);
+        System.out.print(attActual + ": " + val + " "); break; //Círculo
+        case 4: ellipse.setCx(val2);
+        System.out.print(attActual + ": " + val + " "); break; //Elipse
+        default: break;
+      }
       break;
-      case "coorcy": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setCy(val2);
+      case "coorcy": switch (tipoFig)
+      {
+        case 2: circle.setCy(val2);
+        System.out.print(attActual + ": " + val + " "); break; //Círculo
+        case 4: ellipse.setCy(val2);
+        System.out.print(attActual + ": " + val + " "); break; //Elipse
+        default: break;
+      }
       break;
-      case "rad": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setRad(val2);
+      case "rad": circle.setR(val2);
+      System.out.print(attActual + ": " + val + " ");
       break;
-      case "coorx0": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setX0(val2);
+      case "coorx0": rect.setX(val2);
+      System.out.print(attActual + ": " + val + " ");
       break;
-      case "coory0": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setY0(val2);
+      case "coory0": rect.setY(val2);
+      System.out.print(attActual + ": " + val + " ");
       break;
-      case "wid": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setWid(val2);
+      case "wid": rect.setWidth(val2);
+      System.out.print(attActual + ": " + val + " ");
       break;
-      case "hei": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setHei(val2);
+      case "hei": rect.setHeight(val2);
+      System.out.print(attActual + ": " + val + " ");
       break;
-      case "radx": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setRadx(val2);
+      case "radx": ellipse.setRx(val2);
+      System.out.print(attActual + ": " + val + " ");
       break;
-      case "rady": System.out.print(attActual + ": " + val);
-      val2 = Integer.parseInt(val);
-      figActual.setRady(val2);
+      case "rady": ellipse.setRy(val2);
+      System.out.print(attActual + ": " + val + " ");
       break;
-*/
+
+
       default: break;
     }
   }
@@ -97,6 +104,79 @@ public class Visitador extends DepthFirstAdapter {
 
   }
 
+  @Override
+  public void caseAAPr1(AAPr1 node)
+  {
+      inAAPr1(node);
+      if(node.getMinus() != null)
+      {
+          node.getMinus().apply(this);
+      }
+      if(node.getF() != null)
+      {
+          contFig++;
+          System.out.println("");
+          node.getF().apply(this);
+      }
+      if(node.getS() != null)
+      {
+          node.getS().apply(this);
+      }
+      if(node.getMayus0() != null)
+      {
+          node.getMayus0().apply(this);
+      }
+      outAAPr1(node);
+  }
+
+  @Override
+  public void caseABPr1(ABPr1 node)
+  {
+      inABPr1(node);
+      if(node.getMinus() != null)
+      {
+          node.getMinus().apply(this);
+      }
+      if(node.getF() != null)
+      {
+          contFig++;
+          System.out.println("");
+          node.getF().apply(this);
+      }
+      if(node.getMayus0() != null)
+      {
+          node.getMayus0().apply(this);
+      }
+      outABPr1(node);
+  }
+
+  @Override
+  public void caseACPr1(ACPr1 node)
+  {
+      inACPr1(node);
+      if(node.getMinus() != null)
+      {
+          node.getMinus().apply(this);
+      }
+      if(node.getS() != null)
+      {
+          node.getS().apply(this);
+      }
+      if(node.getF() != null)
+      {
+          contFig++;
+          System.out.println("");
+          node.getF().apply(this);
+      }
+      if(node.getMayus0() != null)
+      {
+          node.getMayus0().apply(this);
+      }
+      outACPr1(node);
+  }
+
+
+
 
   @Override
   public void caseALineF(ALineF node)
@@ -105,8 +185,8 @@ public class Visitador extends DepthFirstAdapter {
       if(node.getLine() != null)
       {
 
-        System.out.println("Crear línea...");
-        figActual = new Line();
+        System.out.println("Crear línea... (" + contFig + " figuras).");
+        line = new Line();
         tipoFig = 1;
           node.getLine().apply(this);
       }
@@ -121,8 +201,8 @@ public class Visitador extends DepthFirstAdapter {
       inACircleF(node);
       if(node.getCircle() != null)
       {
-        System.out.println("Crear círculo...");
-          figActual = new Circle();
+        System.out.println("Crear círculo... (" + contFig + " figuras).");
+          circle = new Circle();
           tipoFig = 2;
           node.getCircle().apply(this);
       }
@@ -137,9 +217,9 @@ public class Visitador extends DepthFirstAdapter {
       inARectF(node);
       if(node.getRect() != null)
       {
-        System.out.println("Crear rectángulo...");
+        System.out.println("Crear rectángulo... (" + contFig + " figuras).");
         tipoFig = 3;
-          figActual = new Rectangle();
+          rect = new Rectangle();
           node.getRect().apply(this);
       }
       if(node.getR1() != null)
@@ -153,9 +233,9 @@ public class Visitador extends DepthFirstAdapter {
       inAEllipseF(node);
       if(node.getEllipse() != null)
       {
-        System.out.println("Crear elipse...");
+        System.out.println("Crear elipse... (" + contFig + " figuras).");
         tipoFig = 4;
-          figActual = new Ellipse();
+          ellipse = new Ellipse();
           node.getEllipse().apply(this);
       }
       if(node.getE1() != null)
@@ -169,9 +249,9 @@ public class Visitador extends DepthFirstAdapter {
       inAPolygonF(node);
       if(node.getPolygon() != null)
       {
-        System.out.println("Crear polígono...");
+        System.out.println("Crear polígono... (" + contFig + " figuras).");
         tipoFig = 5;
-          figActual = new Polygon();
+          polygon = new Polygon();
           node.getPolygon().apply(this);
       }
       if(node.getP() != null)
@@ -185,8 +265,8 @@ public class Visitador extends DepthFirstAdapter {
       inAPolylineF(node);
       if(node.getPolyline() != null)
       {
-        System.out.println("Crear polilínea...");
-          figActual = new Polyline();
+        System.out.println("Crear polilínea... (" + contFig + " figuras).");
+          polyline = new Polyline();
           tipoFig = 6;
           node.getPolyline().apply(this);
       }
@@ -456,6 +536,136 @@ public class Visitador extends DepthFirstAdapter {
       outARady(node);
   }
 
+  @Override
+  public void caseAAAtt0(AAAtt0 node)
+  {
+      inAAAtt0(node);
+      if(node.getFill() != null)
+      {
+          node.getFill().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getCo() != null)
+      {
+          node.getCo().apply(this);
+      }
+      if(node.getC0() != null)
+      {
+          node.getC0().apply(this);
+      }
+      if(node.getA() != null)
+      {
+          node.getA().apply(this);
+      }
+      outAAAtt0(node);
+  }
+
+  @Override
+  public void caseABAtt0(ABAtt0 node)
+  {
+      inABAtt0(node);
+      if(node.getStroke() != null)
+      {
+          node.getStroke().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getCo() != null)
+      {
+          node.getCo().apply(this);
+      }
+      if(node.getC0() != null)
+      {
+          node.getC0().apply(this);
+      }
+      if(node.getA() != null)
+      {
+          node.getA().apply(this);
+      }
+      outABAtt0(node);
+  }
+
+  @Override
+  public void caseACAtt0(ACAtt0 node)
+  {
+      inACAtt0(node);
+      if(node.getStrokew() != null)
+      {
+          node.getStrokew().apply(this);
+      }
+      if(node.getIg() != null)
+      {
+          node.getIg().apply(this);
+      }
+      if(node.getNum() != null)
+      {
+          node.getNum().apply(this);
+      }
+      outACAtt0(node);
+  }
+
+  @Override
+  public void caseAASp0(AASp0 node)
+  {
+      inAASp0(node);
+      if(node.getFill() != null)
+      {
+          node.getFill().apply(this);
+      }
+      if(node.getDosp() != null)
+      {
+          node.getDosp().apply(this);
+      }
+      if(node.getC0() != null)
+      {
+          node.getC0().apply(this);
+      }
+      outAASp0(node);
+  }
+
+  @Override
+  public void caseABSp0(ABSp0 node)
+  {
+      inABSp0(node);
+      if(node.getStroke() != null)
+      {
+          node.getStroke().apply(this);
+      }
+      if(node.getDosp() != null)
+      {
+          node.getDosp().apply(this);
+      }
+      if(node.getC0() != null)
+      {
+          node.getC0().apply(this);
+      }
+      outABSp0(node);
+  }
+
+  @Override
+  public void caseACSp0(ACSp0 node)
+  {
+      inACSp0(node);
+      if(node.getStrokew() != null)
+      {
+          node.getStrokew().apply(this);
+      }
+      if(node.getDosp() != null)
+      {
+          node.getDosp().apply(this);
+      }
+      if(node.getN() != null)
+      {
+          node.getN().apply(this);
+      }
+      outACSp0(node);
+  }
+
 
 
   @Override
@@ -469,7 +679,7 @@ public class Visitador extends DepthFirstAdapter {
       if(node.getN() != null)
       {
         //Modificar acá.
-        asignarValor(node.getN().toString());
+        asignarValor(node.getN().getText());
           node.getN().apply(this);
       }
       if(node.getCo() != null)
