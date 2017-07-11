@@ -14,7 +14,7 @@ public class Polygon extends Figura{
   }
 
   public Polygon () {
-    super(0, null, null); 
+    super(); 
 
   }
 

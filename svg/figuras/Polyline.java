@@ -14,7 +14,7 @@ public class Polyline extends Figura {
 
   }
   public Polyline () {
-    super(0, null, null); 
+    super(); 
 
   }
 
