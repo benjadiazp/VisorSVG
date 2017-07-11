@@ -1,20 +1,22 @@
 package svg.figuras;
 public abstract class Figura
 {
-  
+  protected String nombreFigura;
   protected String stroke;
   protected String fill;
   protected int strokewidth;
 
-  public Figura(int sw, String s, String f)
+  public Figura(String nombre, int sw, String s, String f)
   {
     stroke = s;
     strokewidth = sw;
     fill = f;
+    nombreFigura = nombre;
   }
 
-  public Figura()
+  public Figura(String nombre)
   {
+    nombreFigura = nombre;
     stroke = "none";
     strokewidth = 1;
     fill = "black";
