@@ -34,7 +34,7 @@ public class Visitador extends DepthFirstAdapter {
     lista.add(obtenerFigura());
     contFig++;
     System.out.println(nombreFigura() + " agregada.\n");
-
+    
   }
 
   Figura obtenerFigura()

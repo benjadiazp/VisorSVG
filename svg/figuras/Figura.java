@@ -1,7 +1,7 @@
 package svg.figuras;
 public abstract class Figura
 {
-
+  
   protected String stroke;
   protected String fill;
   protected int strokewidth;
