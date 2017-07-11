@@ -4,12 +4,6 @@ import svg.analysis.*;
 import svg.analysis.DepthFirstAdapter.*;
 import svg.figuras.*;
 import svg.figuras.Figura;
-import svg.figuras.Line;
-import svg.figuras.Circle;
-import svg.figuras.Rectangle;
-import svg.figuras.Ellipse;
-import svg.figuras.Polygon;
-import svg.figuras.Polyline;
 import java.util.LinkedList;
 
 public class Visitador extends DepthFirstAdapter {
@@ -40,75 +34,75 @@ public class Visitador extends DepthFirstAdapter {
     int val2=0;
     switch (attActual)
     {
-      case "coorx": line.setX1(val2);
-      val2 = Integer.parseInt(val);
+      case "coorx": val2 = Integer.parseInt(val);
+      line.setX1(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
-      case "coory": line.setY1(val2);
-      val2 = Integer.parseInt(val);
+      case "coory": val2 = Integer.parseInt(val);
+      line.setY1(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
-      case "coorx2": line.setX2(val2);
-      val2 = Integer.parseInt(val);
+      case "coorx2": val2 = Integer.parseInt(val);
+      line.setX2(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
-      case "coory2": line.setY2(val2);
-      val2 = Integer.parseInt(val);
+      case "coory2": val2 = Integer.parseInt(val);
+      line.setY2(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "coorcx": switch (tipoFig)
       {
-        case 2: circle.setCx(val2);
-        val2 = Integer.parseInt(val);
+        case 2: val2 = Integer.parseInt(val);
+        circle.setCx(val2);
         System.out.print(attActual + ": " + val + " "); break; //Círculo
-        case 4: ellipse.setCx(val2);
-        val2 = Integer.parseInt(val);
+        case 4: val2 = Integer.parseInt(val);
+        ellipse.setCx(val2);
         System.out.print(attActual + ": " + val + " "); break; //Elipse
         default: break;
       }
       break;
       case "coorcy": switch (tipoFig)
       {
-        case 2: circle.setCy(val2);
-        val2 = Integer.parseInt(val);
+        case 2: val2 = Integer.parseInt(val);
+        circle.setCy(val2);
         System.out.print(attActual + ": " + val + " "); break; //Círculo
-        case 4: ellipse.setCy(val2);
-        val2 = Integer.parseInt(val);
+        case 4: val2 = Integer.parseInt(val);
+        ellipse.setCy(val2);
         System.out.print(attActual + ": " + val + " "); break; //Elipse
         default: break;
       }
       break;
-      case "rad": circle.setR(val2);
-      val2 = Integer.parseInt(val);
+      case "rad": val2 = Integer.parseInt(val);
+      circle.setR(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
-      case "coorx0": rect.setX(val2);
-      val2 = Integer.parseInt(val);
+      case "coorx0": val2 = Integer.parseInt(val);
+      rect.setX(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
-      case "coory0": rect.setY(val2);
-      val2 = Integer.parseInt(val);
+      case "coory0": val2 = Integer.parseInt(val);
+      rect.setY(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
-      case "wid": rect.setWidth(val2);
-      val2 = Integer.parseInt(val);
+      case "wid": val2 = Integer.parseInt(val);
+      rect.setWidth(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
-      case "hei": rect.setHeight(val2);
-      val2 = Integer.parseInt(val);
+      case "hei": val2 = Integer.parseInt(val);
+      rect.setHeight(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
-      case "radx": ellipse.setRx(val2);
-      val2 = Integer.parseInt(val);
+      case "radx": val2 = Integer.parseInt(val);
+      ellipse.setRx(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
-      case "rady": ellipse.setRy(val2);
-      val2 = Integer.parseInt(val);
+      case "rady": val2 = Integer.parseInt(val);
+      ellipse.setRy(val2);
       System.out.print(attActual + ": " + val + " ");
       break;
       case "fill": switch (tipoFig)
       {
-
+        //  STYLE
         case 1: line.setFill(val);
         System.out.print(attActual + ": " + val + " ");
         break;
