@@ -13,6 +13,13 @@ public abstract class Figura
     fill = f;
   }
 
+  public Figura()
+  {
+    stroke = "none";
+    strokewidth = 1;
+    fill = "black";
+  }
+
   public void setStroke(String s)
   {
     stroke = s;
