@@ -7,16 +7,17 @@ public class Circle extends Figura{
   int r;
 
 
-  public Circle (int cx, int cy, int r, int strokewidth, String stroke, String fill) {
-    super(strokewidth, stroke, fill);
+  public Circle (String nombre, int cx, int cy, int r, int strokewidth, String stroke, String fill) {
+    super("Circle", strokewidth, stroke, fill);
     this.cx = cx;
     this.cy = cy;
     this.r = r;
-
+    nombreFigura = nombre;
 
   }
-  public Circle () {
-    super();
+  public Circle (String nombre) {
+    super("Circle");
+    nombreFigura = nombre; 
   }
 
     public void setCx(int cx) {

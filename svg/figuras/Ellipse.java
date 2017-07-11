@@ -6,18 +6,17 @@ public class Ellipse extends Figura{
   int rx;
   int ry;
 
-  public Ellipse (int cx, int cy, int rx, int ry, int strokewidth, String stroke, String fill){
-    super(strokewidth, stroke, fill);
+  public Ellipse (String nombre, int cx, int cy, int rx, int ry, int strokewidth, String stroke, String fill){
+    super("Ellipse", strokewidth, stroke, fill);
     this.cx = cx;
     this.cy = cy;
     this.rx = rx;
     this.ry = ry;
-
-
+    nombreFigura = nombre;
   }
-  public Ellipse () {
-    super(); 
-
+  public Ellipse (String nombre) {
+    super("Ellipse");
+    nombreFigura = nombre;
   }
 
     public int getCx() {

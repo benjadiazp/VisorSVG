@@ -3,19 +3,18 @@ package svg.figuras;
 import java.util.LinkedList;
 
 public class Polyline extends Figura {
-  LinkedList<String> points = new LinkedList();
-  int strokewidth;
-  String fill;
-  String stroke;
+  LinkedList<int[]> points;
 
-  public Polyline (LinkedList p, int strokewidth, String stroke, String fill){
-    super(strokewidth, stroke, fill);
-    points = p;
-
+  public Polyline (String nombre, int strokewidth, String stroke, String fill){
+    super("Polyline", strokewidth, stroke, fill);
+    points = new LinkedList();
+    nombreFigura = nombre;
   }
-  public Polyline () {
-    super(); 
 
+  public Polyline (String nombre) {
+    super("Polyline");
+    points = new LinkedList();
+    nombreFigura = nombre;  
   }
 
     public LinkedList getPoints() {
@@ -24,6 +23,11 @@ public class Polyline extends Figura {
 
     public void setPoints(LinkedList points) {
         this.points = points;
+    }
+
+    public void addPoint(int[] arr)
+    {
+      points.add(arr);
     }
 
 }

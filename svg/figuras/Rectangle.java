@@ -7,17 +7,18 @@ public class Rectangle extends Figura  {
   int height;
 
 
-  public Rectangle (int x, int y, int w, int h, int strokewidth, String stroke, String fill)
+  public Rectangle (String nombre, int x, int y, int w, int h, int strokewidth, String stroke, String fill)
   {
-    super(strokewidth, stroke, fill);
+    super("Rectangle", strokewidth, stroke, fill);
     this.x = x;
     this.y = y;
     width = w;
     height = h;
-
+    nombreFigura = nombre;
   }
-  public Rectangle () {
-    super(); 
+  public Rectangle (String nombre) {
+    super("Rectangle");
+    nombreFigura = nombre;  
   }
     public int getX() {
         return x;
