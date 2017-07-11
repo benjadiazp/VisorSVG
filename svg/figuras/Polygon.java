@@ -5,16 +5,14 @@ import java.util.LinkedList;
 public class Polygon extends Figura{
   LinkedList<int[]> points;
 
-  public Polygon (String nombre, int strokewidth, String stroke, String fill){
+  public Polygon (int strokewidth, String stroke, String fill){
     super("Polygon", strokewidth, stroke, fill);
     points = new LinkedList();
-    nombreFigura = nombre;
   }
 
-  public Polygon (String nombre) {
+  public Polygon () {
     super("Polygon");
     points = new LinkedList();
-    nombreFigura = nombre; 
   }
     public LinkedList getPoints() {
         return points;
