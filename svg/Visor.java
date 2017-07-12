@@ -27,6 +27,54 @@ public class Visor extends JPanel {
 
 	}
 
+	public static void main( String[] args ) {
+
+
+		leerSVG();
+
+		//leer archivo html con instrucciones svg.
+		//Parsear el archivo de entrada.
+		//Indicar errores si el formato no corresponde, y abortar
+		//aplicar visitador y generar informaci�n �til para la siguiente etapa (apoyarse de variables, arreglos, objetos, etc.)
+		//utilizar estos datos generados en el metodo paint.
+
+
+		JFrame ventana = new JFrame("Visor SVG");
+		ventana.setSize( 800,800 );
+
+		// Receptor de eventos de cierre de la clase
+		ventana.addWindowListener( new WindowAdapter() {
+
+			public void windowClosing( WindowEvent evt ) {
+				System.exit( 0 );
+			}
+
+		} );
+
+		Container ejemplo = new Visor();
+		ventana.setContentPane( ejemplo ); //esto invoca automaticamente el metodo paint
+		ventana.setVisible( true );
+
+	}
+
+	public static void leerSVG()
+	{
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String line;
+		try {
+				System.out.println ("Ingrese figura(s) en svg.");
+				line = in.readLine();
+				Parser p = new Parser(new Lexer( new PushbackReader(new StringReader(line), 1024)));
+
+				Start tree = p.parse();
+				tree.apply(new Visitador());
+				figuras = Visitador.lista;
+		}
+		catch(Exception e) {
+				System.out.println(e.getMessage());
+		}
+	}
+
 	public void dibujarFigura(Graphics2D g, Figura f)
 	{
 
@@ -114,56 +162,5 @@ public class Visor extends JPanel {
 		return c;
 	}
 
-	public static void main( String[] args ) {
 
-
-		leerSVG2();
-
-		//leer archivo html con instrucciones svg.
-		//Parsear el archivo de entrada.
-		//Indicar errores si el formato no corresponde, y abortar
-		//aplicar visitador y generar informaci�n �til para la siguiente etapa (apoyarse de variables, arreglos, objetos, etc.)
-		//utilizar estos datos generados en el metodo paint.
-
-
-		JFrame ventana = new JFrame("Visor SVG");
-		ventana.setSize( 800,800 );
-
-		// Receptor de eventos de cierre de la clase
-		ventana.addWindowListener( new WindowAdapter() {
-
-			public void windowClosing( WindowEvent evt ) {
-				System.exit( 0 );
-			}
-
-		} );
-
-		Container ejemplo = new Visor();
-		ventana.setContentPane( ejemplo ); //esto invoca automaticamente el metodo paint
-		ventana.setVisible( true );
-
-	}
-
-	public static void leerSVG()
-	{
-
-	}
-
-	public static void leerSVG2()
-	{
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		String line;
-		try {
-				System.out.println ("Ingrese figura(s) en svg.");
-				line = in.readLine();
-				Parser p = new Parser(new Lexer( new PushbackReader(new StringReader(line), 1024)));
-
-				Start tree = p.parse();
-				tree.apply(new Visitador());
-				figuras = Visitador.lista;
-		}
-		catch(Exception e) {
-				System.out.println(e.getMessage());
-		}
-	}
 }
