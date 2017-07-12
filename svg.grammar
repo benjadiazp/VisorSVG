@@ -40,7 +40,8 @@ Tokens
 	dosp = ':';
 
 Ignored Tokens
-	blank;
+	blank,
+	execute;
 
 Productions
 

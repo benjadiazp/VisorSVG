@@ -26,4 +26,17 @@ public class Polygon extends Figura{
     {
       points.add(arr);
     }
+    public int getX1(){return -1;};
+    public int getY1(){return -1;};
+    public int getX2(){return -1;};
+    public int getY2(){return -1;};
+    public int getCx(){return -1;};
+    public int getCy(){return -1;};
+    public int getX(){return -1;};
+    public int getY(){return -1;};
+    public int getWidth(){return -1;};
+    public int getHeight(){return -1;};
+    public int getRx(){return -1;};
+    public int getRy(){return -1;};
+    public int getR(){return -1;};
 }

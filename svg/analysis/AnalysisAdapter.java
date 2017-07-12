@@ -759,6 +759,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseTExecute(TExecute node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseEOF(EOF node)
     {
         defaultCase(node);

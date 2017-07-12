@@ -127,6 +127,7 @@ public interface Analysis extends Switch
     void caseTC0(TC0 node);
     void caseTPc(TPc node);
     void caseTDosp(TDosp node);
+    void caseTExecute(TExecute node);
     void caseEOF(EOF node);
     void caseInvalidToken(InvalidToken node);
 }
