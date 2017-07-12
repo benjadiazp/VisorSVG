@@ -18,10 +18,10 @@ public class Visor extends JPanel {
 
 	public void paint( Graphics g ) {
 		Graphics2D g2 = (Graphics2D)g;
-
+		System.out.print("Qué está pasando.");
 		for (int i=0; i < figuras.size(); i++)
 		{
-			System.out.println("Imprimir " + figuras.get(i).getNombre() + "... ");
+			System.out.println("Imprimir " + figuras.get(i).getNombre() + "... (Figura " + i + " de " + figuras.size() + ").");
 			dibujarFigura(g2, figuras.get(i));
 		}
 
@@ -51,8 +51,8 @@ public class Visor extends JPanel {
 
 		} );
 
-		Container ejemplo = new Visor();
-		ventana.setContentPane( ejemplo ); //esto invoca automaticamente el metodo paint
+		Container dibujo = new Visor();
+		ventana.setContentPane( dibujo ); //esto invoca automaticamente el metodo paint
 		ventana.setVisible( true );
 
 	}
@@ -154,6 +154,10 @@ public class Visor extends JPanel {
 			case "red" : c = Color.red; break;
 			case "pink" : c = Color.pink; break;
 			case "gray" : c = Color.gray; break;
+			case "skyblue" : c = new Color(83,224, 252); break;
+			case "purple" : c = new Color(122,22, 103); break;
+			case "brown" : c = new Color(102,53, 14); break;
+			case "lime" : c = new Color(107,252, 45); break;
 			default: break;
 		}
 		return c;
