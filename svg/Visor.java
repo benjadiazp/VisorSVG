@@ -59,9 +59,12 @@ public class Visor extends JPanel {
 
 	public static void leerSVG()
 	{
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String line;
 		try {
 				System.out.println ("Ingrese figura(s) en svg.");
-				Parser p = new Parser( new Lexer( new PushbackReader(new InputStreamReader(System.in),1024)));
+				line = in.readLine();
+				Parser p = new Parser( new Lexer( new PushbackReader(new StringReader(line))));
 
 				Start tree = p.parse();
 				tree.apply(new Visitador());
