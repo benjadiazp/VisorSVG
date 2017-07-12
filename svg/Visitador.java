@@ -7,7 +7,7 @@ import svg.figuras.Figura;
 import java.util.LinkedList;
 
 public class Visitador extends DepthFirstAdapter {
-  public LinkedList<Figura> lista = new LinkedList<>();
+  public static LinkedList<Figura> lista = new LinkedList<>();
   private int tipoFig;
   int contFig = 1;
   String attActual;
@@ -34,7 +34,7 @@ public class Visitador extends DepthFirstAdapter {
     lista.add(obtenerFigura());
     contFig++;
     System.out.println(nombreFigura() + " agregada.\n");
-    
+
   }
 
   Figura obtenerFigura()
@@ -214,6 +214,17 @@ public class Visitador extends DepthFirstAdapter {
     }
   }
 
+  void asignarPunto(int x, int y)
+  {
+    int[] arr = new int[] {x, y};
+    System.out.println(arr[0] + ", " + arr[1] + " ");
+    switch (tipoFig)
+    {
+      case 5: polygon.addPoint(arr); break;
+      case 6: polyline.addPoint(arr); break;
+      default: break;
+    }
+  }
 
 
   public Visitador()
@@ -812,6 +823,29 @@ public class Visitador extends DepthFirstAdapter {
           node.getN().apply(this);
       }
       outACSp0(node);
+  }
+
+  @Override
+  public void caseAP1(AP1 node)
+  {
+      inAP1(node);
+      int x=0, y=0;
+      if(node.getN() != null)
+      {
+        x = Integer.parseInt(node.getN().getText());
+          node.getN().apply(this);
+      }
+      if(node.getComa() != null)
+      {
+          node.getComa().apply(this);
+      }
+      if(node.getA() != null)
+      {
+        y = Integer.parseInt(node.getA().getText());
+          node.getA().apply(this);
+      }
+      asignarPunto(x, y);
+      outAP1(node);
   }
 
 

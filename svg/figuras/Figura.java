@@ -1,7 +1,7 @@
 package svg.figuras;
 public abstract class Figura
 {
-  protected String nombreFigura;
+  public String nombreFigura;
   protected String stroke;
   protected String fill;
   protected int strokewidth;
@@ -20,6 +20,11 @@ public abstract class Figura
     stroke = "none";
     strokewidth = 1;
     fill = "black";
+  }
+
+  public String getNombre()
+  {
+    return nombreFigura;
   }
 
   public void setStroke(String s)
@@ -51,18 +56,30 @@ public abstract class Figura
   {
     return fill;
   }
-/*  public void setX1(){return;}
-  public void setY1(){return;}
-  public void setX2(){return;}
-  public void setY2(){return;}
-  public void setCx(){return;}
-  public void setCy(){return;}
-  public void setX0(){return;}
-  public void setY0(){return;}
-  public void setWid(){return;}
-  public void setHei(){return;}
-  public void setRadx(){return;}
-  public void setRady(){return;}
-  public void setRad(){return;}
-  */
+  public abstract void setX1();
+  public abstract void setY1();
+  public abstract void setX2();
+  public abstract void setY2();
+  public abstract void setCx();
+  public abstract void setCy();
+  public abstract void setX0();
+  public abstract void setY0();
+  public abstract void setWid();
+  public abstract void setHei();
+  public abstract void setRadx();
+  public abstract void setRady();
+  public abstract void setRad();
+  public abstract int getX1();
+  public abstract int getY1();
+  public abstract int getX2();
+  public abstract int getY2();
+  public abstract int getCx();
+  public abstract int getCy();
+  public abstract int getX0();
+  public abstract int getY0();
+  public abstract int getWid();
+  public abstract int getHei();
+  public abstract int getRadx();
+  public abstract int getRady();
+  public abstract int getRad();
 }
