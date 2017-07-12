@@ -1,4 +1,7 @@
 package svg.figuras;
+
+import java.util.LinkedList;
+
 public abstract class Figura
 {
   public String nombreFigura;
@@ -62,24 +65,26 @@ public abstract class Figura
   public abstract void setY2();
   public abstract void setCx();
   public abstract void setCy();
-  public abstract void setX0();
-  public abstract void setY0();
-  public abstract void setWid();
-  public abstract void setHei();
-  public abstract void setRadx();
-  public abstract void setRady();
+  public abstract void setX();
+  public abstract void setY();
+  public abstract void setWidth();
+  public abstract void setHeight();
+  public abstract void setRx();
+  public abstract void setRy();
   public abstract void setRad();
+  public abstract void setPoints();
   public abstract int getX1();
   public abstract int getY1();
   public abstract int getX2();
   public abstract int getY2();
   public abstract int getCx();
   public abstract int getCy();
-  public abstract int getX0();
-  public abstract int getY0();
-  public abstract int getWid();
-  public abstract int getHei();
-  public abstract int getRadx();
-  public abstract int getRady();
-  public abstract int getRad();
+  public abstract int getX();
+  public abstract int getY();
+  public abstract int getWidth();
+  public abstract int getHeight();
+  public abstract int getRx();
+  public abstract int getRy();
+  public abstract int getR();
+  public abstract LinkedList getPoints();
 }

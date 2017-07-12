@@ -232,6 +232,8 @@ public class Visitador extends DepthFirstAdapter {
 
   }
 
+
+
   @Override
   public void caseAAPr1(AAPr1 node)
   {
@@ -861,7 +863,11 @@ public class Visitador extends DepthFirstAdapter {
       if(node.getN() != null)
       {
         //Modificar acá.
-        asignarValor(node.getN().getText());
+        if (attActual != null)
+        {
+          asignarValor(node.getN().getText());
+        }
+
           node.getN().apply(this);
       }
       if(node.getCo() != null)

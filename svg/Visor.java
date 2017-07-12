@@ -11,8 +11,6 @@ import java.io.*;
 import java.io.BufferedReader;
 import java.util.LinkedList;
 import svg.figuras.*;
-import svg.figuras.Figura;
-import svg.figuras.Line;
 
 public class Visor extends JPanel {
 
@@ -27,59 +25,77 @@ public class Visor extends JPanel {
 			dibujarFigura(g2, figuras.get(i));
 		}
 
-
-		// C�rculo a rellenar
-/*
-		//Ellipse2D circulo = new Ellipse2D.Float( 10,10,220,220 );
-		Line l = new Line(50, 200, 200, 100, 15, "gray", "red");
-		Line2D linea = new Line2D.Float(l.getX1(), l.getY1(), l.getX2(), l.getY2());
-		// Gradiente de color de azul a verde
-		GradientPaint gradiente = new GradientPaint( 75,75,Color.RED, 95,95,Color.green,true );
-		// Se fija el gradiente
-		g2.setColor(obtenerColor(l.getStroke()));
-		// Se rellena el c�rculo
-		//g2.fill( circulo );
-
-
-		g2.fill(linea);
-		g2.setStroke(new BasicStroke(15));
-		g2.drawLine(l.getX1(), l.getY1(), l.getX2(), l.getY2());
-
-		*/
-
-	}// M�todo principal de la clase
+	}
 
 	public void dibujarFigura(Graphics2D g, Figura f)
 	{
 
 		g.setColor(obtenerColor(f.getStroke()));
-		g.setStroke(new BasicStroke(f.getStrokewidth()));
+		g.setStroke(new BasicStroke(f.getStrokewidth()*2));
 
 		switch(f.getNombre())
 
 		{
-			case "Line": dibujarLinea(g, f); break;
+			case "Line": g.drawLine(f.getX1(), f.getY1(), f.getX2(), f.getY2()); ;
+			break;
+			case "Ellipse": Ellipse2D e = new Ellipse2D.Double((f.getCx()-f.getRx()), (f.getCy()-f.getRy()), f.getRx()*2, f.getRy()*2);
+			g.draw(e);
+			if (!f.getFill().equals("none"))
+			{
+				g.setColor(obtenerColor(f.getFill()));
+				g.fill(e);
+			}
 
-/*
-			case "Ellipse": dibujarEllipse(g, f); break;
-			case "Circle": dibujarCircle(g, f); break;
-			case "Rectangle": dibujarRectangle(g, f); break;
-			case "Polygon": dibujarPolygon(g, f); break;
-			case "Polyline": dibujarPolyline(g, f); break;
-*/
+			break;
+			case "Circle": Ellipse2D c = new Ellipse2D.Double((f.getCx()-f.getR()), (f.getCy()-f.getR()), f.getR()*2, f.getR()*2);
+			g.draw(c);
+			if (!f.getFill().equals("none"))
+			{
+				g.setColor(obtenerColor(f.getFill()));
+				g.fill(c);
+			}
+			break;
+			case "Rectangle": Rectangle2D r = new Rectangle2D.Float(f.getX(), f.getY(), f.getWidth(), f.getHeight());
+			g.draw(r);
+			g.setColor(obtenerColor(f.getFill()));
+			g.fill(r);
+			break;
+			case "Polygon": dibujarPolygon(g, f);break;
+			case "Polyline": dibujarPolyline(g, f);break;
+
 			default: break;
 		}
 
-	}
 
-	public void dibujarLinea(Graphics2D g, Figura l)
+
+	}
+	void dibujarPolygon(Graphics2D g, Figura f)
 	{
-		g.drawLine(l.getX1(), l.getY1(), l.getX2(), l.getY2());
-
+		LinkedList<int[]> points = f.getPoints();
+		int valoresX[] = new int[points.size()];
+		int valoresY[] = new int[points.size()];
+		for (int i=0; i<points.size(); i++)
+		{
+			valoresX[i] = points.get(i)[0];
+			valoresY[i] = points.get(i)[1];
+		}
+		java.awt.Polygon p = new java.awt.Polygon(valoresX, valoresY, points.size());
+		g.drawPolygon(p);
+		g.setColor(obtenerColor(f.getFill()));
+		g.fill(p);
 	}
-
-
-
+	void dibujarPolyline(Graphics2D g, Figura f)
+	{
+		LinkedList<int[]> points = f.getPoints();
+		int valoresX[] = new int[points.size()];
+		int valoresY[] = new int[points.size()];
+		for (int i=0; i<points.size(); i++)
+		{
+			valoresX[i] = points.get(i)[0];
+			valoresY[i] = points.get(i)[1];
+		}
+		g.drawPolyline(valoresX, valoresY, points.size());
+	}
 	private Color obtenerColor(String str)
 	{
 		Color c=null;
@@ -100,14 +116,12 @@ public class Visor extends JPanel {
 
 	public static void main( String[] args ) {
 
-		//leerSVG();
-		//leerSVG2();
-		//aplicarVisitador();
 
-		/*leer archivo html con instrucciones svg.
-		Parsear el archivo de entrada.
-		Indicar errores si el formato no corresponde, y abortar
-		*/
+		leerSVG2();
+
+		//leer archivo html con instrucciones svg.
+		//Parsear el archivo de entrada.
+		//Indicar errores si el formato no corresponde, y abortar
 		//aplicar visitador y generar informaci�n �til para la siguiente etapa (apoyarse de variables, arreglos, objetos, etc.)
 		//utilizar estos datos generados en el metodo paint.
 
@@ -127,6 +141,7 @@ public class Visor extends JPanel {
 		Container ejemplo = new Visor();
 		ventana.setContentPane( ejemplo ); //esto invoca automaticamente el metodo paint
 		ventana.setVisible( true );
+
 	}
 
 	public static void leerSVG()
@@ -140,11 +155,9 @@ public class Visor extends JPanel {
 		String line;
 		try {
 				System.out.println ("Ingrese figura(s) en svg.");
-				//Crear una instancia del parser
 				line = in.readLine();
 				Parser p = new Parser(new Lexer( new PushbackReader(new StringReader(line), 1024)));
 
-				//generar el arbol de parsing
 				Start tree = p.parse();
 				tree.apply(new Visitador());
 				figuras = Visitador.lista;
