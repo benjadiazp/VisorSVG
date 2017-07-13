@@ -7,7 +7,7 @@ Tokens
 	svg2 = '</svg>';
 	minus = '<';
 	mayus = '>';
-	co = '"';
+	co = ('"' | '“' | '”');
 	ig = '=';
 	sl = '/';
 	line = 'line';
